@@ -12,14 +12,14 @@ class Page2 extends Component{
     }
 
     pagina1(){
-        document.getElementById('TerceiroConteudo').style.display = 'none';
-        document.getElementById('SegundoConteudo').style.display = 'none';
-        document.getElementById('PrimeiroConteudo').style.display  = 'initial';
+        document.getElementById('page3').style.display = 'none';
+        document.getElementById('page2').style.display = 'none';
+        document.getElementById('page1').style.display  = 'initial';
     }
 
     pagina3(){
-        document.getElementById('SegundoConteudo').style.display = 'none';
-        document.getElementById('TerceiroConteudo').style.display = 'initial';
+        document.getElementById('page2').style.display = 'none';
+        document.getElementById('page3').style.display = 'initial';
     }
 
     render(){
@@ -93,9 +93,9 @@ class Page2 extends Component{
                             </div>
                         </div>
                         <button onClick={this.pagina3}>Próxima tela</button>
-             <Page3/>
-         </div>
-         </div>
+                    <Page3/>
+                </div>
+            </div>
         )
     }
 
