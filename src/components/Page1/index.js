@@ -23,8 +23,8 @@ class Page1 extends Component{
     }
 
     componentDidMount(){
-        document.getElementById('page22').style.display = 'none';
-        document.getElementById('page33').style.display = 'none';
+        //document.getElementById('page22').style.display = 'none';
+        //document.getElementById('page33').style.display = 'none';
     }
 
 
@@ -153,10 +153,10 @@ class Page1 extends Component{
                                 </div>                                              
                             </div>                         
                         </div>
-                        <button id="btn" onClick={() => {document.getElementById('pag1').style.display='none'; document.getElementById('page22').style.display='block'  }} >Mostrar página 2</button>
+                        {/*<button id="btn" onClick={() => {document.getElementById('pag1').style.display='none'; document.getElementById('page22').style.display='block'  }} >Mostrar página 2</button> */ }
                    </div>                   
-
-                   <Page2/>
+                                    <h1>{this.state.range['00 a 18']}</h1>
+                   <Page2 range={this.state.range}/>
                  
 
                </div>
