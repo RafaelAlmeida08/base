@@ -4,7 +4,12 @@ import './page3.css';
 class Page3 extends Component{
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {
+            plano: {
+                'nome' : 'teste',
+                'imagem' : 'https://i.imgur.com/RDFaRz2.png'
+            }
+        };
         this.dadoshospitalares       = this.dadoshospitalares.bind(this); 
         this.dadosvalores            = this.dadosvalores.bind(this);
         this.optcompartilhar         = this.optcompartilhar.bind(this); 
@@ -89,7 +94,7 @@ class Page3 extends Component{
             <div id="TerceiroConteudo">
                 <div id="page3">
                     <div className="header">
-                        <img src={require('../images/plano1.png')} alt="logo"/>
+                        <img src={this.state.plano['imagem']} alt="logo"/>
                     </div>
                     <div className="meio">
                         <div className="linha geral">
