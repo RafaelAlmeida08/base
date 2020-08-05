@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './page3.css';
 
 class Page3 extends Component{
     constructor(props){
@@ -8,10 +8,16 @@ class Page3 extends Component{
         this.dadoshospitalares       = this.dadoshospitalares.bind(this); 
         this.dadosvalores            = this.dadosvalores.bind(this);
         this.optcompartilhar         = this.optcompartilhar.bind(this); 
+        this.enviaremail             = this.enviaremail.bind(this);
+        this.compartilhar            = this.compartilhar.bind(this);
+        this.imprimir                = this.imprimir.bind(this);
+        this.informacoes             = this.informacoes.bind(this);
+        this.optcompartilharmobile   = this.optcompartilharmobile.bind(this);
     }
 
     componentDidMount(){
         document.getElementById('opt').style.display = 'none';
+        document.getElementById('optmobile').style.display = 'none';
     }
 
     dadoshospitalares(){
@@ -20,11 +26,15 @@ class Page3 extends Component{
             document.getElementById('dadoshospitalares').style.display = 'initial';
             document.getElementById('rightarrow1').style.display = 'none';
             document.getElementById('downarrow1').style.display = 'block'
+            document.getElementById('dropdown2').style.top = '178%';
         }else{
             document.getElementById('dadoshospitalares').style.display = '';
             document.getElementById('rightarrow1').style.display = 'block';
             document.getElementById('downarrow1').style.display = 'none'
+            document.getElementById('dropdown2').style.top = '154%';
         }
+
+
     }
  
     dadosvalores(){
@@ -49,9 +59,34 @@ class Page3 extends Component{
         }
     }
 
+    optcompartilharmobile(){
+        var x = document.getElementById('optmobile').style.display;
+        if (x === 'none'){
+           document.getElementById('optmobile').style.display='initial';
+        }else{
+           document.getElementById('optmobile').style.display='none';
+        }
+    }
+
+    enviaremail(){
+        alert('Abre Enviar Email');
+    }
+
+    compartilhar(){
+        alert('Abre Compartilhar');
+    }
+
+    imprimir(){
+        alert('Abre Imprimir');
+    }
+
+    informacoes(){
+        alert('Abre Informações');
+    }
+
     render(){
         return(
-            <div id="terceiroconteudo">
+            <div id="TerceiroConteudo">
                 <div id="page3">
                     <div className="header">
                         <img src={require('../images/plano1.png')} alt="logo"/>
@@ -106,7 +141,7 @@ class Page3 extends Component{
                                     <span>28 Laboratórios</span>
                                 </div>
                             </div>
-                                <div className="dropdown">
+                                <div className="dropdown" id="dropdown1">
                                     <i id="rightarrow1" onClick={this.dadoshospitalares} className="arrow right"></i>
                                     <i id="downarrow1" onClick={this.dadoshospitalares} className="arrow down"></i>
                                 </div>
@@ -121,7 +156,7 @@ class Page3 extends Component{
                             <div className="conteudo">
                                 <span>Algo aqui</span>
                             </div>
-                            <div className="dropdown">
+                            <div className="dropdown" id="dropdown2">
                                 <i id="rightarrow2" onClick={this.dadosvalores} className="arrow right"></i>
                                 <i id="downarrow2" onClick={this.dadosvalores} className="arrow down"></i>
                             </div>
@@ -139,14 +174,14 @@ class Page3 extends Component{
                                 <h2>R$ {this.state.valorfinal}</h2>
                             </div>
                          </div>
-                        <div className="dados">
+                        <div className="dados" id="desktop">
                             <div id="opt">
                                 <div className="opt1">
                                     <div className="icon">
                                         <img src={require('../images/email.svg')} alt="email"/>
                                     </div>
                                     <div className="name">
-                                        <span>Enviar por e-mail</span>
+                                        <span onClick={this.enviaremail}>Enviar por e-mail</span>
                                     </div>
                                 </div>
                                 <div className="opt1">
@@ -154,7 +189,7 @@ class Page3 extends Component{
                                         <img src={require('../images/compartilhar.svg')} alt="compartilhar"/>
                                     </div>
                                     <div className="name">
-                                        <span>Compartilhar</span>
+                                        <span onClick={this.compartilhar} >Compartilhar</span>
                                     </div>
                                 </div>
                                 <div className="opt1">
@@ -162,7 +197,7 @@ class Page3 extends Component{
                                         <img src={require('../images/imprimir.svg')} alt="imprimir"/>
                                     </div>
                                     <div className="name">
-                                        <span>Imprimir</span>
+                                        <span onClick={this.imprimir}>Imprimir</span>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +205,41 @@ class Page3 extends Component{
                                 <img src={require('../images/share.png')} alt="bullets"/>
                             </div>
                             <div className="info">
-                                <button>+ Informações</button>
+                                <button onClick={this.informacoes} >+ Informações</button>
+                            </div>
+                        </div>
+                        <div className="dados" id="mobile"> 
+                            <div className="info">
+                                <button onClick={this.informacoes} >+ Informações</button>
+                            </div>                           
+                            <div className="bullets" onClick={this.optcompartilharmobile}>
+                                <img src={require('../images/share.png')} alt="bullets"/>
+                            </div>                            
+                            <div id="optmobile">
+                                <div className="opt1">
+                                    <div className="icon">
+                                        <img src={require('../images/email.svg')} alt="email"/>
+                                    </div>
+                                    <div className="name">
+                                        <span onClick={this.enviaremail}>Enviar por e-mail</span>
+                                    </div>
+                                </div>
+                                <div className="opt1">
+                                    <div className="icon">
+                                        <img src={require('../images/compartilhar.svg')} alt="compartilhar"/>
+                                    </div>
+                                    <div className="name">
+                                        <span onClick={this.compartilhar} >Compartilhar</span>
+                                    </div>
+                                </div>
+                                <div className="opt1">
+                                    <div className="icon">
+                                        <img src={require('../images/imprimir.svg')} alt="imprimir"/>
+                                    </div>
+                                    <div className="name">
+                                        <span onClick={this.imprimir}>Imprimir</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

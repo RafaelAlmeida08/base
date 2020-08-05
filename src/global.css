@@ -413,9 +413,9 @@ button:hover {
     height: 35px;
 }
 
-#opt{
+#opt,#optmobile{
     display: initial;
-    border: 1px solid #5444DA;
+    border: 2px solid #5444DA;
     border-radius: 10px;
     height: 90px;
     background-color: white;
