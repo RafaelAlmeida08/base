@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './page3.css';
+import Email from '../Email';
 
 class Page3 extends Component{
     constructor(props){
@@ -23,6 +24,7 @@ class Page3 extends Component{
     componentDidMount(){
         document.getElementById('opt').style.display = 'none';
         document.getElementById('optmobile').style.display = 'none';
+       
     }
 
     dadoshospitalares(){
@@ -73,8 +75,14 @@ class Page3 extends Component{
         }
     }
 
-    enviaremail(){
-        alert('Abre Enviar Email');
+    enviaremail(){       
+        var modal = document.getElementById("Modalemail");
+        modal.style.display = 'block';
+        var span = document.getElementsByClassName("fecharmodal")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+          }
     }
 
     compartilhar(){
@@ -247,6 +255,7 @@ class Page3 extends Component{
                                 </div>
                             </div>
                         </div>
+                        <Email/>
                     </div>
                 </div>
             </div>
