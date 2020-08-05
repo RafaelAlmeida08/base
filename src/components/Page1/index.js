@@ -6,27 +6,28 @@ class Page1 extends Component{
         super(props);
         this.state = {
             contato: {
-                "nome": '',
-                "cidade": ''
+                nome: '',
+                cidade: ''
             },
             totalcred: 0,
             range: {
-                "00 a 18": 0,
-                "19 a 23": 0,
-                "24 a 28": 0,
-                "29 a 33": 0,
-                "34 a 38": 0,
-                "39 a 43": 0,
-                "44 a 48": 0,
-                "49 a 53": 0,
-                "54 a 58": 0,
-                "59 a +" : 0   
+                "00 a 18": "0",
+                "19 a 23": "0",
+                "24 a 28": "0",
+                "29 a 33": "0",
+                "34 a 38": "0",
+                "39 a 43": "0",
+                "44 a 48": "0",
+                "49 a 53": "0",
+                "54 a 58": "0",
+                "59 ou +" : "0"  
             }
         };
         this.modal      = this.modal.bind(this);
         this.cadastrar  = this.cadastrar.bind(this);
         this.contato    = this.contato.bind(this);
         this.cidade     = this.cidade.bind(this);
+        this.setRange   = this.setRange.bind(this);
     }
 
     componentDidMount(){
@@ -37,15 +38,52 @@ class Page1 extends Component{
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
         document.getElementById('page2').style.display = "initial";
+
         e.preventDefault();
     }
 
     contato(event) {
-        this.setState({contato: {"nome": event.target.value}});
+        this.setState(prevState => (
+            {
+                contato: {
+                    ...prevState.contato,
+                    nome: document.getElementById('input-contato').value
+                }
+            }
+        ));        
+        event.preventDefault();
     }
 
     cidade(event){
-        this.setState({contato: {"cidade": event.target.value}});
+        this.setState(prevState => (
+            {
+                contato: {
+                    ...prevState.contato,
+                    cidade: document.getElementById('select1').value
+                }
+            }
+        ));
+        event.preventDefault();
+    }
+
+    setRange() {
+        let ranges = document.getElementsByClassName('input-range');
+        let range = Object.assign({}, this.state.range);
+        for (var prop in ranges) {
+            var key = ranges[prop].id;
+            var value = ranges[prop].value;
+
+            if (key !== undefined) {
+                if (value === "") {
+                    range[key] = 0;
+                } else {
+                    range[key] = value;
+                }
+            }
+        }
+
+        this.setState({range});
+        return range;
     }
 
     modal(){
@@ -80,7 +118,7 @@ class Page1 extends Component{
                                 <div className="box-contato">
                                     <h3>Contato</h3>
                                     <div id="div-input">
-                                        <input required type="text" value={this.state.contato["nome"]} onChange={this.contato}/>
+                                        <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
                                         <img id="user" src={require('../images/user.png')} alt="user"/>
                                     </div>
                                 </div>
@@ -117,53 +155,54 @@ class Page1 extends Component{
                                 <div className="modal-linha">
                                     <div className="modal-linha-bloco">
                                             <label>00 a 18</label>
-                                            <input onChange={(e) => this.setState({range: {"00 a 18": e.target.value}})} type="number"/>
+                                            <input id="00 a 18" type="number" className="input-range"/>
                                     </div> 
                                     <div className="modal-linha-bloco">
                                             <label>19 a 23</label>
-                                            <input onChange={(e) => this.setState({range: {"19 a 23": e.target.value}})} type="number"/>
+                                            <input id="19 a 23" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                             <label>24 a 28</label>
-                                            <input onChange={(e) => this.setState({range: {"24 a 28": e.target.value}})} type="number"/>
+                                            <input id="24 a 28" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                             <label>29 a 33</label>
-                                            <input onChange={(e) => this.setState({range: {"29 a 33": e.target.value} })} type="number"/>
+                                            <input id="29 a 33" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                             <label>34 a 38</label>
-                                            <input onChange={(e) => this.setState({range: {"34 a 38": e.target.value}})} type="number"/>
+                                            <input id="34 a 38" type="number" className="input-range"/>
                                     </div>                                   
                                 </div>      
                                 <div className="modal-linha">
                                     <div className="modal-linha-bloco">
                                         <label>39 a 43</label>
-                                        <input onChange={(e) => this.setState({range: {"39 a 43": e.target.value}})} type="number"/>
+                                        <input id="39 a 43" type="number" className="input-range"/>
                                     </div> 
                                     <div className="modal-linha-bloco">
                                         <label>44 a 48</label>
-                                        <input onChange={(e) => this.setState({range: {"44 a 48": e.target.value} })} type="number"/>
+                                        <input id="44 a 48" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                         <label>49 a 53</label>
-                                        <input onChange={(e) => this.setState({range: {"49 a 53": e.target.value}})} type="number"/>
+                                        <input id="49 a 53" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                         <label>54 a 58</label>
-                                        <input onChange={(e) => this.setState({range: {"54 a 58": e.target.value}})} type="number"/>
+                                        <input id="54 a 58" type="number" className="input-range"/>
                                     </div>    
                                     <div className="modal-linha-bloco">
                                         <label>59 ou +</label>
-                                        <input onChange={(e) => this.setState({range: {"59 ou +": e.target.value}})} type="number"/>
+                                        <input id="59 ou +" type="number" className="input-range"/>
                                     </div>                                                                   
                                 </div>
                                 <div className="btnmodal">
                                     <button onClick={(e) => {                                          
                                         document.getElementById('myModal').style.display="none";
+                                        var range = this.setRange();
                                         let total = this.state.totalcred;
-                                        for (var prop in this.state.range) {
-                                            total = total + parseInt(this.state.range[prop]);
+                                        for (var prop in range) {
+                                            total = total + parseInt(range[prop]);
                                         }
 
                                         this.setState({totalcred: total});

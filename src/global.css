@@ -463,8 +463,14 @@ button:hover {
     padding: 10px;
 }
 /* Página 2 (Sáude) */
-.dropdown-contato {
+
+#dropdown {
     width: 90%;
+    display: block;
+    margin: 20px auto;
+}
+
+.dropdown-contato {
     background: #FFFCFC;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -474,7 +480,23 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 20px auto;
+    margin: auto;
+    cursor: pointer;
+}
+
+.dropdown-abrir {
+    background: var(--color-primary);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+    color: #D0D0D0;
 }
 
 .dropdown-contato > p {
@@ -488,6 +510,10 @@ button:hover {
 
 .dropdown-contato > span > img:hover {
     cursor: pointer;
+}
+
+#dropdown-content {
+    background: #FFFCFC;
 }
 
 .selection-saude {

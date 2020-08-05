@@ -9,6 +9,7 @@ class Page2 extends Component{
         };
 
         this.pagina1 = this.pagina1.bind(this);
+        this.pagina3 = this.pagina3.bind(this);
     }
 
     pagina1(){
@@ -22,20 +23,31 @@ class Page2 extends Component{
         document.getElementById('page3').style.display = 'initial';
     }
 
+    openDropdown() {
+        var dropdown = document.getElementsById('dropdownBtn');
+
+        dropdown[0].classList.add("dropdown-abrir");
+    }
+
     render(){
         return(
             <div id="SegundoConteudo" className="container">
+                {this.props.range['00 a 18']}
+                {this.props.contato['nome']}
                 <div id="page2">
-                    <div className="dropdown-contato">
-                        <p id="nome-contato">Contato: {this.props.contato["nome"]}</p>
-                        <span id="dropdown-arrow">
-                            <img src={require('../images/arrow-down.svg')} alt="arrow"></img>
-                        </span>
+                    <div id="dropdown">
+                        <div id="dropdownBtn" className="dropdown-contato" onClick={this.openDropdown}>
+                            <p id="nome-contato">Contato: {this.props.contato["nome"]}</p>
+                            <span id="dropdown-arrow">
+                                <img src={require('../images/arrow-down.svg')} alt="arrow"></img>
+                            </span>
+                        </div>
+                        <div id="dropdown-content">
+                            <p>Oi</p>
+                        </div>
                     </div>
 
-                        <div>
-
-                        </div>
+                        
 
                         <div className="selection-saude">
                             <div className="box-superior">
