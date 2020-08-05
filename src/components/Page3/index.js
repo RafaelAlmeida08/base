@@ -12,8 +12,8 @@ class Page3 extends Component{
 
     render(){
         return(
-            <div id="terceiroconteudo">
-                <div id="page33">
+            <div id="TerceiroConteudo" className="container">
+                <div id="page3">
                     <h1>Página 3</h1>
                 </div>
             </div>

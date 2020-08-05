@@ -5,6 +5,10 @@ class Page1 extends Component{
     constructor(props){
         super(props);
         this.state = {
+            contato: {
+                "nome": '',
+                "cidade": ''
+            },
             totalcred: 0,
             range: {
                 "00 a 18": 0,
@@ -19,14 +23,30 @@ class Page1 extends Component{
                 "59 a +" : 0   
             }
         };
-        this.modal                   = this.modal.bind(this);
+        this.modal      = this.modal.bind(this);
+        this.cadastrar  = this.cadastrar.bind(this);
+        this.contato    = this.contato.bind(this);
+        this.cidade     = this.cidade.bind(this);
     }
 
     componentDidMount(){
-        //document.getElementById('page22').style.display = 'none';
-        //document.getElementById('page33').style.display = 'none';
+        document.getElementById('SegundoConteudo').style.display = 'none';
+        document.getElementById('TerceiroConteudo').style.display = 'none';
     }
 
+    cadastrar(e){
+        document.getElementById('PrimeiroConteudo').style.display = "none";
+        document.getElementById('SegundoConteudo').style.display = "initial";
+        e.preventDefault();
+    }
+
+    contato(event) {
+        this.setState({contato: {"nome": event.target.value}});
+    }
+
+    cidade(event){
+        this.setState({contato: {"cidade": event.target.value}});
+    }
 
     modal(){
         var modal   = document.getElementById("myModal");   
@@ -50,7 +70,7 @@ class Page1 extends Component{
     
     render(){
         return(
-               <div id="PrimeiroConteudo">
+               <div id="PrimeiroConteudo" className="container">
                     <div id="pag1">
                         <form onSubmit={this.cadastrar} className="form" id="form">
                             <div className="box">
@@ -60,15 +80,15 @@ class Page1 extends Component{
                                 <div className="box-contato">
                                     <h3>Contato</h3>
                                     <div id="div-input">
-                                        <input required type="text" value={this.state.contato} onChange={this.contato}/>
+                                        <input required type="text" value={this.state.contato["nome"]} onChange={this.contato}/>
                                         <img id="user" src={require('../images/user.png')} alt="user"/>
                                     </div>
                                 </div>
                                 <div className="box-meio">
                                     <div className="box-cidade">
                                         <h3>Cidade</h3>
-                                            <select required id="select1">
-                                                <option value={this.state.cidadeempty}></option>
+                                            <select required id="select1" onChange={this.cidade}>
+                                                <option value={this.state.contato["cidade"]}></option>
                                                 <option value="Rio de Janeiro">Rio de Janeiro</option>
                                                 <option value="Niteroi">Niterói</option>
                                                 <option value="São Goncalo">São Gonçalo</option>
@@ -153,15 +173,11 @@ class Page1 extends Component{
                                 </div>                                              
                             </div>                         
                         </div>
-                        {/*<button id="btn" onClick={() => {document.getElementById('pag1').style.display='none'; document.getElementById('page22').style.display='block'  }} >Mostrar página 2</button> */ }
-                   </div>                   
-                                    <h1>{this.state.range['00 a 18']}</h1>
-                   <Page2 range={this.state.range}/>
-                 
+                   </div>
 
+                   <Page2 range={this.state.range} contato={this.state.contato}/>
                </div>
             )
-       
     }
 
 }
