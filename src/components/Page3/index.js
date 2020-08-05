@@ -51,7 +51,7 @@ class Page3 extends Component{
 
     render(){
         return(
-            <div id="terceiroconteudo">
+            <div id="TerceiroConteudo">
                 <div id="page3">
                     <div className="header">
                         <img src={require('../images/plano1.png')} alt="logo"/>

@@ -30,13 +30,13 @@ class Page1 extends Component{
     }
 
     componentDidMount(){
-        document.getElementById('SegundoConteudo').style.display = 'none';
-        document.getElementById('TerceiroConteudo').style.display = 'none';
+        document.getElementById('page2').style.display = 'none';
+        document.getElementById('page3').style.display = 'none';
     }
 
     cadastrar(e){
-        document.getElementById('PrimeiroConteudo').style.display = "none";
-        document.getElementById('SegundoConteudo').style.display = "initial";
+        document.getElementById('page1').style.display = "none";
+        document.getElementById('page2').style.display = "initial";
         e.preventDefault();
     }
 
@@ -71,7 +71,7 @@ class Page1 extends Component{
     render(){
         return(
                <div id="PrimeiroConteudo" className="container">
-                    <div id="pag1">
+                    <div id="page1">
                         <form onSubmit={this.cadastrar} className="form" id="form">
                             <div className="box">
                                 <div className="box-superior">
@@ -174,9 +174,11 @@ class Page1 extends Component{
                             </div>                         
                         </div>
                    </div>
-
+                
                    <Page2 range={this.state.range} contato={this.state.contato}/>
                </div>
+
+
             )
     }
 
