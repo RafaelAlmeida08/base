@@ -12,7 +12,6 @@ class App extends Component{
     return(
       <BrowserRouter>        
         <Switch>
-          <Route exact path="/" component={Page2}/>
           <Route exact path="/" component={Pageselecao}/>
         </Switch>      
       </BrowserRouter>
