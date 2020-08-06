@@ -13,8 +13,8 @@ class Page2 extends Component{
     }
 
     pagina1(){
-        document.getElementById('page3').style.display = 'none';
-        document.getElementById('page2').style.display = 'none';
+        document.getElementById('page3').style.display  = 'none';
+        document.getElementById('page2').style.display  = 'none';
         document.getElementById('page1').style.display  = 'initial';
     }
 
@@ -24,16 +24,18 @@ class Page2 extends Component{
     }
 
     openDropdown() {
-        var dropdown = document.getElementsById('dropdownBtn');
+        var dropdown = document.getElementById('dropdownBtn');
+        var dropdownContent = document.getElementById('dropdown-content');
 
-        dropdown[0].classList.add("dropdown-abrir");
+        dropdown.classList.add("btn-dropdown-abrir");
+        dropdownContent.classList.remove("dropdown-content");
+        dropdownContent.classList.add("content-dropdown-abrir");
     }
 
     render(){
         return(
             <div id="SegundoConteudo" className="container">
-                {this.props.range['00 a 18']}
-                {this.props.contato['nome']}
+
                 <div id="page2">
                     <div id="dropdown">
                         <div id="dropdownBtn" className="dropdown-contato" onClick={this.openDropdown}>
@@ -74,9 +76,6 @@ class Page2 extends Component{
                             </div>
 
                             <div id="grid">
-                                    <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
-                                    </div>
                                     <div className="item">
                                         <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
                                     </div>
