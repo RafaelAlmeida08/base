@@ -11,8 +11,7 @@ class App extends Component{
   render(){
     return(
       <BrowserRouter>        
-        <Switch>
-          <Route exact path="/" component={Page2}/>
+        <Switch>         
           <Route exact path="/" component={Pageselecao}/>
         </Switch>      
       </BrowserRouter>
