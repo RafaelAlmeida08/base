@@ -10,7 +10,7 @@ class Card extends Component{
             cardinfo1:{
                 nome: 'Card 1 nome',
                 local: 'Card 1 local',
-                logo : 'https://i.imgur.com/3aZOmfy.png'
+                logo : 'https://i.imgur.com/3aZOmfy.png',                
             },
             cardinfo2:{
                 nome: 'Card 2 nome',
@@ -51,10 +51,22 @@ class Card extends Component{
                 nome: 'Card 8 nome',
                 local: 'Card 8 local',
                 logo : 'https://i.imgur.com/BAeIz5B.png'
-            }
+            },
+
+            c1:{
+                fav: ''
+            },
+
+            favoritos : [
+                
+            ]
+               
+
+            
             
         };
         this.mostrarconteudo = this.mostrarconteudo.bind(this);
+        this.favoritos = this.favoritos.bind(this);
     }
 
     mostrarconteudo(nomecard){
@@ -70,7 +82,16 @@ class Card extends Component{
        
 
     }
-
+    favoritos(nomeinput){
+        var joined = this.state.favoritos.concat(nomeinput);        
+        var inputcampo = document.getElementById(nomeinput);
+        var posicao = inputcampo.value;
+        if(inputcampo.checked===true){
+            this.setState({ favoritos: joined });
+        }
+       
+        
+    }
 
     render(){
         return(
@@ -78,6 +99,9 @@ class Card extends Component{
                 <div className="linha-card">
                     <div className="coluna-card">
                         <div id="card1" className="card" onClick={() => this.mostrarconteudo('conteudo-card1')} >
+
+                        <input type="checkbox" value="0" id="c1" onClick={() => this.favoritos('c1')}/>
+
                             <img src={this.state.cardinfo1['logo']} alt="card1"/>
                                 <div id="conteudo-card1" className="conteudo-card">
                                     <div className="informacoes">
@@ -89,6 +113,9 @@ class Card extends Component{
                     </div> 
                     <div className="coluna-card">
                         <div id="card2" className="card" onClick={() => this.mostrarconteudo('conteudo-card2')}>
+
+                        <input type="checkbox" value="1" id="c2" onClick={() => this.favoritos('c2')}/>
+
                             <img src={this.state.cardinfo2['logo']} alt="card2"/>
                                 <div id="conteudo-card2" className="conteudo-card">
                                     <div className="informacoes">
@@ -100,6 +127,9 @@ class Card extends Component{
                     </div>
                     <div className="coluna-card">
                         <div id="card3" className="card" onClick={() => this.mostrarconteudo('conteudo-card3')}>
+
+                        <input type="checkbox" value="2" id="c3" onClick={() => this.favoritos('c3')}/>
+
                             <img src={this.state.cardinfo3['logo']} alt="card3"/>
                                 <div id="conteudo-card3" className="conteudo-card">
                                     <div className="informacoes">
@@ -167,6 +197,10 @@ class Card extends Component{
                             </div>
                         </div> 
                 </div>   
+
+                <h1>Cards selecionados: {this.state.favoritos}</h1>
+               
+
             </div>
         );
     }
