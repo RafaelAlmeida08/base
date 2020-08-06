@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+
 :root {
     --color-primary: #5444DA;
     --color-background: #EFEFEF;
@@ -14,6 +16,7 @@ body{
     background: var(--color-background);
     font: 14px sans-serif;
     -webkit-font-smoothing: antialiased !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 #root {
@@ -549,8 +552,9 @@ button:hover {
 
 #search {
     width: 100%;
-    border-bottom: 1px solid var(--color-primary);
-    margin-bottom: 15px;
+    border: 2px solid var(--color-primary);
+    margin: 15px 0px;
+    border-radius: 5px;
 }
 
 #search > input {
@@ -559,13 +563,17 @@ button:hover {
     box-shadow: 0 0 0 0;
     border: 0 none;
     width: 90%;
-    font-size: 13pt;
+    font-size: 11pt;
+    background-color: transparent;
+    padding: 3px;
 }
 
+#search > span {
+    margin: 8px;
+}
 #search > span > img {
     width: 15px;
     height: 15px;
-    margin-right: 5px;
 }
 
 #grid {

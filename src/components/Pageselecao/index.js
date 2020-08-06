@@ -17,6 +17,14 @@ class Pageselecao extends Component{
             <div id="container">
                 <Sidebar />
                 <div id="PagSelecao">
+                    <h1>Saúde</h1>
+                    <hr/>
+                    <div id="search">
+                        <span>
+                            <img src={require('../images/search.svg')} alt="search"></img>
+                        </span>
+                        <input type="text" placeholder="Pesquisa..." aria-placeholder="Pesquisa"/>
+                    </div>
                     <Card/>
                 </div>
             </div>

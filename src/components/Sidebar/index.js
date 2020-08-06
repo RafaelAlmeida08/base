@@ -5,14 +5,17 @@ export default function Sidebar(props) {
     return (
         <div id="sidebar">
             <div id="btn-group">
+                <span>
+                    <img src={require('../images/planium.png')} alt="logo"></img>
+                </span>
                 <button>
                     PF
                 </button>
                 <button>
-                    PF
+                    PME
                 </button>
                 <button>
-                    PF
+                    Adesão
                 </button>
             </div>
         </div>

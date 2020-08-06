@@ -6,8 +6,16 @@
 }
 
 #PagSelecao {
-    width: 80%;
+    width: 85%;
     height: 100%;
     padding: 50px;
     align-self: flex-end;
+}
+
+#PagSelecao > h1 {
+    margin-bottom: 5px;
+}
+
+hr {
+    color: var(--color-primary);
 }
