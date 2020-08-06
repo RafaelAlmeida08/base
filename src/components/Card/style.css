@@ -36,14 +36,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: none;
-    outline: none;
 }
 
 .card img{
     width:  100px;
     height: 100px;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .conteudo-card{
