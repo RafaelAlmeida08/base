@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card'
+import Sidebar from '../Sidebar';
+import './pagselecao.css';
 
 class Pageselecao extends Component{
 
@@ -12,8 +14,11 @@ class Pageselecao extends Component{
 
     render(){
         return(
-            <div id="PagSelecao">
-                <Card/>
+            <div id="container">
+                <Sidebar />
+                <div id="PagSelecao">
+                    <Card/>
+                </div>
             </div>
         );
     }

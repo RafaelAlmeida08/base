@@ -28,12 +28,13 @@ class Page1 extends Component{
         this.contato    = this.contato.bind(this);
         this.cidade     = this.cidade.bind(this);
         this.setRange   = this.setRange.bind(this);
+        this.setTotalCred = this.setTotalCred.bind(this);
     }
 
-    componentDidMount(){
+   /* componentDidMount(){
         document.getElementById('page2').style.display = 'none';
         document.getElementById('page3').style.display = 'none';
-    }
+    }*/
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
@@ -84,6 +85,17 @@ class Page1 extends Component{
 
         this.setState({range});
         return range;
+    }
+
+    setTotalCred() {     
+        document.getElementById('myModal').style.display="none";
+        var range = this.setRange();
+        let total = 0;
+        for (var prop in range) {
+            total = total + parseInt(range[prop]);
+        }
+
+        this.setState({totalcred: total});
     }
 
     modal(){
@@ -197,24 +209,13 @@ class Page1 extends Component{
                                     </div>                                                                   
                                 </div>
                                 <div className="btnmodal">
-                                    <button onClick={(e) => {                                          
-                                        document.getElementById('myModal').style.display="none";
-                                        var range = this.setRange();
-                                        let total = this.state.totalcred;
-                                        for (var prop in range) {
-                                            total = total + parseInt(range[prop]);
-                                        }
-
-                                        this.setState({totalcred: total});
-                                        }
-                                        }>
-                                        Confirmar</button>     
+                                    <button onClick={this.setTotalCred}>Confirmar</button>     
                                 </div>                                              
                             </div>                         
                         </div>
                    </div>
                 
-                   <Page2 range={this.state.range} contato={this.state.contato}/>
+                   {/*<Page2 range={this.state.range} contato={this.state.contato}/>*/}
                </div>
 
 

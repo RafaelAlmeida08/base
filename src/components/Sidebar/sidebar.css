@@ -1,0 +1,24 @@
+#sidebar {
+    height: 100%;
+    width: 20%;
+    background-color: khaki;
+    position: fixed;
+    align-self: flex-start;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+}
+
+#btn-group {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+
+#btn-group > button {
+    width: 90%;
+}
