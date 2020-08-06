@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Home from './components/Home';
+import Pageselecao from './components/Pageselecao';
 import './global.css'
 
 class App extends Component{
@@ -10,7 +10,7 @@ class App extends Component{
     return(
       <BrowserRouter>        
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={Pageselecao}/>
         </Switch>      
       </BrowserRouter>
     );
