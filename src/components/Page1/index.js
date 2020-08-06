@@ -31,10 +31,10 @@ class Page1 extends Component{
         this.setTotalCred = this.setTotalCred.bind(this);
     }
 
-    componentDidMount(){
+   /* componentDidMount(){
         document.getElementById('page2').style.display = 'none';
         document.getElementById('page3').style.display = 'none';
-    }
+    }*/
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
@@ -215,7 +215,7 @@ class Page1 extends Component{
                         </div>
                    </div>
                 
-                   <Page2 range={this.state.range} contato={this.state.contato}/>
+                   {/*<Page2 range={this.state.range} contato={this.state.contato}/>*/}
                </div>
 
 
