@@ -84,10 +84,6 @@ class Card extends Component{
         var posicao = inputcampo.value;
         if(inputcampo.checked===true){
             this.setState({ favoritos: joined });
-        }else if(this.state.favoritos===nomeinput){
-            alert('tem dado')
-        }else{
-            alert('nao tem')
         }
        
         
