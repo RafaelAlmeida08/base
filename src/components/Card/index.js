@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Card from '../Card'
 
-class Pageselecao extends Component{
+
+class Card extends Component{
 
     constructor(props){
         super(props);
@@ -12,11 +12,11 @@ class Pageselecao extends Component{
 
     render(){
         return(
-            <div id="PagSelecao">
-                <Card/>
+            <div>
+                <h1>Card</h1>
             </div>
         );
     }
 }
 
-export default Pageselecao;
+export default Card;
