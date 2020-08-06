@@ -1,0 +1,39 @@
+#cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    width: 150px;
+    min-height: 150px;
+    height: auto;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna-card{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    margin: 25px;
+    text-align: center;
+}
+
+.conteudo-card{
+    display: none;
+    
+}
+
+.card img{
+    width:  100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.linha-card{
+    display: flex;
+    flex-direction: row;
+}
