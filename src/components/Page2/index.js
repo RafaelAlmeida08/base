@@ -1,53 +1,39 @@
 import React, {Component} from 'react';
-import Page3 from '../Page3';
+import Modal from '../Modal';
 
 class Page2 extends Component{
     constructor(props){
         super(props);
         this.state = {
-            
+            isVisible: false,
+            planoEscolhido: 'Plano'
         };
-
-        this.pagina1 = this.pagina1.bind(this);
-        this.pagina3 = this.pagina3.bind(this);
+        
+        this.click = this.click.bind(this);
     }
 
-    pagina1(){
-        document.getElementById('page3').style.display = 'none';
-        document.getElementById('page2').style.display = 'none';
-        document.getElementById('page1').style.display  = 'initial';
-    }
+    click(e) {
 
-    pagina3(){
-        document.getElementById('page2').style.display = 'none';
-        document.getElementById('page3').style.display = 'initial';
-    }
-
-    openDropdown() {
-        var dropdown = document.getElementsById('dropdownBtn');
-
-        dropdown[0].classList.add("dropdown-abrir");
+         this.setState({
+            isVisible: true,
+            planoEscolhido:e.target.id
+        });
     }
 
     render(){
         return(
             <div id="SegundoConteudo" className="container">
-                {this.props.range['00 a 18']}
-                {this.props.contato['nome']}
                 <div id="page2">
-                    <div id="dropdown">
-                        <div id="dropdownBtn" className="dropdown-contato" onClick={this.openDropdown}>
-                            <p id="nome-contato">Contato: {this.props.contato["nome"]}</p>
-                            <span id="dropdown-arrow">
-                                <img src={require('../images/arrow-down.svg')} alt="arrow"></img>
-                            </span>
-                        </div>
-                        <div id="dropdown-content">
-                            <p>Oi</p>
-                        </div>
+                    <div className="dropdown-contato">
+                        <p id="nome-contato">Contato: {/*this.props.contato["nome"]*/}</p>
+                        <span id="dropdown-arrow">
+                            <img src={require('../images/arrow-down.svg')} alt="arrow"></img>
+                        </span>
                     </div>
 
-                        
+                        <div>
+
+                        </div>
 
                         <div className="selection-saude">
                             <div className="box-superior">
@@ -75,38 +61,40 @@ class Page2 extends Component{
 
                             <div id="grid">
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img1" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img2" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img3" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img4" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img5" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img6" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img7" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                                     <div className="item">
-                                        <img src={require('../images/Ameno-Saúde.png')} alt="plano"></img>
+                                        <img id="img8" src={require('../images/Ameno-Saúde.png')} onClick={this.click} alt="plano"></img>
                                     </div>
                             </div>
 
                             <div className="box-inferior">
                                 <button onClick={this.pagina1}>Voltar</button>
+                                {/*<button onClick={this.pagina3}>Próxima tela</button>*/}
                             </div>
                         </div>
-                        <button onClick={this.pagina3}>Próxima tela</button>
-                    <Page3/>
+                        {/*<button onClick={this.pagina3}>Próxima tela</button>*/}
                 </div>
+                    {/*<Page3/>*/}
+                    {this.state.isVisible ? <Modal onClose={() => this.setState({isVisible: false}) } plano={this.state.planoEscolhido} /> : null}
             </div>
         )
     }
