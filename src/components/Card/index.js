@@ -68,7 +68,7 @@ class Card extends Component{
 
         this.mostrarconteudo = this.mostrarconteudo.bind(this);
         this.renderCard = this.renderCard.bind(this);
-        /*this.favoritos = this.favoritos.bind(this);*/
+        this.favoritos = this.favoritos.bind(this);
 
         };
 
@@ -96,6 +96,7 @@ class Card extends Component{
         return(
             <div className="coluna-card">
                  <div id="card" className="card">
+                 <input type="checkbox" value="1" id={`card${values.id}`} onClick={() => this.favoritos(`card${values.id}`)}/>
                  <img onClick={() => this.mostrarconteudo(`card${values.id}`)} src={values.logo} alt={`card${values.id}`}/>
                      <div id={`card${values.id}`} className="conteudo-card">
                          <div className="informacoes">
@@ -121,6 +122,7 @@ class Card extends Component{
         return(
             <div className="Cards">
                 {obj}
+             <h1>Cards selecionados: {this.state.favoritos}</h1>
             </div>
         )
     }
