@@ -8,7 +8,7 @@ class Pageselecao extends Component{
     constructor(props){
         super(props);
         this.state = {
-
+            clickedPlan: {}
         };
     }
 
@@ -25,7 +25,7 @@ class Pageselecao extends Component{
                         </span>
                         <input type="text" placeholder="Pesquisa..." aria-placeholder="Pesquisa"/>
                     </div>
-                    <Card/>
+                    <Card clickedPlan={this.state.clickedPlan} / >
                 </div>
             </div>
         );
