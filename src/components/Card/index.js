@@ -89,6 +89,17 @@ class Card extends Component{
         var posicao = inputcampo.value;
         if(inputcampo.checked===true){
             this.setState({ favoritos: joined });
+        } else {
+            let state = this.state
+            let card = state.favoritos.indexOf(nomeinput)
+
+
+            if (card > -1) {
+                state.favoritos.splice(card, 1)
+            }
+
+                this.setState(state)
+                console.log(state.favoritos)
         }
     }
 
@@ -127,7 +138,7 @@ class Card extends Component{
         return(
             <div className="Cards">
                 {obj}
-                <h1>Cards selecionados: {this.state.favoritos}</h1>
+             <h1>Cards selecionados: {this.state.favoritos.length == 0 ? '' : this.state.favoritos}</h1>
             </div>
         )
     }
