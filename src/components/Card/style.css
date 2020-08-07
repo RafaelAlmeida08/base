@@ -31,7 +31,7 @@
 }
 
 .card{
-    width: calc(90% / 2);
+    width: calc(90% / 3);
     min-height: 150px;
     height: auto;
     display: flex;
