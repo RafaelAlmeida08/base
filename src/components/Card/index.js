@@ -105,17 +105,6 @@ class Card extends Component{
 
     renderCard(values) {
         return(
-            <div className="coluna-card">
-                 <div id="card" className="card">
-                 <input type="checkbox" value="1" id={`card${values.id}`} onClick={() => this.favoritos(`card${values.id}`)}/>
-                 <img onClick={() => this.mostrarconteudo(`mostarCard${values.id}`)} src={values.logo} alt={`card${values.id}`}/>
-                     <div id={`card${values.id}`} className="conteudo-card">
-                         <div className="informacoes">
-                             <span>{values.nome}</span>
-                             <span>{values.local}</span>
-                         </div>
-                     </div>
-                </div>
                 <div id="card" className="card">
                     <img src={values.logo} alt={`card${values.id}`} onClick={() => this.mostrarconteudo(`card${values.id}`)}/>
                     <div id={`card${values.id}-info`} className="conteudo-card">
@@ -133,7 +122,6 @@ class Card extends Component{
                         </div>
                     </div>
                 </div>
-            </div>
         )
 
     }
