@@ -136,9 +136,16 @@ class Card extends Component{
         Object.keys(cardDados[0]).forEach( (values) => { obj.push(this.renderCard(cardDados[0][values])) })
 
         return(
-            <div className="Cards">
-                {obj}
-             <h1>Cards selecionados: {this.state.favoritos.length == 0 ? '' : this.state.favoritos}</h1>
+            <div className="wrapper-cards">
+                <div className="Cards">
+                    {obj}
+                    <h1>Cards selecionados: {this.state.favoritos.length == 0 ? '' : this.state.favoritos}</h1>
+                </div>
+                <div className="btn">
+                    <button>
+                        Comparar Planos
+                    </button>
+                </div>
             </div>
         )
     }
