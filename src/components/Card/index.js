@@ -61,12 +61,16 @@ class Card extends Component{
                     local: 'Card 8 local',
                     logo : 'https://i.imgur.com/BAeIz5B.png'
                 }
-            }
+            },
+            favoritos: []
             
         };
+
         this.mostrarconteudo = this.mostrarconteudo.bind(this);
         this.renderCard = this.renderCard.bind(this);
-    }
+        /*this.favoritos = this.favoritos.bind(this);*/
+
+        };
 
     mostrarconteudo(nomecard){
       var conteudo = document.getElementById(nomecard);
@@ -79,19 +83,28 @@ class Card extends Component{
        }
     }
 
+    favoritos(nomeinput){
+        var joined = this.state.favoritos.concat(nomeinput);        
+        var inputcampo = document.getElementById(nomeinput);
+        var posicao = inputcampo.value;
+        if(inputcampo.checked===true){
+            this.setState({ favoritos: joined });
+        }
+    }
+
     renderCard(values) {
         return(
-                    <div className="coluna-card">
-                         <div id="card" className="card">
-                         <img onClick={() => this.mostrarconteudo(`card${values.id}`)} src={values.logo} alt={`card${values.id}`}/>
-                             <div id={`card${values.id}`} className="conteudo-card">
-                                 <div className="informacoes">
-                                     <span>{values.nome}</span>
-                                     <span>{values.local}</span>
-                                 </div>
-                             </div>
-                        </div>
-                    </div>
+            <div className="coluna-card">
+                 <div id="card" className="card">
+                 <img onClick={() => this.mostrarconteudo(`card${values.id}`)} src={values.logo} alt={`card${values.id}`}/>
+                     <div id={`card${values.id}`} className="conteudo-card">
+                         <div className="informacoes">
+                             <span>{values.nome}</span>
+                             <span>{values.local}</span>
+                         </div>
+                     </div>
+                </div>
+            </div>
         )
 
     }
@@ -104,11 +117,12 @@ class Card extends Component{
         cardDados.push(this.state.dados);
 
         Object.keys(cardDados[0]).forEach( (values) => { obj.push(this.renderCard(cardDados[0][values])) })
+
         return(
             <div className="Cards">
                 {obj}
             </div>
-        );
+        )
     }
 }
 

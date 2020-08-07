@@ -1,0 +1,62 @@
+.card-plano {
+    width: calc(100% / 3);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.card-plano-header {
+    background-color: var(--color-primary);
+    text-align: center;
+}
+
+.card-plano-title {
+    font-size: 12pt;
+    color: #dcdcdc;
+    font-weight: 900;
+}
+
+.card-plano-content {
+    margin: 0 auto;
+}
+
+.card-plano-logo {
+    margin: 5px auto;
+    width: 100%;
+    height: 2%;
+}
+
+.card-plano-logo > img {
+    width: 90px;
+    margin: 0 auto;
+    display: block;
+}
+
+.card-plano-datas {
+    width: 100%;
+}
+
+.card-plano-datas > table {
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.card-plano-datas > table > tr > td {
+    text-align: center;
+    padding: 2px;
+    font-size: 10pt;
+}
+
+.card-plano-footer {
+    padding: 15px 0px;
+    border-top: 1px solid var(--color-primary);
+    width: 100%;
+}
+
+.card-plano-footer > button {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    background-color: var(--color-primary);
+    color: #ffffff;
+}

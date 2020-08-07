@@ -1,3 +1,4 @@
+
 #cards{
     display: grid;
 }
@@ -39,7 +40,7 @@
 .card img{
     width:  100px;
     height: 100px;
-    cursor: pointer;
+    cursor: pointer;   
 }
 
 .conteudo-card{
