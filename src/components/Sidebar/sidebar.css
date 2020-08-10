@@ -1,7 +1,7 @@
 #sidebar {
     height: 100%;
     width: 15%;
-    background-color: #cecece41;
+    background-color: var(--color-primary);
     position: fixed;
     align-self: flex-start;
     overflow-x: hidden;
@@ -26,4 +26,7 @@
     font-size: 10pt;
     border-width: initial;
     font-weight: bold;
+    border-color: #fff;
+    color: var(--color-primary);
+    background-color: #fff;
 }

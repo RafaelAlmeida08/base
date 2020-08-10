@@ -187,8 +187,8 @@ class Card extends Component{
                         {obj}
                     </div>
 
-                    <div className="btn" onClick={this.comparativo}>
-                        <button>
+                    <div className="btn">
+                        <button onClick={this.comparativo}>
                             Comparar Planos
                         </button>
                     </div>
