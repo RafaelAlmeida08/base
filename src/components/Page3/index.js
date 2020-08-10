@@ -98,7 +98,9 @@ class Page3 extends Component{
     }
 
     informacoes(){
-        alert('Abre Informações');
+        document.getElementById('group-cardplano').style.display = '';
+        document.getElementById('header-comparativo').style.display = '';
+        document.getElementById('page3').style.display='none';
     }
 
     dados(dados){
@@ -227,7 +229,7 @@ class Page3 extends Component{
                                 <img src={require('../images/share.png')} alt="bullets"/>
                             </div>
                             <div className="info">
-                                <button onClick={this.informacoes} >+ Informações</button>
+                                <button onClick={this.informacoes} >Voltar</button>
                             </div>
                         </div>
                         <div className="dados" id="mobile"> 
