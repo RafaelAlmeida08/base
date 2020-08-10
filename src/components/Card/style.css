@@ -98,3 +98,11 @@
 .btn > button:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
+
+.wrapper-card {
+    display: none;
+}
+
+#wrapper-comparativo {
+    display: none;
+}

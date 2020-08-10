@@ -6,30 +6,8 @@ import './comparativo.css';
 class Comparativo extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-            data: [
-                {
-                    nome: 'Ameno',
-                    logo: '../images/planos/1.png',
-                    total: '200.00',
-                    modalidade: 'Saúde Adesão',
-                    id : 1
-                },
-                {
-                    nome: 'HBS',
-                    logo: '../images/Ameno-Saúde.png',
-                    total: '300.00',
-                    modalidade: '-',
-                    id : 2
-                },
-                {
-                    nome: 'São Paulo',
-                    total: '500.00',
-                    modalidade: '-',
-                    id : 3
-                }
-            ],
-
             data2: [
                 {
                     nome:'',
@@ -41,7 +19,38 @@ class Comparativo extends Component {
                 }
             ]
         };
-        this.maisinformacoes = this.maisinformacoes.bind(this);       
+
+        this.renderCardPlano = this.renderCardPlano.bind(this);
+        this.pageselecao = this.pageselecao.bind(this);
+        this.maisinformacoes = this.maisinformacoes.bind(this);      
+    }
+
+    renderCardPlano() {
+        if(this.props.planos.length > 0) {
+            console.log(this.props.planos.length)
+            return this.props.planos.map(planoInfo => (
+                <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
+            )) 
+        }
+    }
+
+    pageselecao() {
+        var wrapperCards = document.getElementById('wrapper-cards');
+        wrapperCards.style.display = 'initial';
+
+        var sidebar = document.getElementById('sidebar');
+        sidebar.style.display = 'flex';
+
+        var header = document.getElementById('pageselecao-header');
+        header.style.display = 'initial';
+
+        var pageselecao = document.getElementById('PagSelecao');
+        pageselecao.style.width = '85%';
+        pageselecao.style.padding = '50px';
+        
+        var wrapperComparativo = document.getElementById('wrapper-comparativo');
+        wrapperComparativo.style.display = 'none'
+
     }
 
     maisinformacoes(plano){       
@@ -62,10 +71,17 @@ class Comparativo extends Component {
                 <hr />
                 <div id="group-cardplano">
                     {
-                        this.state.data.map(planoInfo => (
-                            <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
-                        ))
+                        this.renderCardPlano()
                     }
+                </div>
+                <div id="footer-comparativo">
+                    <button 
+                        className="btn-voltar" 
+                        id="btn-voltar" 
+                        onClick={this.pageselecao}
+                    >
+                        Voltar
+                    </button>
                 </div>
             </div>
         );
