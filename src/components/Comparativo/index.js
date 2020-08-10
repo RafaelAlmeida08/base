@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CardPlano from '../CardPlano';
+import Page3 from '../Page3';
 import './comparativo.css';
 
 class Comparativo extends Component {
@@ -10,24 +11,47 @@ class Comparativo extends Component {
                 {
                     nome: 'Ameno',
                     logo: '../images/planium.png',
-                    total: '200.00'
+                    total: '200.00',
+                    modalidade: 'Saúde Adesão',
+                    id : 1
                 },
                 {
                     nome: 'HBS',
                     logo: '../images/Ameno-Saúde.png',
-                    total: '300.00'
+                    total: '300.00',
+                    modalidade: '-',
+                    id : 2
                 },
                 {
                     nome: 'São Paulo',
-                    total: '500.00'
+                    total: '500.00',
+                    modalidade: '-',
+                    id : 3
+                }
+            ],
+
+            data2: [
+                {
+                    nome:'',
+                    total: '',
+                    modalidade: '',
+                    logo:'',
+                    id: ''
                 }
             ]
         };
+        this.maisinformacoes = this.maisinformacoes.bind(this);       
+    }
+
+    maisinformacoes(plano){       
+       this.setState({data2: plano});
     }
 
     render() {
         return(
-            <div id="comparativo">
+            <div id="comparativo">               
+                <Page3 nome={this.state.data2['nome']} total={this.state.data2['total']} 
+                       modalidade={this.state.data2['modalidade']}/>
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>
                     <span>
@@ -38,7 +62,7 @@ class Comparativo extends Component {
                 <div id="group-cardplano">
                     {
                         this.state.data.map(planoInfo => (
-                            <CardPlano plano={planoInfo}/>
+                            <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
                         ))
                     }
                 </div>

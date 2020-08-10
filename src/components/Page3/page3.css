@@ -123,3 +123,14 @@
     }
 
 }
+
+#page3{
+    display: none;
+}
+
+#page3 .page3-header{
+    background-color: none !important;
+    text-align: center;
+    padding: 20px;
+}
+

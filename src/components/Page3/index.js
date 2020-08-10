@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './page3.css';
 import Email from '../Email';
 
+
+
 class Page3 extends Component{
     constructor(props){
         super(props);
@@ -19,11 +21,13 @@ class Page3 extends Component{
         this.imprimir                = this.imprimir.bind(this);
         this.informacoes             = this.informacoes.bind(this);
         this.optcompartilharmobile   = this.optcompartilharmobile.bind(this);
+        this.dados                   = this.dados.bind(this);
     }
 
     componentDidMount(){
         document.getElementById('opt').style.display = 'none';
         document.getElementById('optmobile').style.display = 'none';
+       
        
     }
 
@@ -97,11 +101,16 @@ class Page3 extends Component{
         alert('Abre Informações');
     }
 
+    dados(dados){
+
+    }
+
     render(){
         return(
             <div id="TerceiroConteudo">
+             
                 <div id="page3">
-                    <div className="header">
+                    <div className="page3-header">
                         <img src={this.state.plano['imagem']} alt="logo"/>
                     </div>
                     <div className="meio">
@@ -111,10 +120,10 @@ class Page3 extends Component{
                             </div>
                             <div className="conteudo conteudo-duplo">
                                 <div className="conteudo1">
-                                    <span>Qualicorp</span>
+                                <span>{this.props.nome}</span>
                                 </div>
                                 <div className="conteudo2">
-                                    <h3>Executivo R3</h3>
+                                    <h3></h3>
                                 </div>                                    
                             </div>
                         </div>
@@ -123,7 +132,7 @@ class Page3 extends Component{
                                 <label>Modalidade</label>
                             </div>
                             <div className="conteudo">
-                                <span>Saúde Adesão</span>
+                                <span>{this.props.modalidade}</span>
                             </div>
                         </div>
                         <div className="linha acomodacao">
@@ -184,7 +193,7 @@ class Page3 extends Component{
                                 <span>Total</span>
                             </div>
                             <div className="valor">
-                                <h2>R$ {this.state.valorfinal}</h2>
+                                <h2>R$ {this.props.total}</h2>
                             </div>
                          </div>
                         <div className="dados" id="desktop">
