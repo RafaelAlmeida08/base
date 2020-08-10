@@ -52,7 +52,7 @@ class Comparativo extends Component {
         return(
             <div id="comparativo">               
                 <Page3 nome={this.state.data2['nome']} total={this.state.data2['total']} 
-                       modalidade={this.state.data2['modalidade']} logo={this.state.data2['logo']}/>
+                       modalidade={this.state.data2['modalidade']}/>
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>
                     <span>
