@@ -10,7 +10,7 @@ class Comparativo extends Component {
             data: [
                 {
                     nome: 'Ameno',
-                    logo: '../images/planium.png',
+                    logo: '../images/planos/1.png',
                     total: '200.00',
                     modalidade: 'Saúde Adesão',
                     id : 1
@@ -34,6 +34,7 @@ class Comparativo extends Component {
                 {
                     nome:'',
                     total: '',
+                    logo: '',
                     modalidade: '',
                     logo:'',
                     id: ''
@@ -51,7 +52,7 @@ class Comparativo extends Component {
         return(
             <div id="comparativo">               
                 <Page3 nome={this.state.data2['nome']} total={this.state.data2['total']} 
-                       modalidade={this.state.data2['modalidade']}/>
+                       modalidade={this.state.data2['modalidade']} logo={this.state.data2['logo']}/>
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>
                     <span>
