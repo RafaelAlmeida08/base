@@ -235,7 +235,7 @@ class Page3 extends Component{
                         </div>
                         <div className="dados" id="mobile"> 
                             <div className="info">
-                                <button onClick={this.informacoes} >+ Informações</button>
+                                <button onClick={this.informacoes} >Voltar</button>
                             </div>                           
                             <div className="bullets" onClick={this.optcompartilharmobile}>
                                 <img src={require('../images/share.png')} alt="bullets"/>
