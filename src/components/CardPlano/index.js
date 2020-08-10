@@ -64,6 +64,7 @@ export default function CardPlano(props) {
                 <button id="btnx" onClick={() => {     
                     document.getElementById('group-cardplano').style.display = 'none';
                     document.getElementById('header-comparativo').style.display = 'none';
+                    document.getElementById('btn-voltar').style.display = 'none';
                     document.getElementById('page3').style.display='initial';
                     console.log(
                         'Nome do plano: ' + plano.nome,

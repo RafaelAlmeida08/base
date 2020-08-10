@@ -100,6 +100,7 @@ class Page3 extends Component{
     informacoes(){
         document.getElementById('group-cardplano').style.display = '';
         document.getElementById('header-comparativo').style.display = '';
+        document.getElementById('btn-voltar').style.display = '';        
         document.getElementById('page3').style.display='none';
     }
 
