@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card'
 import Sidebar from '../Sidebar';
+import Comparativo from '../Comparativo';
 import './pagselecao.css';
 
 class Pageselecao extends Component{
@@ -17,15 +18,17 @@ class Pageselecao extends Component{
             <div id="container">
                 <Sidebar />
                 <div id="PagSelecao">
-                    <h1>Saúde</h1>
-                    <hr/>
-                    <div id="search">
-                        <span>
-                            <img src={require('../images/search.svg')} alt="search"></img>
-                        </span>
-                        <input type="text" placeholder="Pesquisa..." aria-placeholder="Pesquisa"/>
+                    <div id="pageselecao-header">
+                        <h1>Saúde</h1>
+                        <hr/>
+                        <div id="search">
+                            <span>
+                                <img src={require('../images/search.svg')} alt="search"></img>
+                            </span>
+                            <input type="text" placeholder="Pesquisa..." aria-placeholder="Pesquisa"/>
+                        </div>
                     </div>
-                    <Card clickedPlan={this.state.clickedPlan} / >
+                    <Card clickedPlan={this.state.clickedPlan} />
                 </div>
             </div>
         );

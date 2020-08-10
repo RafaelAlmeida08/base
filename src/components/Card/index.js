@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../Card/style.css';
+import Comparativo from '../Comparativo';
 
 
 class Card extends Component{
@@ -12,19 +13,22 @@ class Card extends Component{
                     id: 1,
                     nome: 'Ameno',
                     local: 'Card 1 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png'
+                    logo : 'https://i.imgur.com/3aZOmfy.png',
+                    total: '200.00'
                 },
                 cardinfo2:{
                     id: 2,
                     nome: 'HBC',
                     local: 'Card 2 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png'
+                    logo : 'https://i.imgur.com/BAeIz5B.png',
+                    total: '300.00'
                 },
                 cardinfo3:{
                     id: 3,
                     nome: 'Qualicorp',
                     local: 'Card 3 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png'
+                    logo : 'https://i.imgur.com/3aZOmfy.png',
+                    total: '200.00'
                 },
 
                 cardinfo4:{
@@ -62,13 +66,14 @@ class Card extends Component{
                     logo : 'https://i.imgur.com/BAeIz5B.png'
                 }
             },
-            favoritos: []
+            favoritos: [ ]
             
         };
 
         this.mostrarconteudo = this.mostrarconteudo.bind(this);
         this.renderCard = this.renderCard.bind(this);
         this.favoritos = this.favoritos.bind(this);
+        this.comparativo = this.comparativo.bind(this);
 
         };
 
@@ -83,39 +88,78 @@ class Card extends Component{
         }
     }
 
-    favoritos(nomeinput){
-        var joined = this.state.favoritos.concat(nomeinput);        
-        var inputcampo = document.getElementById(nomeinput);
-        var posicao = inputcampo.value;
-        if(inputcampo.checked===true){
+    favoritos(inputID){
+        var input = document.getElementById(inputID);
+        var details = document.getElementById(inputID + '-row')
+        var plano = {
+            id: details.attributes['data-id'].value,
+            nome: details.attributes['data-nome'].value,
+            total: details.attributes['data-total'].value,
+            logo: details.attributes['data-logo'].value
+        };
+
+        var joined = this.state.favoritos.concat(plano);        
+        if (input.checked === true){
             this.setState({ favoritos: joined });
+            console.log(joined);
         } else {
             let state = this.state
-            let card = state.favoritos.indexOf(nomeinput)
+            state.favoritos.splice(state.favoritos.findIndex(planos => planos.id === plano.id), 1);
 
-
-            if (card > -1) {
-                state.favoritos.splice(card, 1)
-            }
-
-                this.setState(state)
-                console.log(state.favoritos)
+            this.setState(state)
+            console.log(state.favoritos)
         }
+    }
+
+    comparativo() {
+        var wrapperCards = document.getElementById('wrapper-cards');
+        wrapperCards.style.display = 'none';
+
+        var sidebar = document.getElementById('sidebar');
+        sidebar.style.display = 'none';
+
+        var header = document.getElementById('pageselecao-header');
+        header.style.display = 'none';
+
+        var pageselecao = document.getElementById('PagSelecao');
+        pageselecao.style.width = '100%';
+        pageselecao.style.padding = '0px';
+        
+        var wrapperComparativo = document.getElementById('wrapper-comparativo');
+        wrapperComparativo.style.display = 'initial'
+
     }
 
     renderCard(values) {
         return(
                 <div id="card" className="card">
-                    <img src={values.logo} alt={`card${values.id}`} onClick={() => this.mostrarconteudo(`card${values.id}`)}/>
-                    <div id={`card${values.id}-info`} className="conteudo-card">
+                    <img 
+                        src={values.logo} 
+                        alt={`card${values.id}`} 
+                        onClick={() => this.mostrarconteudo(`${values.id}`)}
+                    />
+                    <div id={`${values.id}-info`} className="conteudo-card">
                         <div className="informacoes">
                             <table>
                                 <tr>
-                                    <td>
+                                    <td 
+                                        id={`${values.id}-row`}
+                                        data-id={values.id}
+                                        data-nome={values.nome}
+                                        data-total={values.total}
+                                        data-logo={values.logo}
+                                    >
                                         {values.nome}
                                     </td>
                                     <td>
-                                        <input type="checkbox" value="1" id={`card${values.id}`} onClick={() => this.favoritos(`card${values.id}`)}/>
+                                        <input 
+                                            type="checkbox" 
+                                            value="1" 
+                                            id={`${values.id}`} 
+                                            onClick={
+                                                () => this.favoritos(`${values.id}`)
+                                            }
+                                        />
                                     </td>
                                 </tr>
                             </table>
@@ -130,22 +174,29 @@ class Card extends Component{
 
         let cardDados = []
         let obj = []
+        let planos = this.state.favoritos;
 
         cardDados.push(this.state.dados);
 
         Object.keys(cardDados[0]).forEach( (values) => { obj.push(this.renderCard(cardDados[0][values])) })
 
         return(
-            <div className="wrapper-cards">
-                <div className="Cards">
-                    {obj}
-                    <h1>Cards selecionados: {this.state.favoritos.length == 0 ? '' : this.state.favoritos}</h1>
+            <div className="wrapper">
+                <div id="wrapper-cards">
+                    <div className="Cards">
+                        {obj}
+                    </div>
+
+                    <div className="btn" onClick={this.comparativo}>
+                        <button>
+                            Comparar Planos
+                        </button>
+                    </div>
                 </div>
-                <div className="btn">
-                    <button>
-                        Comparar Planos
-                    </button>
+                <div id="wrapper-comparativo">
+                   <Comparativo planos={planos}/>
                 </div>
+
             </div>
         )
     }

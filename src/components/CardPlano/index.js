@@ -13,7 +13,7 @@ export default function CardPlano(props) {
             </div>
             <div className="card-plano-content">
                 <div className="card-plano-logo">
-                    <img src={require('../images/planium.png')} alt="Logo" />
+                    <img src={plano.logo} alt="Logo" />
                 </div>
                 <div className="card-plano-datas">
                     <table>
