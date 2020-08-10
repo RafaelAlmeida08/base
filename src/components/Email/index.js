@@ -8,6 +8,7 @@ class Email extends Component{
     }
 
     render(){
+        
         return(
             
                 <div id="Modalemail" className="Modalemail">
