@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Page3 from '../Page3';
 import './cardplano.css';
+
+
+
 
 export default function CardPlano(props) {
     const {plano} = props;
+
+   function passapage3(plano){
+       props.passapage3(plano);
+   }
 
     return (
         <div className="card-plano">
@@ -16,7 +24,7 @@ export default function CardPlano(props) {
                     <img src={plano.logo} alt="Logo" />
                 </div>
                 <div className="card-plano-datas">
-                    <table>
+                    <table key={plano.id}>
                         <tr>
                             <td>
                                 Total
@@ -53,10 +61,23 @@ export default function CardPlano(props) {
                 </div>
             </div>
             <div className="card-plano-footer" role="footer">
-                <button className="btn-footer">
+                <button id="btnx" onClick={() => {     
+                    document.getElementById('group-cardplano').style.display = 'none';
+                    document.getElementById('header-comparativo').style.display = 'none';
+                    document.getElementById('page3').style.display='initial';
+                    console.log(
+                        'Nome do plano: ' + plano.nome,
+                        'Total: ' + plano.total
+                        );
+
+                        passapage3(plano);
+                    }}
+                    
+                    className="btn-footer">
                     + Informações
                 </button>
             </div>
         </div>
     );
 }
+

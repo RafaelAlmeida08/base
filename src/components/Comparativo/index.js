@@ -1,21 +1,35 @@
 import React, {Component} from 'react';
 import CardPlano from '../CardPlano';
+import Page3 from '../Page3';
 import './comparativo.css';
 
 class Comparativo extends Component {
     constructor(props) {
         super(props);
         
+        this.state = {
+            data2: [
+                {
+                    nome:'',
+                    total: '',
+                    modalidade: '',
+                    logo:'',
+                    id: ''
+                }
+            ]
+        };
+
         this.renderCardPlano = this.renderCardPlano.bind(this);
         this.pageselecao = this.pageselecao.bind(this);
+        this.maisinformacoes = this.maisinformacoes.bind(this);      
     }
 
     renderCardPlano() {
         if(this.props.planos.length > 0) {
             console.log(this.props.planos.length)
             return this.props.planos.map(planoInfo => (
-                <CardPlano plano={planoInfo}/>
-            ))
+                <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
+            )) 
         }
     }
 
@@ -35,11 +49,18 @@ class Comparativo extends Component {
         
         var wrapperComparativo = document.getElementById('wrapper-comparativo');
         wrapperComparativo.style.display = 'none'
+
+    }
+
+    maisinformacoes(plano){       
+       this.setState({data2: plano});
     }
 
     render() {
         return(
-            <div id="comparativo">
+            <div id="comparativo">               
+                <Page3 nome={this.state.data2['nome']} total={this.state.data2['total']} 
+                       modalidade={this.state.data2['modalidade']}/>
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>
                     <span>
