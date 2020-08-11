@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './page3.css';
 import Email from '../Email';
-
+import PDF from '../PDF';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 
 
 class Page3 extends Component{
@@ -25,8 +26,8 @@ class Page3 extends Component{
     }
 
     componentDidMount(){
-        document.getElementById('opt').style.display = 'none';
-        document.getElementById('optmobile').style.display = 'none';
+        document.getElementById('opt').style.display        = 'none';
+        document.getElementById('optmobile').style.display  = 'none';
        
        
     }
@@ -34,15 +35,15 @@ class Page3 extends Component{
     dadoshospitalares(){
         var a = document.getElementById('dadoshospitalares');
         if(a.style.display===''){
-            document.getElementById('dadoshospitalares').style.display = 'initial';
-            document.getElementById('rightarrow1').style.display = 'none';
-            document.getElementById('downarrow1').style.display = 'block'
-            document.getElementById('dropdown2').style.top = '178%';
+            document.getElementById('dadoshospitalares').style.display  = 'initial';
+            document.getElementById('rightarrow1').style.display        = 'none';
+            document.getElementById('downarrow1').style.display         = 'block'
+            document.getElementById('dropdown2').style.top              = '178%';
         }else{
-            document.getElementById('dadoshospitalares').style.display = '';
-            document.getElementById('rightarrow1').style.display = 'block';
-            document.getElementById('downarrow1').style.display = 'none'
-            document.getElementById('dropdown2').style.top = '154%';
+            document.getElementById('dadoshospitalares').style.display  = '';
+            document.getElementById('rightarrow1').style.display        = 'block';
+            document.getElementById('downarrow1').style.display         = 'none'
+            document.getElementById('dropdown2').style.top              = '154%';
         }
 
 
@@ -51,22 +52,22 @@ class Page3 extends Component{
     dadosvalores(){
         var a = document.getElementById('dadosvalores');
         if(a.style.display===''){
-            document.getElementById('dadosvalores').style.display = 'initial';
-            document.getElementById('rightarrow2').style.display = 'none';
-            document.getElementById('downarrow2').style.display = 'block'
+            document.getElementById('dadosvalores').style.display   = 'initial';
+            document.getElementById('rightarrow2').style.display    = 'none';
+            document.getElementById('downarrow2').style.display     = 'block'
         }else{
-            document.getElementById('dadosvalores').style.display = '';
-            document.getElementById('rightarrow2').style.display = 'block';
-            document.getElementById('downarrow2').style.display = 'none'
+            document.getElementById('dadosvalores').style.display   = '';
+            document.getElementById('rightarrow2').style.display    = 'block';
+            document.getElementById('downarrow2').style.display     = 'none'
         }
     }
 
     optcompartilhar(){
         var x = document.getElementById('opt').style.display;
         if (x === 'none'){
-           document.getElementById('opt').style.display='initial';
+           document.getElementById('opt').style.display = 'initial';
         }else{
-           document.getElementById('opt').style.display='none';
+           document.getElementById('opt').style.display = 'none';
         }
     }
 
@@ -94,7 +95,7 @@ class Page3 extends Component{
     }
 
     imprimir(){
-        alert('Abre Imprimir');
+
     }
 
     informacoes(){
@@ -111,10 +112,9 @@ class Page3 extends Component{
     render(){
         return(
             <div id="TerceiroConteudo">
-             
                 <div id="page3">
                     <div className="page3-header">
-                        <img src={this.state.plano['imagem']} alt="logo"/>
+                        <img src={this.props.plano.logo} alt="logo"/>
                     </div>
                     <div className="meio">
                         <div className="linha geral">
@@ -123,7 +123,7 @@ class Page3 extends Component{
                             </div>
                             <div className="conteudo conteudo-duplo">
                                 <div className="conteudo1">
-                                <span>{this.props.nome}</span>
+                                <span>{this.props.plano.nome}</span>
                                 </div>
                                 <div className="conteudo2">
                                     <h3></h3>
@@ -135,7 +135,7 @@ class Page3 extends Component{
                                 <label>Modalidade</label>
                             </div>
                             <div className="conteudo">
-                                <span>{this.props.modalidade}</span>
+                                <span>{this.props.plano.modalidade}</span>
                             </div>
                         </div>
                         <div className="linha acomodacao">
@@ -196,7 +196,7 @@ class Page3 extends Component{
                                 <span>Total</span>
                             </div>
                             <div className="valor">
-                                <h2>R$ {this.props.total}</h2>
+                                <h2>R$ {this.props.plano.total}</h2>
                             </div>
                          </div>
                         <div className="dados" id="desktop">
@@ -222,6 +222,11 @@ class Page3 extends Component{
                                         <img src={require('../images/imprimir.svg')} alt="imprimir"/>
                                     </div>
                                     <div className="name">
+                                        {this.props.plano.logo
+                                            ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
+                                                {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
+                                            </PDFDownloadLink> 
+                                        : "" }
                                         <span onClick={this.imprimir}>Imprimir</span>
                                     </div>
                                 </div>

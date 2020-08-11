@@ -60,8 +60,10 @@ class Comparativo extends Component {
     render() {
         return(
             <div id="comparativo">               
-                <Page3 nome={this.state.data2['nome']} total={this.state.data2['total']} 
-                       modalidade={this.state.data2['modalidade']}/>
+                <Page3
+                    plano={this.state.data2}
+
+                />
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>
                     <span>

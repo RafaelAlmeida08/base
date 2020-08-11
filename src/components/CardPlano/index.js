@@ -8,9 +8,9 @@ import './cardplano.css';
 export default function CardPlano(props) {
     const {plano} = props;
 
-   function passapage3(plano){
+    function passapage3(plano){
        props.passapage3(plano);
-   }
+    }
 
     return (
         <div className="card-plano">
@@ -61,16 +61,12 @@ export default function CardPlano(props) {
                 </div>
             </div>
             <div className="card-plano-footer" role="footer">
-                <button id="btnx" onClick={() => {     
-                    document.getElementById('group-cardplano').style.display = 'none';
-                    document.getElementById('header-comparativo').style.display = 'none';
-                    document.getElementById('btn-voltar').style.display = 'none';
-                    document.getElementById('page3').style.display='initial';
-                    console.log(
-                        'Nome do plano: ' + plano.nome,
-                        'Total: ' + plano.total
-                        );
-
+                <button id="btnx" onClick={
+                    () => {     
+                        document.getElementById('group-cardplano').style.display    = 'none';
+                        document.getElementById('header-comparativo').style.display = 'none';
+                        document.getElementById('btn-voltar').style.display         = 'none';
+                        document.getElementById('page3').style.display              = 'initial';
                         passapage3(plano);
                     }}
                     
