@@ -43,4 +43,5 @@
     width: 25%;
     background-color: var(--color-primary);
     color: #ffffff;
+    display: inline;
 }
