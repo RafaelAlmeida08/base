@@ -35,35 +35,40 @@ class Card extends Component{
                     id: 4,
                     nome: 'Card 4 nome',
                     local: 'Card 4 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png'
+                    logo : 'https://i.imgur.com/BAeIz5B.png',
+                    total: '400.00'
                 },
 
                 cardinfo5:{
                     id: 5,
                     nome: 'Card 5 nome',
                     local: 'Card 5 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png'
+                    logo : 'https://i.imgur.com/3aZOmfy.png',
+                    total: '500.00'
                 },
 
                 cardinfo6:{
                     id: 6,
                     nome: 'Card 6 nome',
                     local: 'Card 6 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png'
+                    logo : 'https://i.imgur.com/BAeIz5B.png',
+                    total: '600.00'
                 },
 
                 cardinfo7:{
                     id: 7,
                     nome: 'Card 7 nome',
                     local: 'Card 7 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png'
+                    logo : 'https://i.imgur.com/3aZOmfy.png',
+                    total: '700.00'
                 },
 
                 cardinfo8:{
                     id: 8,
                     nome: 'Card 8 nome',
                     local: 'Card 8 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png'
+                    logo : 'https://i.imgur.com/BAeIz5B.png',
+                    total: '4800.00'
                 }
             },
             favoritos: [ ]
@@ -91,6 +96,7 @@ class Card extends Component{
     favoritos(inputID){
         var input = document.getElementById(inputID);
         var details = document.getElementById(inputID + '-row')
+        console.log(details)
         var plano = {
             id: details.attributes['data-id'].value,
             nome: details.attributes['data-nome'].value,
