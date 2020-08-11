@@ -5,7 +5,6 @@ import Page1 from './components/Page1';
 import Card from './components/Card';
 import Pagecli from './components/PageCli';
 import Pageselecao from './components/Pageselecao';
-import linkGenerator from './linkGenerator';
 import './global.css';
 
 class App extends Component{

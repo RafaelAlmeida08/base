@@ -1,24 +1,20 @@
-import React from 'react';
 
-const linkGenerator = () => {
+function gerarLink(data) {
+    const base_url = 'www.localhost:3000/pagecli/'
 
-    const base_url = 'localhost:3000/pagecli/'
+    const hash = btoa(JSON.stringify(data))
 
-    let values = {
-        nome:"Acran",
-        idade: "28",
-        profissao: "DEV"
-    }
-    
-    const hash = btoa(JSON.stringify(values))
-    
-    
-   return(
-        <div>
-            {base_url + hash}
-        </div>
-   ) 
+    return  base_url + hash
 }
 
+async function linkGenerator (data) {
+    
+    let link = gerarLink(data)
 
-export default linkGenerator;
+    const r = await fetch(`https://is.gd/create.php?format=json&url=${link}`)
+    const l = await r.json()
+    return l.shorturl
+
+}
+
+export default linkGenerator

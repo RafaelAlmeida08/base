@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CardPlano from '../CardPlano';
 import Page3 from '../Page3';
 import './comparativo.css';
+import linkGenerator from './../../linkGenerator'
+
 
 class Comparativo extends Component {
     constructor(props) {
@@ -23,15 +25,27 @@ class Comparativo extends Component {
         this.renderCardPlano = this.renderCardPlano.bind(this);
         this.pageselecao = this.pageselecao.bind(this);
         this.maisinformacoes = this.maisinformacoes.bind(this);      
+        this.compartilharWpp = this.compartilharWpp.bind(this);      
     }
 
     renderCardPlano() {
+        console.log(this.props.planos)
         if(this.props.planos.length > 0) {
             console.log(this.props.planos.length)
             return this.props.planos.map(planoInfo => (
                 <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
             )) 
         }
+    }
+
+    compartilharWpp() {
+
+        let linkWpp = `https://wa.me/5521973049219?text=`
+        
+        linkGenerator(this.props.planos).then(r => {
+            let msg = escape(`Para visualizar seu comparativo, por favor acesse: ${r}`)
+            window.open(`${linkWpp}${msg}`);
+        })
     }
 
     pageselecao() {
@@ -81,6 +95,12 @@ class Comparativo extends Component {
                         onClick={this.pageselecao}
                     >
                         Voltar
+                    </button>
+                    <button 
+                        className="btn-voltar" 
+                        onClick={this.compartilharWpp}
+                    >
+                        Compartilhar wpp
                     </button>
                 </div>
             </div>
