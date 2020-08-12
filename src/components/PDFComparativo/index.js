@@ -5,11 +5,14 @@ export default function PDF(props) {
   const styles = StyleSheet.create({
     page: {
       flexDirection: 'column',
-      backgroundColor: '#E4E4E4'
+      backgroundColor: '#ffffff'
     },
     section: {
-      margin: 10,
       padding: 10
+    },
+    wrapper: {
+      margin: 10,
+      border: "1px solid #81d742"
     },
     image: {
       display: 'block',
@@ -30,7 +33,7 @@ export default function PDF(props) {
       <Page size="A4" style={styles.page}>
         {props.data.length > 0
           ? props.data.map(planoInfo => (
-                <View style={styles.section}>
+                <View style={styles.wrapper}>
                     <Image src={planoInfo.logo} style={styles.image}></Image>
                     <View style={styles.section}>
                         <Text style={styles.title}>

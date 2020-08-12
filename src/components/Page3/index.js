@@ -222,12 +222,21 @@ class Page3 extends Component{
                                         <img src={require('../images/imprimir.svg')} alt="imprimir"/>
                                     </div>
                                     <div className="name">
-                                        {this.props.plano.id
-                                            ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
-                                                {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
-                                            </PDFDownloadLink> 
-                                        : "" }
                                         <span onClick={this.imprimir}>Imprimir</span>
+                                    </div>
+                                </div>
+                                <div className="opt1">
+                                    <div className="icon">
+                                        <img src={require('../images/pdf.svg')} alt="imprimir"/>
+                                    </div>
+                                    <div className="name">
+                                        <span>
+                                            {this.props.plano.id
+                                                ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
+                                                    {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
+                                                </PDFDownloadLink> 
+                                            : "" }
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -268,6 +277,20 @@ class Page3 extends Component{
                                     </div>
                                     <div className="name">
                                         <span onClick={this.imprimir}>Imprimir</span>
+                                    </div>
+                                </div>
+                                <div className="opt1">
+                                    <div className="icon">
+                                        <img src={require('../images/pdf.svg')} alt="imprimir"/>
+                                    </div>
+                                    <div className="name">
+                                        <span>
+                                            {this.props.plano.id
+                                                ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
+                                                    {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
+                                                </PDFDownloadLink> 
+                                            : "" }
+                                        </span>
                                     </div>
                                 </div>
                             </div>
