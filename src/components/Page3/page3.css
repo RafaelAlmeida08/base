@@ -85,12 +85,8 @@
         padding: 0;
     }
 
-    #opt{
-        border: 2px solid #5444da !important;     
-    }
-
     #dadoshospitalares{
-        background-color: white !important;
+        background-color: #ffffff !important;
     }
 
     #mobile{
@@ -101,11 +97,6 @@
     #mobile .bullets, .info{
         margin-bottom: 20px;
         
-    }
-
-    #optmobile{
-        padding: 10px !important;
-        height: auto !important;      
     }
 
    
@@ -134,3 +125,51 @@
     padding: 20px;
 }
 
+.conteudo-valor h2{
+    color: var(--color-primary);
+    font-weight: initial;
+    font-size: 30px;
+}
+
+.bullets{
+    background-color: var(--color-primary);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.bullets:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#opt, #optmobile{
+    display: initial;
+    border: 3px solid var(--color-primary);
+    border-radius: 10px;
+    height: auto;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.opt1:hover{
+    background-color: var(--color-primary);
+    cursor: pointer;    
+    color: white;
+}
+
+.opt1 > .name > span > a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.opt1:hover > .name > span > a{
+    color: #ffffff;
+}

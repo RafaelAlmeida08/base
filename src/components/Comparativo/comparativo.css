@@ -53,7 +53,7 @@
 #wrapper-opt {
     flex-direction: column;
     width: 200px;
-    border: 1px solid var(--color-primary);
+    border: 3px solid var(--color-primary);
     border-radius: 5px;
     z-index: 1;
     position: absolute;
@@ -71,6 +71,7 @@
 .opt:hover {
     background-color: var(--color-primary);
     cursor: pointer;
+    padding-left: 20px;
 }
 
 .opt:hover .opt-text {
