@@ -356,12 +356,6 @@ button:hover {
     text-align: center;
 }
 
-.conteudo-valor h2{
-    color: #5444DA;
-    font-weight: initial;
-    font-size: 30px;
-}
-
 .conteudo-valor span{
     font-size: 20px;
 }
@@ -397,39 +391,8 @@ button:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-.bullets{
-    background-color: #5444DA;
-    
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 4px;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-.bullets:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-}
-
-
 .info button{
     height: 35px;
-}
-
-#opt,#optmobile{
-    display: initial;
-    border: 2px solid #5444DA;
-    border-radius: 10px;
-    height: auto;
-    background-color: white;
-    transition: all 0.5s;
 }
 
 .opt1{
@@ -439,25 +402,8 @@ button:hover {
    
 }
 
-.opt1:nth-child(1){
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-
-.opt1:nth-child(3){
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    padding-bottom: 8px;
-}
-
 .opt1 .name{
     padding-left: 15px;
-}
-
-.opt1:hover{
-    background-color: #5444DA;
-    cursor: pointer;    
-    color: white;
 }
 
 .dados img{
