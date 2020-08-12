@@ -25,6 +25,11 @@
     top: 20%;
 }
 
+#btn-share {
+    cursor: pointer;
+    height: 50px;
+}
+
 #comparativo > hr {
     margin: 15px 0px;
 }
@@ -40,8 +45,52 @@
 .btn-voltar {
     margin: 0 auto;
     display: block;
-    width: 25%;
     background-color: var(--color-primary);
     color: #ffffff;
     display: inline;
+}
+
+#wrapper-opt {
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    z-index: 1;
+    position: absolute;
+    right: 12%;
+    background-color: var(--color-background);
+    display: none;
+}
+
+.opt {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.opt:hover {
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.opt:hover .opt-text {
+    color: #ffffff;
+}
+
+.opt:hover .opt-text a {
+    color: #ffffff;
+} 
+
+.opt-icon > img {
+    width: 25px;
+    color: #ffffff;
+}
+
+.opt-text {
+    margin-left: 20px;
+}
+
+.opt-text > a {
+    text-decoration: none;
+    color: #000000;
 }

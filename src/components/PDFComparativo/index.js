@@ -28,18 +28,20 @@ export default function PDF(props) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {props.data 
-          ? <View style={styles.section}>
-              <Image src={props.data.logo} style={styles.image}></Image>
-              <View style={styles.section}>
-                <Text style={styles.title}>
-                  {props.data.nome}
-                </Text>
-                <Text style={styles.title}>
-                  {props.data.total}
-                </Text>
-              </View>
-            </View>
+        {props.data.length > 0
+          ? props.data.map(planoInfo => (
+                <View style={styles.section}>
+                    <Image src={planoInfo.logo} style={styles.image}></Image>
+                    <View style={styles.section}>
+                        <Text style={styles.title}>
+                            {planoInfo.nome}
+                        </Text>
+                        <Text style={styles.title}>
+                            {planoInfo.total}
+                        </Text>
+                    </View>
+                </View>
+            )) 
           : "" }
       </Page>
     </Document>

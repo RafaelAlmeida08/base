@@ -222,7 +222,7 @@ class Page3 extends Component{
                                         <img src={require('../images/imprimir.svg')} alt="imprimir"/>
                                     </div>
                                     <div className="name">
-                                        {this.props.plano.logo
+                                        {this.props.plano.id
                                             ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
                                                 {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
                                             </PDFDownloadLink> 
