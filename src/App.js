@@ -13,7 +13,7 @@ class App extends Component{
     return(
       <BrowserRouter>
         <Switch>         
-          <Route exact path="/" component={Pageselecao}/>
+          <Route exact path="/" component={Page1}/>
 
           <Route path="/pagecli/:data">
             <Pagecli/>

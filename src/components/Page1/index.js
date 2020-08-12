@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Page2 from '../Page2';
+import '../Page1/style.css';
+import Pageselecao from '../Pageselecao';
 
 class Page1 extends Component{
     constructor(props){
@@ -31,10 +32,10 @@ class Page1 extends Component{
         this.setTotalCred = this.setTotalCred.bind(this);
     }
 
-   /* componentDidMount(){
-        document.getElementById('page2').style.display = 'none';
-        document.getElementById('page3').style.display = 'none';
-    }*/
+   componentDidMount(){
+        document.getElementById('container').style.display = 'none';
+       
+    }
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
@@ -96,6 +97,14 @@ class Page1 extends Component{
         }
 
         this.setState({totalcred: total});
+
+       
+    }
+
+    pagina2(e){
+        document.getElementById('PrimeiroConteudo').style.display = 'none';
+        document.getElementById('container').style.display = '';
+        e.preventDefault();
     }
 
     modal(){
@@ -120,9 +129,10 @@ class Page1 extends Component{
     
     render(){
         return(
+            <>
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
-                        <form onSubmit={this.cadastrar} className="form" id="form">
+                        <form onSubmit={this.cadastrar, this.pagina2} className="form" id="form">
                             <div className="box">
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>
@@ -213,12 +223,11 @@ class Page1 extends Component{
                                 </div>                                              
                             </div>                         
                         </div>
-                   </div>
-                
-                   {/*<Page2 range={this.state.range} contato={this.state.contato}/>*/}
+                   </div>   
                </div>
-
-
+               <Pageselecao/>
+            </>
+           
             )
     }
 
