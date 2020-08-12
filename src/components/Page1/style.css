@@ -2,3 +2,105 @@
     position: fixed;
     top: 0;
 }
+
+.box{
+    width: 100%;
+    padding: 20px;
+}
+
+.box-superior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-superior h1{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.box-superior-direita span{
+    font-size: 35px;
+}
+
+.box-contato{
+    margin-top: 30px;
+}
+
+.box-contato, .box-meio h3{
+    color: var(--color-primary);
+}
+
+.box-contato input{
+    /*background-color: #DCDCDC;*/
+    border-top: none;
+    border-left: none;
+    border-right: navajowhite;
+    padding-top: 15px;
+    width: 100%;
+    appearance: none;
+    outline: none;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+}
+
+.box-contato img{
+    width: 30px;
+}
+
+.box-contato > #div-input {
+    width: 50%;
+}
+
+#input-contato {
+    font-size: 11pt;
+    border-bottom: 1px solid var(--color-primary);
+    transition: all 0.5s;
+}
+
+#input-contato:focus {
+    border: 1px solid var(--color-primary);
+    border-radius: 3px;
+}
+.box-meio{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.box-cidade{
+    width: 55%;
+}
+
+.box-cidade input{
+    width: 100%;
+}
+
+.box-cred{
+    width: 50%;
+    margin-left: 50px;
+    padding-right: 20px;
+    padding-left: 35px;
+}
+
+.box-cred input{
+    width: 100%;
+}
+
+
+.box-inferior{
+    margin-top: 50px;
+    text-align: right;
+}
+
+.btnmodal{
+    text-align: right;
+    margin-top: 60px;
+}
+
+#page1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

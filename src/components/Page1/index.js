@@ -137,11 +137,11 @@ class Page1 extends Component{
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>
                                 </div>
+                                <hr />
                                 <div className="box-contato">
                                     <h3>Contato</h3>
                                     <div id="div-input">
                                         <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
-                                        <img id="user" src={require('../images/user.png')} alt="user"/>
                                     </div>
                                 </div>
                                 <div className="box-meio">
