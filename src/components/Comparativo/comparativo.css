@@ -1,3 +1,51 @@
+@media (min-width: 320px) and (max-width: 479px) {
+    #comparativo {
+        margin: 0px auto !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    #comparativo > hr {
+        margin: 5px 0px 15px !important;
+    }
+
+    #header-comparativo {
+        margin: 0 !important;
+        padding: 10px 10px 0px 10px !important;
+    }
+
+    #header-comparativo > h1 {
+        font-size: 18pt !important;
+    }
+
+    #btn-share {
+        width: 15% !important;
+        height: 50px !important;
+    }
+
+    #wrapper-opt {
+        right: 22% !important;
+    }
+
+    #group-cardplano {
+        flex-direction: column !important;
+    }
+
+    .card-plano {
+        width: 80% !important;
+        margin: 15px auto !important;
+    }
+
+    #footer-comparativo {
+        padding: 10px 15px !important;
+    }
+
+    #btn-voltar {
+        display: block !important;
+        width: 100% !important;
+    }
+}
+
 #comparativo {
     width: 90vw;
     margin: 50px;
@@ -11,14 +59,7 @@
     margin: 15px 0px 0px 0px;
 }
 
-#header-comparativo > span {
-    border: 1px solid var(--color-primary);
-    border-radius: 5px;
-    width: 5%;
-    background-color: var(--color-primary);
-}
-
-#header-comparativo > span > img {
+#btn-share > img {
     margin: 0 auto;
     display: block;
     position: relative;
@@ -28,6 +69,10 @@
 #btn-share {
     cursor: pointer;
     height: 50px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    width: 5%;
+    background-color: var(--color-primary);
 }
 
 #comparativo > hr {

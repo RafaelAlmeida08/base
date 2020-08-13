@@ -1,3 +1,19 @@
+@media (min-width: 320px) and (max-width: 479px) {
+    #sidebar {
+        height: 8% !important;
+        width: 100% !important;
+    }
+
+    #btn-group {
+        flex-direction: row !important;
+    }
+
+    #btn-group > button {
+        width: calc(100% / 4) !important;
+        height: 80% !important;
+    }
+}
+
 #sidebar {
     height: 100%;
     width: 15%;
