@@ -1,4 +1,28 @@
 
+@media (min-width: 320px) and (max-width: 479px) {
+    .Cards {
+        margin: 0 !important;
+    }
+
+    .card {
+        width: calc(90% / 2) !important;
+    }
+
+    .card img {
+        width: 79px !important;
+        height: 80px !important;
+    }
+    
+    .btn {
+        padding: 20px 0px !important;
+        height: auto !important;
+    }
+
+    .btn > button {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
 .Cards{
     display: flex;
     flex-direction: row;

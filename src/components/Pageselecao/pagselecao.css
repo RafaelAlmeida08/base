@@ -1,3 +1,15 @@
+@media (min-width: 320px) and (max-width: 479px) {
+    #container {
+        flex-direction: row !important;
+    }
+
+    #PagSelecao {
+        padding: 80px 0 0 0 !important;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 #container {
     width: 100vw;
     height: 100vh;
