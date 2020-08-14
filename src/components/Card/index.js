@@ -202,7 +202,11 @@ class Card extends Component{
                 <div id="wrapper-comparativo">
                    <Comparativo planos={planos}/>
                 </div>
-
+                <button onClick={ () => {
+                     document.getElementById('PrimeiroConteudo').style.display = '';
+                     document.getElementById('container').style.display = 'none';
+                     
+                }} >Voltar</button>
             </div>
         )
     }
