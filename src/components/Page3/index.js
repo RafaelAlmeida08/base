@@ -113,9 +113,6 @@ class Page3 extends Component{
         return(
             <div id="TerceiroConteudo">
                 <div id="page3">
-                    <div className="page3-header">
-                        <img src={this.props.plano.logo} alt="logo"/>
-                    </div>
                     <div className="meio">
                         <div className="linha geral">
                             <div className="titulo">
@@ -123,7 +120,7 @@ class Page3 extends Component{
                             </div>
                             <div className="conteudo conteudo-duplo">
                                 <div className="conteudo1">
-                                <span>{this.props.plano.nome}</span>
+                                <span>{this.props.plano.produto}</span>
                                 </div>
                                 <div className="conteudo2">
                                     <h3></h3>
@@ -132,10 +129,10 @@ class Page3 extends Component{
                         </div>
                         <div className="linha modalidade">
                             <div className="titulo">
-                                <label>Modalidade</label>
+                                <label>Segmentaçaõ</label>
                             </div>
                             <div className="conteudo">
-                                <span>{this.props.plano.modalidade}</span>
+                                <span>{this.props.plano.segmentacao}</span>
                             </div>
                         </div>
                         <div className="linha acomodacao">
@@ -143,7 +140,7 @@ class Page3 extends Component{
                                 <label>Acomodação</label>
                             </div>
                             <div className="conteudo">
-                                <span>Apartamento</span>
+                                <span>{this.props.plano.acomodacao}</span>
                             </div>
                         </div>
                         <div className="linha coparticipacao">
@@ -151,7 +148,7 @@ class Page3 extends Component{
                                 <label>Coparticipação</label>
                             </div>
                             <div className="conteudo">
-                                <span>Não</span>
+                                <span>{this.props.plano.coparticipacao}</span>
                             </div>
                         </div>
                         <div className="linha hospitalares">
