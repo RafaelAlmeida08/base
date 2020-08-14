@@ -42,7 +42,10 @@ class Comparativo extends Component {
 
     compartilharWpp() {
 
-        let number = this.props.telefone;
+        let numberFormated = this.props.telefone.toString().match(/\d/g)
+
+        let number = `55${numberFormated.join("")}`
+
         let linkWpp = `https://wa.me/${number}?text=`
         
         linkGenerator(this.props.planos).then(r => {
