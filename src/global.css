@@ -76,11 +76,11 @@ button:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-#root{
+/*#root{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .bar{
     width: 100%;

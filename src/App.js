@@ -16,10 +16,10 @@ class App extends Component{
   
     return(      
       <BrowserRouter>
-              <Switch>         
+        <Switch>             
           <Route exact path="/" component={Page1}/>
 
-          <Route path="/pagecli/:data">
+        <Route path="/pagecli/:data">
             <Pagecli/>
           </Route>
 
