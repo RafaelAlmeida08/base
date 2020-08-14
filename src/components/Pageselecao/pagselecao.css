@@ -3,11 +3,29 @@
         flex-direction: row !important;
     }
 
+    #search{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    
+
     #PagSelecao {
         padding: 80px 0 0 0 !important;
         display: block;
         margin: 0 auto;
     }
+}
+
+#search{
+    overflow: hidden;
+}
+
+#search select{
+    background-color: transparent;
+    border: none;
 }
 
 #container {
