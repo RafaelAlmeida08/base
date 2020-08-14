@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import '../Page1/style.css';
 import Pageselecao from '../Pageselecao';
+import InputMask from "react-input-mask";
+
 
 class Page1 extends Component{
     constructor(props){
@@ -8,7 +10,8 @@ class Page1 extends Component{
         this.state = {
             contato: {
                 nome: '',
-                cidade: ''
+                cidade: '',
+                telefone: ''
             },
             totalcred: 0,
             range: {
@@ -23,24 +26,27 @@ class Page1 extends Component{
                 "54 a 58": "0",
                 "59 ou +" : "0"  
             },
-            teste: [
+            teste : [
 
             ]
+            
         };
         this.modal      = this.modal.bind(this);
         this.cadastrar  = this.cadastrar.bind(this);
         this.contato    = this.contato.bind(this);
         this.cidade     = this.cidade.bind(this);
+        this.telefone    = this.telefone.bind(this);
         this.setRange   = this.setRange.bind(this);
         this.setTotalCred = this.setTotalCred.bind(this);
+    
     }
 
    componentDidMount(){
-        document.getElementById('container').style.display = 'none';
-
+        document.getElementById('container').style.display = 'none';    
         
-       
     }
+
+ 
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
@@ -55,6 +61,18 @@ class Page1 extends Component{
                 contato: {
                     ...prevState.contato,
                     nome: document.getElementById('input-contato').value
+                }
+            }
+        ));        
+        event.preventDefault();
+    }
+
+    telefone(event) {
+        this.setState(prevState => (
+            {
+                contato: {
+                    ...prevState.telefone,
+                    telefone: document.getElementById('input-telefone').value
                 }
             }
         ));        
@@ -143,12 +161,32 @@ class Page1 extends Component{
                                     <h1>Dados básicos</h1>
                                 </div>
                                 <hr />
+
                                 <div className="box-contato">
-                                    <h3>Contato</h3>
-                                    <div id="div-input">
-                                        <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
+                                    <div className="contato-first">
+                                        <h3>Contato</h3>
+                                        <div id="div-input">
+                                            <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
+                                        </div>
                                     </div>
+                                    <div className="contato-second">
+                                        <div className="box-telefone">
+                                            <h3>Telefone</h3>
+                                            <div id="div-input" >                                              
+                                                <InputMask  
+                                                required
+                                                id="input-telefone"
+                                                type="text" 
+                                                value={this.state.contato['telefone']} 
+                                                onChange={this.telefone}  
+                                                mask="(99) 99999-9999" 
+                                                />
+                                            </div>
+                                                                            
+                                        </div>
+                                    </div>                                    
                                 </div>
+                                
                                 <div className="box-meio">
                                     <div className="box-cidade">
                                         <h3>Cidade</h3>
