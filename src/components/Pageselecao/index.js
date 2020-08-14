@@ -18,7 +18,8 @@ class Pageselecao extends Component{
 
     render(){
         return(
-            <div id="container">               
+            <div id="container">
+                {console.log(this.props)}
                 <Sidebar />
                 <div id="PagSelecao">
                     <div id="pageselecao-header">

@@ -28,6 +28,7 @@ class Page1 extends Component{
                 "59 ou +" : "0"  
             },            
         };
+        
         this.modal      = this.modal.bind(this);
         this.cadastrar  = this.cadastrar.bind(this);
         this.contato    = this.contato.bind(this);

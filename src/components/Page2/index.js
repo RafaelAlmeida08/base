@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Modal from '../Modal';
+import data from '../../jsonformatter.json';
 
 class Page2 extends Component{
     constructor(props){
@@ -19,10 +20,12 @@ class Page2 extends Component{
             planoEscolhido:e.target.id
         });
     }
-
+    
+    
     render(){
         return(
-            <div id="SegundoConteudo" className="container">
+            <div id="SegundoConteudo" className="container-pag2">
+            {alert(this.state.contato)}
                 <div id="page2">
                     <div className="dropdown-contato">
                         <p id="nome-contato">Contato: {/*this.props.contato["nome"]*/}</p>
