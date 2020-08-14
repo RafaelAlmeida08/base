@@ -7,15 +7,19 @@ import Pagecli from './components/PageCli';
 import Pageselecao from './components/Pageselecao';
 import './global.css';
 
+
+
+
 class App extends Component{
 
   render(){
-    return(
+  
+    return(      
       <BrowserRouter>
-        <Switch>         
+        <Switch>             
           <Route exact path="/" component={Page1}/>
 
-          <Route path="/pagecli/:data">
+        <Route path="/pagecli/:data">
             <Pagecli/>
           </Route>
 

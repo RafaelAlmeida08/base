@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card'
 import Sidebar from '../Sidebar';
-import Comparativo from '../Comparativo';
 import './pagselecao.css';
 
 class Pageselecao extends Component{
