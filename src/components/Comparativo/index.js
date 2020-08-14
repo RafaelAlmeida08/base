@@ -67,6 +67,8 @@ class Comparativo extends Component {
         var wrapperComparativo = document.getElementById('wrapper-comparativo');
         wrapperComparativo.style.display = 'none'
 
+        document.getElementById('btn-1').style.display = '';
+
     }
 
     maisinformacoes(plano){       

@@ -134,6 +134,8 @@ class Card extends Component{
         var wrapperComparativo = document.getElementById('wrapper-comparativo');
         wrapperComparativo.style.display = 'initial'
 
+        document.getElementById('btn-1').style.display = 'none';
+
     }
 
     renderCard(values) {
@@ -199,14 +201,14 @@ class Card extends Component{
                         </button>
                     </div>
                 </div>
+                <button id="btn-1" onClick={ () => {
+                     document.getElementById('PrimeiroConteudo').style.display = '';
+                     document.getElementById('container').style.display = 'none';                     
+                }} >Voltar</button>
                 <div id="wrapper-comparativo">
                    <Comparativo planos={planos}/>
                 </div>
-                <button onClick={ () => {
-                     document.getElementById('PrimeiroConteudo').style.display = '';
-                     document.getElementById('container').style.display = 'none';
-                     
-                }} >Voltar</button>
+                
             </div>
         )
     }
