@@ -34,7 +34,6 @@ export default function PDF(props) {
         {props.data.length > 0
           ? props.data.map(planoInfo => (
                 <View style={styles.wrapper}>
-                    <Image src={planoInfo.logo} style={styles.image}></Image>
                     <View style={styles.section}>
                         <Text style={styles.title}>
                             {planoInfo.nome}

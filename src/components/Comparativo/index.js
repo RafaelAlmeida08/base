@@ -99,14 +99,6 @@ class Comparativo extends Component {
                 <div id="header-comparativo">
                     <h1>Comparativo</h1>                
                     <div id="wrapper-opt">
-                        <div className="opt">
-                            <div className="opt-icon">
-                                <img src={require('../images/pdf.svg')} alt="PDF" />
-                            </div>
-                            <div className="opt-text">
-                                
-                            </div>
-                        </div>
                         <div 
                             className="opt" 
                             onClick={this.compartilharWpp}

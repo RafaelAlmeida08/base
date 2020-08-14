@@ -6,6 +6,8 @@ import data from '../../jsonformatter.json';
 export default function CardPlano(props) {
     const {plano} = props;
 
+    let sele_plano = '';
+
     function passapage3(plano){
        props.passapage3(plano);
     }
@@ -74,6 +76,8 @@ export default function CardPlano(props) {
             }
         }
 
+        props.plano.total = total;
+        sele_plano = props.plano;
         return total;
     }
 
@@ -85,16 +89,16 @@ export default function CardPlano(props) {
                 </h2>
             </div>
             <div className="card-plano-content">
+                <div className="wrapper-total">
+                    <h1 className="total-title">
+                        Total
+                    </h1>
+                    <h1 className="total-valor">
+                        R$ {getTotal(plano.btxplano)}
+                    </h1>
+                </div>
                 <div className="card-plano-datas">
                     <table key={plano.btxplano}>
-                        <tr>
-                            <td>
-                                Total
-                            </td>
-                            <td>
-                                R$ {getTotal(plano.btxplano)}
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                Registro ANS
@@ -137,7 +141,7 @@ export default function CardPlano(props) {
                         document.getElementById('header-comparativo').style.display = 'none';
                         document.getElementById('btn-voltar').style.display         = 'none';
                         document.getElementById('page3').style.display              = 'initial';
-                        passapage3(plano);
+                        passapage3(sele_plano);
                     }}
                     
                     className="btn-footer">

@@ -8,6 +8,7 @@
 .card-plano-header {
     background-color: var(--color-primary);
     text-align: center;
+    padding: 5px;
 }
 
 .card-plano-title {
@@ -60,4 +61,16 @@
     width: 70%;
     background-color: var(--color-primary);
     color: #ffffff;
+}
+
+.wrapper-total {
+    width: 100%;
+}
+
+.wrapper-total > h1 {
+    text-align: center;
+}
+
+.total-valor {
+    color: var(--color-primary);
 }
