@@ -26,9 +26,7 @@ class Page1 extends Component{
                 "49 a 53": "0",
                 "54 a 58": "0",
                 "59 ou +" : "0"  
-            },
-            cidades : []
-            
+            },            
         };
         this.modal      = this.modal.bind(this);
         this.cadastrar  = this.cadastrar.bind(this);
@@ -37,13 +35,11 @@ class Page1 extends Component{
         this.telefone    = this.telefone.bind(this);
         this.setRange   = this.setRange.bind(this);
         this.setTotalCred = this.setTotalCred.bind(this);
-        this.mostrar      = this.mostrar.bind(this);
-    
+        this.setDataContato = this.setDataContato.bind(this);    
     }
 
    componentDidMount(){
         document.getElementById('container').style.display = 'none';         
-        this.mostrar();   
     }
 
  
@@ -80,6 +76,7 @@ class Page1 extends Component{
     }
 
     cidade(event){
+        console.log(document.getElementById('select1').value);
         this.setState(prevState => (
             {
                 contato: {
@@ -124,21 +121,20 @@ class Page1 extends Component{
        
     }
 
+    setDataContato() {
+        let dataContato = {
+            nome: document.getElementById('input-contato').value,
+            telefone: document.getElementById('input-telefone').value,
+            cidade: document.getElementById('select1').value
+        }
+
+        this.setState({contato: dataContato});
+    }
+
     pagina2(e){
         document.getElementById('PrimeiroConteudo').style.display = 'none';
         document.getElementById('container').style.display = '';
         e.preventDefault();
-    }
-
-    mostrar(){
-        let inicio = 0;
-        let fim = 200;
-        let cidades = this.state.cidades
-
-        for(inicio; inicio<=fim;inicio++){
-            cidades[inicio] =  data.faixascep[inicio].city
-        }
-
     }
 
     modal(){
@@ -163,17 +159,7 @@ class Page1 extends Component{
     
     render(){
         return(
-            <>   
-
-                                <div>
-                                    {this.state.cidades.map((c) => {
-                                        return(
-                                           c.faixascep
-                                        )                   
-                                    })}
-                                </div>
-               
-
+            <>
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
                         <form onSubmit={this.cadastrar, this.pagina2} className="form" id="form">
@@ -182,10 +168,6 @@ class Page1 extends Component{
                                     <h1>Dados básicos</h1>
                                 </div>
                                 <hr />
-
-                                
-          
-
                                 <div className="box-contato">
                                     <div className="contato-first">
                                         <h3>Contato</h3>
@@ -214,11 +196,15 @@ class Page1 extends Component{
                                 <div className="box-meio">
                                     <div className="box-cidade">
                                         <h3>Cidade</h3>
-                                            <select required id="select1" onChange={this.cidade}>
-                                                <option value={this.state.contato["cidade"]}></option>
-                                                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                                <option value="Niteroi">Niterói</option>
-                                                <option value="São Goncalo">São Gonçalo</option>
+                                            <select required id="select1">
+                                                {
+                                                    data.tbl_cidade.length > 0 ? 
+                                                    data.tbl_cidade.map((index) => 
+                                                        <option value={index.codigo_ibge}>
+                                                            {index.cidade + " - " + index.uf}
+                                                        </option>
+                                                    ) : <option>Nenhuma cidade cadastrada</option>
+                                                }
                                             </select>
                                     </div>
                                     <div className="box-cred">
@@ -227,7 +213,7 @@ class Page1 extends Component{
                                     </div>
                                 </div>
                                 <div className="box-inferior">
-                                    <button type="submit">Confirmar</button>
+                                    <button type="submit" onClick={this.setDataContato}>Confirmar</button>
                                 </div>
                             </div>
                         </form>
@@ -292,7 +278,7 @@ class Page1 extends Component{
                         </div>
                    </div>   
                </div>
-               <Pageselecao/>
+               <Pageselecao contato={this.state.contato}/>
             </>
            
             )
