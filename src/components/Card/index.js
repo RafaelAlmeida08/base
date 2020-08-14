@@ -76,7 +76,7 @@ class Card extends Component{
         };
 
         this.mostrarconteudo = this.mostrarconteudo.bind(this);
-        this.renderCard = this.renderCard.bind(this);
+        this.renderRow = this.renderRow.bind(this);
         this.favoritos = this.favoritos.bind(this);
         this.comparativo = this.comparativo.bind(this);
 
@@ -95,25 +95,33 @@ class Card extends Component{
 
     favoritos(inputID){
         var input = document.getElementById(inputID);
-        var details = document.getElementById(inputID + '-row')
-        console.log(details)
-        var plano = {
-            id: details.attributes['data-id'].value,
-            nome: details.attributes['data-nome'].value,
-            total: details.attributes['data-total'].value,
-            logo: details.attributes['data-logo'].value
-        };
+        var details = document.getElementById(inputID + '-row');
 
-        var joined = this.state.favoritos.concat(plano);        
-        if (input.checked === true){
-            this.setState({ favoritos: joined });
-            console.log(joined);
+        if (details) {
+            var plano = {
+                btxplano: details.attributes['data-idplano'].value,
+                registroans: details.attributes['data-registroans'].value,
+                produto: details.attributes['data-produto'].value,
+                contratacao: details.attributes['data-contratacao'].value,
+                abrangencia: details.attributes['data-abrangencia'].value,
+                segmentacao: details.attributes['data-segmentacao'].value,
+                acomodacao: details.attributes['data-acomodacao'].value,
+                coparticipacao: details.attributes['data-coparticipacao'].value
+            };
+    
+            var joined = this.state.favoritos.concat(plano);        
+            if (input.checked === true){
+                this.setState({ favoritos: joined });
+                console.log(joined);
+            } else {
+                let state = this.state
+                state.favoritos.splice(state.favoritos.findIndex(planos => planos.id === plano.id), 1);
+    
+                this.setState(state)
+                console.log(state.favoritos)
+            }
         } else {
-            let state = this.state
-            state.favoritos.splice(state.favoritos.findIndex(planos => planos.id === plano.id), 1);
-
-            this.setState(state)
-            console.log(state.favoritos)
+            console.log("vazio");
         }
     }
 
@@ -138,75 +146,90 @@ class Card extends Component{
 
     }
 
-    renderCard(values) {
+    renderRow(values) {
         return(
-                <div id="card" className="card">
-                    <img 
-                        src={values.logo} 
-                        alt={`card${values.id}`} 
-                        onClick={() => this.mostrarconteudo(`${values.id}`)}
-                    />
-                    <div id={`${values.id}-info`} className="conteudo-card">
-                        <div className="informacoes">
-                            <table>
-                                <tr>
-                                    <td 
-                                        id={`${values.id}-row`}
-                                        data-id={values.id}
-                                        data-nome={values.nome}
-                                        data-total={values.total}
-                                        data-logo={values.logo}
-                                    >
-                                        {values.nome}
-                                    </td>
-                                    <td>
-                                        <input 
-                                            type="checkbox" 
-                                            value="1" 
-                                            id={`${values.id}`} 
-                                            onClick={
-                                                () => this.favoritos(`${values.id}`)
-                                            }
-                                        />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <tr 
+                    id={values.btxplano + '-row'}
+                    data-idplano={values.btxplano}
+                    data-registroans={values.registroans}
+                    data-produto={values.produto}
+                    data-contratacao={values.tipocontratacao}
+                    data-abrangencia={values.abrangencia}
+                    data-segmentacao={values.segmentacao}
+                    data-acomodacao={values.acomodacao}
+                    data-coparticipacao={values.coparticipacao === true ? "Sim" : "Não"}
+                >
+                    <td>
+                        {values.produto}
+                    </td>
+                    <td>
+                        {values.acomodacao}
+                    </td>
+                    <td>
+                        {values.abrangencia}
+                    </td>
+                    <td>
+                        <input 
+                            id={values.btxplano} 
+                            type="checkbox" 
+                            onClick={() => this.favoritos(values.btxplano)}/>
+                    </td>
+                </tr>
         )
 
     }
 
     render(){
-
-        let cardDados = []
         let obj = []
         let planos = this.state.favoritos;
 
-        cardDados.push(this.state.dados);
-
-        Object.keys(cardDados[0]).forEach( (values) => { obj.push(this.renderCard(cardDados[0][values])) })
+        if (this.props.planos.length > 0) {
+            this.props.planos.map((plano) => {
+                obj.push(this.renderRow(plano[0]));
+            });
+        }
 
         return(
             <div className="wrapper">
                 <div id="wrapper-cards">
                     <div className="Cards">
-                        {obj}
+                        {this.props.planos.length > 0 ? 
+                            <table>
+                                <tr>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Acomodação
+                                    </th>
+                                    <th>
+                                        Abrangência
+                                    </th>
+                                    <th>
+                                        Comparar
+                                    </th>
+                                </tr>
+                                {obj}
+                            </table>
+                        : ""}
                     </div>
+                        
+                    {
+                        planos.length > 1 ?
+                        <div className="btn">
+                            <button onClick={this.comparativo}>
+                                Comparar Planos                           
+                            </button>
+                        </div> : "" 
+                    }
 
-                    <div className="btn">
-                        <button onClick={this.comparativo}>
-                            Comparar Planos                           
-                        </button>
-                    </div>
                 </div>
                 <button id="btn-1" onClick={ () => {
                      document.getElementById('PrimeiroConteudo').style.display = '';
                      document.getElementById('container').style.display = 'none';                     
                 }} >Voltar</button>
                 <div id="wrapper-comparativo">
-                   <Comparativo planos={planos} telefone={this.props.telefone}/>
+                   <Comparativo planos={planos} telefone={this.props.telefone} ranges={this.props.range}/>
                 </div>
                 
             </div>

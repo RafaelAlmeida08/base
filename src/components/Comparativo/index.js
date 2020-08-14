@@ -104,11 +104,7 @@ class Comparativo extends Component {
                                 <img src={require('../images/pdf.svg')} alt="PDF" />
                             </div>
                             <div className="opt-text">
-                                {this.props.planos.length > 0
-                                    ?   <PDFDownloadLink document={<PDFComparativo data={this.props.planos}/>} fileName="plano.pdf">
-                                            {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
-                                        </PDFDownloadLink> 
-                                    : "" }
+                                
                             </div>
                         </div>
                         <div 

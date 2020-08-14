@@ -16,29 +16,26 @@ export default function CardPlano(props) {
         <div className="card-plano">
             <div className="card-plano-header" role="header">
                 <h2 className="card-plano-title">
-                    {plano.nome}
+                    {plano.produto}
                 </h2>
             </div>
             <div className="card-plano-content">
-                <div className="card-plano-logo">
-                    <img src={plano.logo} alt="Logo" />
-                </div>
                 <div className="card-plano-datas">
-                    <table key={plano.id}>
+                    <table key={plano.btxplano}>
                         <tr>
                             <td>
                                 Total
                             </td>
                             <td>
-                                R$ {plano.total}
+                                R$ 100
                             </td>
                         </tr>
                         <tr>
                             <td>
-                               Modalidade 
+                               Registro ANS
                             </td>
                             <td>
-                                Saúde Adesão
+                                {plano.registroans}
                             </td>
                         </tr>
                         <tr>
@@ -46,7 +43,7 @@ export default function CardPlano(props) {
                                 Acomodação
                             </td>
                             <td>
-                                Apartamento
+                                {plano.acomodacao}
                             </td>
                         </tr>
                         <tr>
@@ -54,7 +51,15 @@ export default function CardPlano(props) {
                                 Coparticipação
                             </td>
                             <td>
-                                Não
+                                {plano.coparticipacao}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Abrangencia
+                            </td>
+                            <td>
+                                {plano.abrangencia}
                             </td>
                         </tr>
                     </table>

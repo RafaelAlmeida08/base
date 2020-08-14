@@ -278,7 +278,7 @@ class Page1 extends Component{
                         </div>
                    </div>   
                </div>
-               <Pageselecao telefone={this.state.contato.telefone}/>
+               <Pageselecao telefone={this.state.contato.telefone} contato={this.state.contato} range={this.state.range}/>
             </>
            
             )
