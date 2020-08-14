@@ -42,9 +42,11 @@ class Comparativo extends Component {
 
     compartilharWpp() {
 
-        let linkWpp = `https://wa.me/5521973049219?text=`
+        let number = this.props.telefone;
+        let linkWpp = `https://wa.me/${number}?text=`
         
         linkGenerator(this.props.planos).then(r => {
+           
             let msg = escape(`Para visualizar seu comparativo, por favor acesse: ${r}`)
             window.open(`${linkWpp}${msg}`);
         })
@@ -92,7 +94,7 @@ class Comparativo extends Component {
                     plano={this.state.data2}
                 />
                 <div id="header-comparativo">
-                    <h1>Comparativo</h1>
+                    <h1>Comparativo</h1>                
                     <div id="wrapper-opt">
                         <div className="opt">
                             <div className="opt-icon">

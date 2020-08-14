@@ -197,7 +197,7 @@ class Card extends Component{
 
                     <div className="btn">
                         <button onClick={this.comparativo}>
-                            Comparar Planos
+                            Comparar Planos                           
                         </button>
                     </div>
                 </div>
@@ -206,7 +206,7 @@ class Card extends Component{
                      document.getElementById('container').style.display = 'none';                     
                 }} >Voltar</button>
                 <div id="wrapper-comparativo">
-                   <Comparativo planos={planos}/>
+                   <Comparativo planos={planos} telefone={this.props.telefone}/>
                 </div>
                 
             </div>

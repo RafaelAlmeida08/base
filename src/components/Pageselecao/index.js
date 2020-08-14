@@ -9,17 +9,20 @@ class Pageselecao extends Component{
     constructor(props){
         super(props);
         this.state = {
-            clickedPlan: []
+            clickedPlan: [],
+               
         };
     }
 
+    
+
     render(){
         return(
-            <div id="container">
+            <div id="container">               
                 <Sidebar />
                 <div id="PagSelecao">
                     <div id="pageselecao-header">
-                        <h1>Saúde</h1>
+                        <h1>Saúde</h1>                     
                         <hr/>
                         <div id="search">
                             <span>
@@ -28,7 +31,7 @@ class Pageselecao extends Component{
                             <input type="text" placeholder="Pesquisa..." aria-placeholder="Pesquisa"/>
                         </div>
                     </div>
-                    <Card clickedPlan={this.state.clickedPlan} />
+                    <Card clickedPlan={this.state.clickedPlan} telefone={this.props.telefone} />
                 </div>
             </div>
         );
