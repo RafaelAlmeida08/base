@@ -3,6 +3,7 @@ import '../Page1/style.css';
 import Pageselecao from '../Pageselecao';
 import InputMask from "react-input-mask";
 
+
 class Page1 extends Component{
     constructor(props){
         super(props);
@@ -24,7 +25,10 @@ class Page1 extends Component{
                 "49 a 53": "0",
                 "54 a 58": "0",
                 "59 ou +" : "0"  
-            }
+            },
+            teste : [
+
+            ]
             
         };
         this.modal      = this.modal.bind(this);
@@ -34,14 +38,15 @@ class Page1 extends Component{
         this.telefone    = this.telefone.bind(this);
         this.setRange   = this.setRange.bind(this);
         this.setTotalCred = this.setTotalCred.bind(this);
+    
     }
 
    componentDidMount(){
-        document.getElementById('container').style.display = 'none';
-
+        document.getElementById('container').style.display = 'none';    
         
-       
     }
+
+ 
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
