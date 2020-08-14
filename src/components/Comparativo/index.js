@@ -42,7 +42,9 @@ class Comparativo extends Component {
 
     compartilharWpp() {
 
-        let numberFormated = this.props.telefone.toString().match(/\d/g)
+        console.log(this.props.planos)
+
+       let numberFormated = this.props.telefone.toString().match(/\d/g)
 
         let number = `55${numberFormated.join("")}`
 

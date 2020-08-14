@@ -22,6 +22,7 @@ const Pagecli = () => {
    
     return (
         <div className="pageCli">
+            {console.log(dados)}
             <div className="containerPageCli">
                 <div className="sideBarPageCli">
                     <img src="/icone_cotacao.png" />
