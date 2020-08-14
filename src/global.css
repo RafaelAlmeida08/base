@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 
 :root {
-    --color-primary: #81d742;
+    --color-primary: rgb(28, 51, 98);
     --color-background: #EFEFEF;
 }
 *{

@@ -39,6 +39,7 @@
 .card-plano-datas > table {
     width: 100%;
     margin: 30px 0px;
+    box-shadow: none;
 }
 
 .card-plano-datas > table > tr > td {

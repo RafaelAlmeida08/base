@@ -17,16 +17,42 @@
 #sidebar {
     height: 100%;
     width: 15%;
-    background-color: var(--color-primary);
+    background-color: rgb(239, 239, 239);;
     position: fixed;
     align-self: flex-start;
     overflow-x: hidden;
     overflow-y: hidden;
     display: flex;
+    flex-direction: column;
+    align-content: space-around;
     box-shadow: 5px 0px 10px 0px #888888;
     padding: 10px 0px;
 }
 
+#sidebar > div {
+    width: 100%;
+}
+
+#dataContato > div {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#logo {
+    margin-bottom: 25px;
+}
+
+#logo > img {
+    height: 100%;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: 13pt;
+}
 #btn-group {
     height: 95%;
     width: 100%;
