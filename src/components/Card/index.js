@@ -229,7 +229,7 @@ class Card extends Component{
                      document.getElementById('container').style.display = 'none';                     
                 }} >Voltar</button>
                 <div id="wrapper-comparativo">
-                   <Comparativo planos={planos} telefone={this.props.telefone} ranges={this.props.range}/>
+                   <Comparativo planos={planos} telefone={this.props.telefone} range={this.props.range}/>
                 </div>
                 
             </div>

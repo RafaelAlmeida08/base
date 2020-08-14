@@ -16,16 +16,16 @@ class Page1 extends Component{
             },
             totalcred: 0,
             range: {
-                "00 a 18": "0",
-                "19 a 23": "0",
-                "24 a 28": "0",
-                "29 a 33": "0",
-                "34 a 38": "0",
-                "39 a 43": "0",
-                "44 a 48": "0",
-                "49 a 53": "0",
-                "54 a 58": "0",
-                "59 ou +" : "0"  
+                "00 a 18": 0,
+                "19 a 23": 0,
+                "24 a 28": 0,
+                "29 a 33": 0,
+                "34 a 38": 0,
+                "39 a 43": 0,
+                "44 a 48": 0,
+                "49 a 53": 0,
+                "54 a 58": 0,
+                "59 ou +" : 0  
             },            
         };
         
@@ -198,6 +198,7 @@ class Page1 extends Component{
                                     <div className="box-cidade">
                                         <h3>Cidade</h3>
                                             <select required id="select1">
+                                                <option selected disabled>Selecione uma cidade...</option>
                                                 {
                                                     data.tbl_cidade.length > 0 ? 
                                                     data.tbl_cidade.map((index) => 
