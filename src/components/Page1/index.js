@@ -24,12 +24,8 @@ class Page1 extends Component{
                 "49 a 53": "0",
                 "54 a 58": "0",
                 "59 ou +" : "0"  
-            },
-            teste: [
-
-            ],
-
-            teste2: ''
+            }
+            
         };
         this.modal      = this.modal.bind(this);
         this.cadastrar  = this.cadastrar.bind(this);
