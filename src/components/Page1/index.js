@@ -159,7 +159,7 @@ class Page1 extends Component{
     
     render(){
         return(
-            <>
+            <> 
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
                         <form onSubmit={this.cadastrar, this.pagina2} className="form" id="form">
@@ -278,7 +278,7 @@ class Page1 extends Component{
                         </div>
                    </div>   
                </div>
-               <Pageselecao contato={this.state.contato}/>
+               <Pageselecao telefone={this.state.contato.telefone}/>
             </>
            
             )
