@@ -38,12 +38,12 @@ class Page3 extends Component{
             document.getElementById('dadoshospitalares').style.display  = 'initial';
             document.getElementById('rightarrow1').style.display        = 'none';
             document.getElementById('downarrow1').style.display         = 'block'
-            document.getElementById('dropdown2').style.top              = '178%';
+            document.getElementById('dropdown2').style.top              = '88%';
         }else{
             document.getElementById('dadoshospitalares').style.display  = '';
             document.getElementById('rightarrow1').style.display        = 'block';
             document.getElementById('downarrow1').style.display         = 'none'
-            document.getElementById('dropdown2').style.top              = '154%';
+            document.getElementById('dropdown2').style.top              = '77%';
         }
 
 
