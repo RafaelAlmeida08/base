@@ -35,7 +35,7 @@ class Comparativo extends Component {
         if(this.props.planos.length > 0) {
             console.log(this.props.planos.length)
             return this.props.planos.map(planoInfo => (
-                <CardPlano plano={planoInfo} passapage3={this.maisinformacoes}/>
+                <CardPlano plano={planoInfo} passapage3={this.maisinformacoes} range={this.props.range}/>
             )) 
         }
     }
