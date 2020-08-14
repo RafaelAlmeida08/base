@@ -9,16 +9,16 @@ export default ({dados}) => {
 
     return(
         <div id={dados.id} className="cardPageCli" onClick={verifyFnction}>
-            <div className="body">
-                <p className="desc">Produto</p>
-                <span className="span-body">{dados.produto}</span>
-                <p className="desc">Contratação</p>
-                <span className="span-body">{dados.contratacao}</span>
-                <p className="desc">Abrangencia</p>
-                <span className="span-body">{dados.abrangencia}</span>
-            </div>
             <div className="card-footer">
-                <span>clique para selecionar {dados.nome}</span>
+                <span>{dados.produto}</span>
+            </div>
+            <div className="body">
+                <p className="desc">Total</p>
+                    <span className="span-body">R$: {dados.total.toFixed(2)}</span>
+                <p className="desc">Contratação</p>
+                    <span className="span-body">{dados.contratacao}</span>
+                <p className="desc">Abrangência</p>
+                    <span className="span-body">{dados.abrangencia}</span>
             </div>
         </div>
     )

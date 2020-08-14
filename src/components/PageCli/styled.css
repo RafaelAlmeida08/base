@@ -11,10 +11,11 @@
 .sideBarPageCli {
     background-color: #1F3261;
     width: 90px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 
 .sideBarPageCli img {
