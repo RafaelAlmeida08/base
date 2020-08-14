@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../Page1/style.css';
 import Pageselecao from '../Pageselecao';
 import InputMask from "react-input-mask";
+import data from '../../jsonformatter.json';
 
 
 class Page1 extends Component{
@@ -26,9 +27,7 @@ class Page1 extends Component{
                 "54 a 58": "0",
                 "59 ou +" : "0"  
             },
-            teste : [
-
-            ]
+            cidades : []
             
         };
         this.modal      = this.modal.bind(this);
@@ -38,12 +37,13 @@ class Page1 extends Component{
         this.telefone    = this.telefone.bind(this);
         this.setRange   = this.setRange.bind(this);
         this.setTotalCred = this.setTotalCred.bind(this);
+        this.mostrar      = this.mostrar.bind(this);
     
     }
 
    componentDidMount(){
-        document.getElementById('container').style.display = 'none';    
-        
+        document.getElementById('container').style.display = 'none';         
+        this.mostrar();   
     }
 
  
@@ -130,6 +130,17 @@ class Page1 extends Component{
         e.preventDefault();
     }
 
+    mostrar(){
+        let inicio = 0;
+        let fim = 200;
+        let cidades = this.state.cidades
+
+        for(inicio; inicio<=fim;inicio++){
+            cidades[inicio] =  data.faixascep[inicio].city
+        }
+
+    }
+
     modal(){
         var modal   = document.getElementById("myModal");   
         var select2 = document.getElementById("select2");
@@ -152,7 +163,17 @@ class Page1 extends Component{
     
     render(){
         return(
-            <>          
+            <>   
+
+                                <div>
+                                    {this.state.cidades.map((c) => {
+                                        return(
+                                           c.faixascep
+                                        )                   
+                                    })}
+                                </div>
+               
+
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
                         <form onSubmit={this.cadastrar, this.pagina2} className="form" id="form">
@@ -161,6 +182,9 @@ class Page1 extends Component{
                                     <h1>Dados básicos</h1>
                                 </div>
                                 <hr />
+
+                                
+          
 
                                 <div className="box-contato">
                                     <div className="contato-first">
@@ -195,7 +219,7 @@ class Page1 extends Component{
                                                 <option value="Rio de Janeiro">Rio de Janeiro</option>
                                                 <option value="Niteroi">Niterói</option>
                                                 <option value="São Goncalo">São Gonçalo</option>
-                                            </select>                                   
+                                            </select>
                                     </div>
                                     <div className="box-cred">
                                         <h3>Credenciados</h3>
