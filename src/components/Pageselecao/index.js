@@ -29,8 +29,8 @@ class Pageselecao extends Component{
                             {
                                 data.tbl_entidade.length > 0 ? 
                                 data.tbl_entidade.map((index) => 
-                                    <option value={index.codigo_codemp}>
-                                        {index.nome}
+                                    <option id={index.codigo_codemp} value={index.codigo_codemp}>
+                                        {index.nome}                                      
                                     </option>
                                     ) : <option>Nenhuma cidade cadastrada</option>
                             }
