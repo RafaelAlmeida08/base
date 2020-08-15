@@ -150,7 +150,7 @@ class Page3 extends Component{
                             <div className="conteudo">
                                 <span>{this.props.plano.coparticipacao}</span>
                             </div>
-                        </div>
+                        </div>{/*
                         <div className="linha hospitalares">
                             <div className="titulo">
                                 <label>Hospitalares</label>
@@ -185,7 +185,7 @@ class Page3 extends Component{
                         </div>
                             <div id="dadosvalores" className="linha valores">
                                 <h1>algo</h1>
-                            </div>
+                        </div>*/}
                     </div>
                     <div className="footer">
                         <div className="conteudo-valor">
@@ -198,6 +198,7 @@ class Page3 extends Component{
                          </div>
                         <div className="dados" id="desktop">
                             <div id="opt">
+                                {/*
                                 <div className="opt1">
                                     <div className="icon">
                                         <img src={require('../images/email.svg')} alt="email"/>
@@ -205,7 +206,7 @@ class Page3 extends Component{
                                     <div className="name">
                                         <span onClick={this.enviaremail}>Enviar por e-mail</span>
                                     </div>
-                                </div>
+                                </div> 
                                 <div className="opt1">
                                     <div className="icon">
                                         <img src={require('../images/compartilhar.svg')} alt="compartilhar"/>
@@ -221,7 +222,7 @@ class Page3 extends Component{
                                     <div className="name">
                                         <span onClick={this.imprimir}>Imprimir</span>
                                     </div>
-                                </div>
+                                </div>*/}
                                 <div className="opt1">
                                     <div className="icon">
                                         <img src={require('../images/pdf.svg')} alt="imprimir"/>
