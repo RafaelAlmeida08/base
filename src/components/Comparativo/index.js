@@ -21,7 +21,8 @@ class Comparativo extends Component {
                     logo:'',
                     id: ''
                 }
-            ]
+            ],
+            planos: []
         };
 
         this.renderCardPlano = this.renderCardPlano.bind(this);
@@ -32,15 +33,28 @@ class Comparativo extends Component {
         this.getTotal = this.getTotal.bind(this);
     }
 
-    renderCardPlano() {
+    getPlanos() {
         if(this.props.planos.length > 0) {
             let planos = this.props.planos;
             let total = 0;
-            console.log(planos);
+
             planos.map((index) => {
                 total = this.getTotal(index.btxplano);
                 index.preco = (total).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
             })
+        }
+    }
+
+    renderCardPlano() {
+        if(this.props.planos.length > 0) {
+            let planos = this.props.planos;
+            let total = 0;
+
+            planos.map((index) => {
+                total = this.getTotal(index.btxplano);
+                index.preco = (total).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+            })
+            
             return planos.map(planoInfo => (    
                 <CardPlano 
                     plano={planoInfo} 
@@ -182,6 +196,18 @@ class Comparativo extends Component {
                             </div>
                             <div className="opt-text">
                                 Whatsapp
+                            </div>
+                        </div>
+                        <div className="opt">
+                            <div className="opt-icon">
+                                <img src={require('../images/whatsapp.svg')} alt="Whatsapp" />
+                            </div>
+                            <div className="opt-text">
+                                {this.props.planos.length > 0 && this.props.range
+                                    ?   <PDFDownloadLink document={<PDFComparativo data={this.props.planos} range={this.props.range}/>} fileName="plano.pdf" >
+                                            {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
+                                        </PDFDownloadLink> 
+                                    : "" }
                             </div>
                         </div>
                     </div>

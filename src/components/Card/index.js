@@ -219,7 +219,7 @@ class Card extends Component{
                     </div>
                         
                     {
-                        planos.length > 1 ?
+                        planos.length > 0 ?
                         <div className="btn">
                             <button onClick={this.comparativo}>
                                 Comparar Planos                           

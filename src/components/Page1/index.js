@@ -210,7 +210,7 @@ class Page1 extends Component{
                                             </select>
                                     </div>
                                     <div className="box-cred">
-                                        <h3>Credenciados</h3>
+                                        <h3>Beneficiários</h3>
                                         <input id="select2" value={this.state.totalcred} onFocus={this.modal} />
                                     </div>
                                 </div>
