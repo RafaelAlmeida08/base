@@ -9,6 +9,8 @@ const Pagecli = () => {
 
     let dados = JSON.parse(atob(data))
 
+    console.log(dados)
+
     /*
         ----Para Debug---
     const dados = [
@@ -22,7 +24,6 @@ const Pagecli = () => {
    
     return (
         <div className="pageCli">
-            {console.log(dados)}
             <div className="containerPageCli">
                 <div className="sideBarPageCli">
                     <img src="/icone_cotacao.png" />
