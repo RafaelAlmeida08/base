@@ -5,6 +5,7 @@ import './comparativo.css';
 import linkGenerator from './../../linkGenerator'
 import PDFComparativo from '../PDFComparativo';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import data from '../../jsonformatter.json';
 
 class Comparativo extends Component {
     constructor(props) {
@@ -27,17 +28,90 @@ class Comparativo extends Component {
         this.pageselecao = this.pageselecao.bind(this);
         this.maisinformacoes = this.maisinformacoes.bind(this);      
         this.compartilharWpp = this.compartilharWpp.bind(this);
-        this.compartilhar = this.compartilhar.bind(this);    
+        this.compartilhar = this.compartilhar.bind(this);
+        this.getTotal = this.getTotal.bind(this);
     }
 
     renderCardPlano() {
-        console.log(this.props.planos)
         if(this.props.planos.length > 0) {
-            console.log(this.props.planos.length)
-            return this.props.planos.map(planoInfo => (
-                <CardPlano plano={planoInfo} passapage3={this.maisinformacoes} range={this.props.range}/>
+            let planos = this.props.planos;
+            let total = 0;
+            console.log(planos);
+            planos.map((index) => {
+                total = this.getTotal(index.btxplano);
+                index.preco = (total).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+            })
+            return planos.map(planoInfo => (    
+                <CardPlano 
+                    plano={planoInfo} 
+                    passapage3={this.maisinformacoes} 
+                    range={this.props.range}
+                />
             )) 
         }
+    }
+
+    getTotal(plano) {
+        let dataPlano = data.tbl_preco.filter((index) => {
+            return index.btxplano == plano;
+        });
+
+        let total = 0;
+        for (var [key, value] of Object.entries(this.props.range)) {
+            switch (key) {
+                case "00 a 18":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[0] * value;
+                    }
+                    break;
+                case "19 a 23":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[1] * value;
+                    }
+                    break;
+                case "24 a 28":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[2] * value;
+                    }
+                    break;
+                case "29 a 33":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[3] * value;
+                    }
+                    break;
+                case "34 a 38":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[4] * value;
+                    }
+                    break;
+                case "39 a 43": 
+                    if (value > 0) {
+                        total += dataPlano[0].preco[5] * value;
+                    }
+                    break;
+                case "44 a 48":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[6] * value;
+                    }
+                    break;
+                case "49 a 53": 
+                    if (value > 0) {
+                        total += dataPlano[0].preco[7] * value;
+                    }
+                case "54 a 58":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[8] * value;
+                    }
+                    break;
+                case "59 ou +":
+                    if (value > 0) {
+                        total += dataPlano[0].preco[9] * value;
+                    }
+                default:
+                    break;
+            }
+        }
+        return total;
     }
 
     compartilharWpp() {

@@ -32,7 +32,7 @@ class Pageselecao extends Component{
     getDataEntidade() {
         let codigo_entidade = document.getElementById('select-entidade').value;
         let entidade = data.tbl_entidade.filter((entidade) => {
-            if (entidade.codemp == codigo_entidade) {
+            if (entidade.cnpj === codigo_entidade) {
                 return entidade;
             }
         })
@@ -51,9 +51,11 @@ class Pageselecao extends Component{
             }
         });
 
+        let cnpj = document.getElementById('select-entidade').value;
         let dataPlanos = planos.map((codPlano) => {
             return data.tbl_plano.filter((plano) => {
                 if (plano.btxplano == codPlano) {
+                    plano.cnpj_entidade = cnpj;
                     return plano;
                 }
             })
@@ -79,7 +81,7 @@ class Pageselecao extends Component{
                             {
                                 data.tbl_entidade.length > 0 ? 
                                 data.tbl_entidade.map((index) => 
-                                    <option id={index.codemp} value={index.codemp}>
+                                    <option id={index.codemp} value={index.cnpj}>
                                         {index.nome}                                      
                                     </option>
                                     ) : <option>Nenhuma entidade cadastrada</option>

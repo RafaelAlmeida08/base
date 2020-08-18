@@ -12,73 +12,9 @@ export default function CardPlano(props) {
        props.passapage3(plano);
     }
 
-    function getTotal(plano) {
-        let dataPlano = data.tbl_preco.filter((index) => {
-            return index.btxplano == plano;
-        });
-
-        console.log(dataPlano);
-        console.log(props.range);
-
-        let total = 0;
-        for (var [key, value] of Object.entries(props.range)) {
-            switch (key) {
-                case "00 a 18":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[0] * value;
-                    }
-                    break;
-                case "19 a 23":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[1] * value;
-                    }
-                    break;
-                case "24 a 28":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[2] * value;
-                    }
-                    break;
-                case "29 a 33":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[3] * value;
-                    }
-                    break;
-                case "34 a 38":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[4] * value;
-                    }
-                    break;
-                case "39 a 43": 
-                    if (value > 0) {
-                        total += dataPlano[0].preco[5] * value;
-                    }
-                    break;
-                case "44 a 48":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[6] * value;
-                    }
-                    break;
-                case "49 a 53": 
-                    if (value > 0) {
-                        total += dataPlano[0].preco[7] * value;
-                    }
-                case "54 a 58":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[8] * value;
-                    }
-                    break;
-                case "59 ou +":
-                    if (value > 0) {
-                        total += dataPlano[0].preco[9] * value;
-                    }
-                default:
-                    break;
-            }
-        }
-
-        props.plano.total = total;
+    function getTotal() {
         sele_plano = props.plano;
-        return total;
+        return plano.preco;
     }
 
     return (
@@ -94,7 +30,7 @@ export default function CardPlano(props) {
                         Total
                     </h1>
                     <h1 className="total-valor">
-                        R$ {getTotal(plano.btxplano)}
+                        R$ {getTotal()}
                     </h1>
                 </div>
                 <div className="card-plano-datas">

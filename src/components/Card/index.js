@@ -106,7 +106,8 @@ class Card extends Component{
                 abrangencia: details.attributes['data-abrangencia'].value,
                 segmentacao: details.attributes['data-segmentacao'].value,
                 acomodacao: details.attributes['data-acomodacao'].value,
-                coparticipacao: details.attributes['data-coparticipacao'].value
+                coparticipacao: details.attributes['data-coparticipacao'].value,
+                entidade: details.attributes['data-entidade'].value
             };
     
             var joined = this.state.favoritos.concat(plano);        
@@ -158,6 +159,7 @@ class Card extends Component{
                     data-segmentacao={values.segmentacao}
                     data-acomodacao={values.acomodacao}
                     data-coparticipacao={values.coparticipacao === true ? "Sim" : "Não"}
+                    data-entidade={values.cnpj_entidade}
                 >
                     <td>
                         {values.produto}
