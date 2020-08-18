@@ -39,7 +39,7 @@
 
 .card-plano-datas > table {
     width: 100%;
-    margin: 30px 0px;
+    margin: 15px 0px 30px;
     box-shadow: none;
 }
 
@@ -73,6 +73,17 @@
 
 .total-valor {
     color: var(--color-primary);
+}
+
+.ansbox {
+    text-align: center;
+    background-color: black;
+    color: white;
+    outline: 2px solid black;
+    border: 1px solid white;
+    width: 12em;
+    margin: 10px auto;
+    display: block;
 }
 
 
