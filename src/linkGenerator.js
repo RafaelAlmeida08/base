@@ -1,6 +1,16 @@
 
 function gerarLink(data) {
-    const base_url = 'www.localhost:3000/pagecli/'
+
+    let url = window.location.href.toString()
+    let verify = url.match(/https/);
+    let base_url = '';
+
+    if(verify != null) {
+        base_url = `${url.replace('https://', 'www.')}pagecli/`
+    } else {
+        base_url = `${url.replace('http://', 'www.')}pagecli/`
+    }
+
 
     const hash = btoa(JSON.stringify(data))
 
@@ -11,7 +21,7 @@ async function linkGenerator (data) {
     
     let link = gerarLink(data)
 
-    const r = await fetch(`https://is.gd/create.php?format=json&url=${link}`)
+    const r = await fetch(`https://is.gd/create.php?format=json&url=${link.replace('https://', 'www.')}`)
     const l = await r.json()
     return l.shorturl
 

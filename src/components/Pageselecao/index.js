@@ -10,7 +10,8 @@ class Pageselecao extends Component{
         super(props);
         this.state = {
             clickedPlan: [],
-            planos: []
+            planos: [],
+            entidades: []
         };
 
         this.planos = this.planos.bind(this);
@@ -65,8 +66,8 @@ class Pageselecao extends Component{
         this.setState({planos: dataPlanos});
 
     }
-    
 
+ 
     render(){
         return(
             <div id="container">               
@@ -92,7 +93,7 @@ class Pageselecao extends Component{
                     <Card 
                         clickedPlan={this.state.clickedPlan} 
                         telefone={this.props.telefone} 
-                        planos={this.state.planos} 
+                        planos={this.state.planos}                  
                         range={this.props.range}/>
                 </div>
             </div>
