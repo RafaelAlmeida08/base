@@ -23,7 +23,7 @@ async function linkGenerator (data) {
 
     const r = await fetch(`https://is.gd/create.php?format=json&url=${link.replace('https://', 'www.')}`)
     const l = await r.json()
-    return l.shorturl
+    return l.shorturl.replace('www.', 'https://');
 
 }
 
