@@ -1,5 +1,6 @@
 
-function gerarLink(data) {
+
+    function gerarLink(data) {
 
     let url = window.location.href.toString()
 
