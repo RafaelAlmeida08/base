@@ -144,6 +144,8 @@ class Card extends Component{
 
         document.getElementById('btn-1').style.display = 'none';
 
+     
+
     }
 
     renderRow(values) {

@@ -5,10 +5,12 @@ import data from '../../jsonformatter.json';
 
 export default function CardPlano(props) {
     const {plano} = props;
+    
+    let sele_plano = ''; 
+    
+    
 
-    let sele_plano = '';
-
-    function passapage3(plano){
+      function passapage3(plano){
        props.passapage3(plano);
     }
 
@@ -78,7 +80,7 @@ export default function CardPlano(props) {
 
         props.plano.total = total;
         sele_plano = props.plano;
-        return total;
+        return total.toFixed(2);
     }
 
     function vender() {
@@ -151,7 +153,13 @@ export default function CardPlano(props) {
                     
                     className="btn-footer">
                     + Informações
+                </button>                 
+                <button id="btn-vender" onClick={ () => {
+                    window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ 0 + "&indicador=orcamento";
+                }}>Vender
+                    
                 </button>
+                               
             </div>
         </div>
     );
