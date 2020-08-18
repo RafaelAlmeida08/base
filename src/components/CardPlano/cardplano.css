@@ -74,3 +74,31 @@
 .total-valor {
     color: var(--color-primary);
 }
+
+
+@media (min-width: 320px){
+    .card-plano-footer{
+        display: flex;
+        flex-direction: column;       
+    }
+
+    .card-plano-footer button{
+        margin-bottom: 15px;
+    }
+
+    .card-plano-footer a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 1024px){
+    .card-plano-footer{
+        display: flex;
+        flex-direction: row;       
+    }
+
+    .card-plano-footer button{
+     margin: 15px;
+    }
+}
