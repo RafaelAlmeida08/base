@@ -85,13 +85,13 @@ export default function CardPlano(props) {
 
     function vender(e) {
 
-       let op = data.tbl_plano.filter(value => {
-           if(value.btxplano == e.target.id) {
-               return value.btxplano
-           }
+       let op = data.tbl_entidade.filter(value => {
+           return value.btxplanos == e.target.id
        })
 
-       window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ op[0].cnpjoperadora + "&indicador=orcamento";
+       console.log(op)
+
+    //    window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ op[0].cnpjoperadora + "&indicador=orcamento";
 
     }
 
