@@ -48,8 +48,9 @@ class Page1 extends Component{
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
         document.getElementById('page2').style.display = "initial";
-
+        
         e.preventDefault();
+        
     }
 
     contato(event) {
@@ -163,7 +164,7 @@ class Page1 extends Component{
             <> 
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
-                        <form onSubmit={this.cadastrar, this.pagina2} className="form" id="form">
+                        <form onSubmit={this.cadastrar , this.pagina2} className="form" id="form">
                             <div className="box">
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>
@@ -211,7 +212,12 @@ class Page1 extends Component{
                                     </div>
                                     <div className="box-cred">
                                         <h3>Beneficiários</h3>
-                                        <input id="select2" required value={this.state.totalcred == 0 ? "" : this.state.totalcred} onFocus={this.modal} />
+                                        <input 
+                                            id="select2" 
+                                            value={this.state.totalcred === 0 ? "" : this.state.totalcred} 
+                                            onFocus={this.modal} 
+                                            required
+                                        />
                                     </div>
                                 </div>
                                 <div className="box-inferior">

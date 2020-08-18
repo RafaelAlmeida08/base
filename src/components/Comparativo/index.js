@@ -192,7 +192,7 @@ class Comparativo extends Component {
                             onClick={this.compartilharWpp}
                         >
                             <div className="opt-icon">
-                                <img src={require('../images/whatsapp.svg')} alt="Whatsapp" />
+                                <span className="icon icon-wpp"></span>
                             </div>
                             <div className="opt-text">
                                 Whatsapp
@@ -200,7 +200,7 @@ class Comparativo extends Component {
                         </div>
                         <div className="opt">
                             <div className="opt-icon">
-                                <img src={require('../images/whatsapp.svg')} alt="Whatsapp" />
+                                <span className="icon icon-pdf"></span>
                             </div>
                             <div className="opt-text">
                                 {this.props.planos.length > 0 && this.props.range
