@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './page3.css';
 import Email from '../Email';
-import PDF from '../PDF';
+import PDF from '../PDFInformações';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 
 
@@ -228,11 +228,11 @@ class Page3 extends Component{
                                     </div>
                                     <div className="name">
                                         <span>
-                                            {this.props.plano.id
-                                                ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
+                                            {this.props.plano.preco != 0
+                                                 ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
                                                     {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
-                                                </PDFDownloadLink> 
-                                            : "" }
+                                                </PDFDownloadLink> : ""
+                                            }
                                         </span>
                                     </div>
                                 </div>
@@ -282,11 +282,6 @@ class Page3 extends Component{
                                     </div>
                                     <div className="name">
                                         <span>
-                                            {this.props.plano.id
-                                                ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
-                                                    {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
-                                                </PDFDownloadLink> 
-                                            : "" }
                                         </span>
                                     </div>
                                 </div>
