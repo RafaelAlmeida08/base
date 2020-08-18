@@ -8,69 +8,6 @@ class Card extends Component{
     constructor(props){
         super(props);
         this.state = {  
-            dados: {       
-                cardinfo1:{
-                    id: 1,
-                    nome: 'Ameno',
-                    local: 'Card 1 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png',
-                    total: '200.00'
-                },
-                cardinfo2:{
-                    id: 2,
-                    nome: 'HBC',
-                    local: 'Card 2 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png',
-                    total: '300.00'
-                },
-                cardinfo3:{
-                    id: 3,
-                    nome: 'Qualicorp',
-                    local: 'Card 3 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png',
-                    total: '200.00'
-                },
-
-                cardinfo4:{
-                    id: 4,
-                    nome: 'Card 4 nome',
-                    local: 'Card 4 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png',
-                    total: '400.00'
-                },
-
-                cardinfo5:{
-                    id: 5,
-                    nome: 'Card 5 nome',
-                    local: 'Card 5 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png',
-                    total: '500.00'
-                },
-
-                cardinfo6:{
-                    id: 6,
-                    nome: 'Card 6 nome',
-                    local: 'Card 6 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png',
-                    total: '600.00'
-                },
-
-                cardinfo7:{
-                    id: 7,
-                    nome: 'Card 7 nome',
-                    local: 'Card 7 local',
-                    logo : 'https://i.imgur.com/3aZOmfy.png',
-                    total: '700.00'
-                },
-
-                cardinfo8:{
-                    id: 8,
-                    nome: 'Card 8 nome',
-                    local: 'Card 8 local',
-                    logo : 'https://i.imgur.com/BAeIz5B.png',
-                    total: '4800.00'
-                }
-            },
             favoritos: [ ]
             
         };
@@ -79,7 +16,8 @@ class Card extends Component{
         this.renderRow = this.renderRow.bind(this);
         this.favoritos = this.favoritos.bind(this);
         this.comparativo = this.comparativo.bind(this);
-
+        this.getAbrangencia = this.getAbrangencia.bind(this);
+        this.getAcomodacao = this.getAcomodacao.bind(this);
         };
 
     mostrarconteudo(id){
@@ -145,8 +83,28 @@ class Card extends Component{
 
         document.getElementById('btn-1').style.display = 'none';
 
-     
+    }
 
+    getAbrangencia(abrangencia) {
+        switch (abrangencia) {
+            case 'GM':
+                return 'Grupo de Municípios';
+            case 'N':
+                return 'Nacional';
+            default:
+                break;
+        }
+    }
+
+    getAcomodacao(acomodacao) {
+        switch (acomodacao) {
+            case 'I':
+                return 'Individual';
+            case 'C':
+                return 'Coletiva';
+            default:
+                break;
+        }
     }
 
     renderRow(values) {
@@ -157,9 +115,9 @@ class Card extends Component{
                     data-registroans={values.registroans}
                     data-produto={values.produto}
                     data-contratacao={values.tipocontratacao}
-                    data-abrangencia={values.abrangencia}
+                    data-abrangencia={this.getAbrangencia(values.abrangencia)}
                     data-segmentacao={values.segmentacao}
-                    data-acomodacao={values.acomodacao}
+                    data-acomodacao={this.getAcomodacao(values.acomodacao)}
                     data-coparticipacao={values.coparticipacao === true ? "Sim" : "Não"}
                     data-entidade={values.cnpj_entidade}
                 >
@@ -167,10 +125,10 @@ class Card extends Component{
                         {values.produto}
                     </td>
                     <td>
-                        {values.acomodacao}
+                        {this.getAcomodacao(values.acomodacao)}
                     </td>
                     <td>
-                        {values.abrangencia}
+                        {this.getAbrangencia(values.abrangencia)}
                     </td>
                     <td>
                         <input 

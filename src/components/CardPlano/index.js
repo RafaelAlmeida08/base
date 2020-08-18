@@ -39,16 +39,11 @@ export default function CardPlano(props) {
                         R$ {getTotal(plano.preco)}
                     </h1>
                 </div>
+                <div className="ansbox">
+                    <small>ANS n° - {plano.registroans}</small>
+                </div>
                 <div className="card-plano-datas">
                     <table key={plano.btxplano}>
-                        <tr>
-                            <td>
-                               Registro ANS
-                            </td>
-                            <td>
-                                {plano.registroans}
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                 Acomodação

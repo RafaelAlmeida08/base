@@ -76,9 +76,10 @@ class Pageselecao extends Component{
                     <div id="pageselecao-header">
                         <h1>Saúde</h1>                     
                         <hr/>
-                        <div id="search">                           
+                        <label for="select-entidade">Selecione uma entidade:</label>  
+                        <div id="search">                         
                             <select id="select-entidade" onChange={this.planos}>
-                                <option selected disabled>Selecione uma entidade...</option>
+                                <option selected disabled>Entidade</option>
                             {
                                 data.tbl_entidade.length > 0 ? 
                                 data.tbl_entidade.map((index) => 
