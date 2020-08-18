@@ -80,7 +80,7 @@ export default function CardPlano(props) {
 
         props.plano.total = total;
         sele_plano = props.plano;
-        return total;
+        return total.toFixed(2);
     }
 
     return (
