@@ -11,14 +11,14 @@ const Pagecli = () => {
 
     console.log(dados)
 
-    /*
-        ----Para Debug---
+    
+        /* ----Para Debug---
     const dados = [
-        {id:1, nome:"Plano 1", total:100.00, logo:"caminho logo 1"},
-        {id:2, nome:"Plano 2", total:200.00, logo:"caminho logo 2"},
-        {id:3, nome:"Plano 3", total:300.00, logo:"caminho logo 3"},
-        {id:4, nome:"Plano 4", total:400.00, logo:"caminho logo 4"},
-        {id:4, nome:"Plano 4", total:400.00, logo:"caminho logo 4"}
+        {id:1, nome:"Plano 1", preco:100.00, logo:"caminho logo 1"},
+        {id:2, nome:"Plano 2", preco:200.00, logo:"caminho logo 2"},
+        {id:3, nome:"Plano 3", preco:300.00, logo:"caminho logo 3"},
+        {id:4, nome:"Plano 4", preco:400.00, logo:"caminho logo 4"},
+        {id:4, nome:"Plano 4", preco:400.00, logo:"caminho logo 4"}
     ]*/
 
    
