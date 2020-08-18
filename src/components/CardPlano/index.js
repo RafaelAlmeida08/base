@@ -12,6 +12,7 @@ export default function CardPlano(props) {
 
     function getTotal(total) {
         sele_plano = props.plano;
+        sele_plano.preco = props.plano.preco;
         return total;
     }
 
