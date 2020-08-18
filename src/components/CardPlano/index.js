@@ -16,7 +16,7 @@ export default function CardPlano(props) {
 
     function getTotal(total) {
         sele_plano = props.plano;
-        return total.toFixed(2);
+        return total;
     }
 
     function vender(e) {
