@@ -81,8 +81,13 @@ export default function CardPlano(props) {
         return total;
     }
 
+    function vender() {
+
+    }
+
     return (
-        <div className="card-plano">
+        <div className="card-plano" id={plano.btxplano}>
+        {console.log(plano)}
             <div className="card-plano-header" role="header">
                 <h2 className="card-plano-title">
                     {plano.produto}
