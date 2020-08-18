@@ -211,7 +211,7 @@ class Page1 extends Component{
                                     </div>
                                     <div className="box-cred">
                                         <h3>Beneficiários</h3>
-                                        <input id="select2" value={this.state.totalcred} onFocus={this.modal} />
+                                        <input id="select2" required value={this.state.totalcred == 0 ? "" : this.state.totalcred} onFocus={this.modal} />
                                     </div>
                                 </div>
                                 <div className="box-inferior">
@@ -223,7 +223,7 @@ class Page1 extends Component{
                             <div id="modal-content">                            
                                 <div className="box-superior">
                                     <div className="box-superior-esquerda">
-                                        <h1>Credenciados</h1>
+                                        <h1>Beneficiários</h1>
                                     </div>
                                     <div className="box-superior-direita">
                                         <span className="close">&times;</span>
