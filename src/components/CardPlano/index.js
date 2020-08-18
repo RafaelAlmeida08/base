@@ -14,7 +14,7 @@ export default function CardPlano(props) {
        props.passapage3(plano);
     }
 
-    function getTotal() {
+    function getTotal(total) {
         sele_plano = props.plano;
         return total.toFixed(2);
     }
@@ -45,7 +45,7 @@ export default function CardPlano(props) {
                         Total
                     </h1>
                     <h1 className="total-valor">
-                        R$ {getTotal()}
+                        R$ {getTotal(plano.preco)}
                     </h1>
                 </div>
                 <div className="card-plano-datas">
