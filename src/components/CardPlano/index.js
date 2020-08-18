@@ -83,7 +83,15 @@ export default function CardPlano(props) {
         return total.toFixed(2);
     }
 
-    function vender() {
+    function vender(e) {
+
+       let op = data.tbl_plano.filter(value => {
+           if(value.btxplano == e.target.id) {
+               return value.btxplano
+           }
+       })
+
+       window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ op[0].cnpjoperadora + "&indicador=orcamento";
 
     }
 
@@ -154,12 +162,7 @@ export default function CardPlano(props) {
                     className="btn-footer">
                     + Informações
                 </button>                 
-                <button id="btn-vender" onClick={ () => {
-                    window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ 0 + "&indicador=orcamento";
-                }}>Vender
-                    
-                </button>
-                               
+                <button id="btn-vender" id={plano.btxplano} onClick={ vender }>Vender </button>
             </div>
         </div>
     );
