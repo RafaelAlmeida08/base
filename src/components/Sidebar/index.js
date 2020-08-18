@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './sidebar.css';
-import data from '../../jsonformatter.json';
 
 export default function Sidebar(props) {
     return (

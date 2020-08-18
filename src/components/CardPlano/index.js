@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import Page3 from '../Page3';
+import React from 'react';
 import './cardplano.css';
-import data from '../../jsonformatter.json';
 
 export default function CardPlano(props) {
     const {plano} = props;
     
     let sele_plano = ''; 
     
-    
-
-      function passapage3(plano){
+    function passapage3(plano){
        props.passapage3(plano);
     }
 

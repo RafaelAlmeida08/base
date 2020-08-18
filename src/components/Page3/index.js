@@ -123,7 +123,7 @@ class Page3 extends Component{
                                 <span>{this.props.plano.produto}</span>
                                 </div>
                                 <div className="conteudo2">
-                                    <h3></h3>
+                                    
                                 </div>                                    
                             </div>
                         </div>

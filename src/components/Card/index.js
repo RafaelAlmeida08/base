@@ -189,7 +189,7 @@ class Card extends Component{
 
         if (this.props.planos.length > 0) {
             this.props.planos.map((plano) => {
-                obj.push(this.renderRow(plano[0]));
+                return obj.push(this.renderRow(plano[0]));
             });
         }
 
