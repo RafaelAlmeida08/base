@@ -159,7 +159,7 @@ class Card extends Component{
                     data-contratacao={values.tipocontratacao}
                     data-abrangencia={values.abrangencia}
                     data-segmentacao={values.segmentacao}
-                    data-acomodacao={values.acomodacao}
+                    data-acomodacao={values.acomodacao == "I" ? "Individual" : "Coletiva"}
                     data-coparticipacao={values.coparticipacao === true ? "Sim" : "Não"}
                     data-entidade={values.cnpj_entidade}
                 >
@@ -167,7 +167,7 @@ class Card extends Component{
                         {values.produto}
                     </td>
                     <td>
-                        {values.acomodacao}
+                        {values.acomodacao == "I" ? "Individual" : "Coletiva"}
                     </td>
                     <td>
                         {values.abrangencia}

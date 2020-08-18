@@ -154,7 +154,7 @@
     display: initial;
     border: 3px solid var(--color-primary);
     border-radius: 10px;
-    height: auto;
+    height: auto; 
     background-color: white;
     transition: all 0.5s;
 }
@@ -172,4 +172,12 @@
 
 .opt1:hover > .name > span > a{
     color: #ffffff;
+}
+
+.opt-pdf {
+    background-image: url('../images/pdf.svg') !important;
+}
+
+.opt1:hover .opt-pdf {
+    background-image: url('../images/pdf-branco.svg') !important;
 }

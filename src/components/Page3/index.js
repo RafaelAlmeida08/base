@@ -128,7 +128,7 @@ class Page3 extends Component{
                         </div>
                         <div className="linha modalidade">
                             <div className="titulo">
-                                <label>Segmentaçaõ</label>
+                                <label>Segmentação</label>
                             </div>
                             <div className="conteudo">
                                 <span>{this.props.plano.segmentacao}</span>
@@ -223,8 +223,8 @@ class Page3 extends Component{
                                     </div>
                                 </div>*/}
                                 <div className="opt1">
-                                    <div className="icon">
-                                        <img src={require('../images/pdf.svg')} alt="imprimir"/>
+                                    <div className="icon-info">
+                                        <span className="icon opt-pdf"></span>
                                     </div>
                                     <div className="name">
                                         <span>
