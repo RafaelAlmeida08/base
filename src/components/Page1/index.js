@@ -48,9 +48,9 @@ class Page1 extends Component{
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
         document.getElementById('page2').style.display = "initial";
-
+        
         e.preventDefault();
-        this.pagina2(e);
+        
     }
 
     contato(event) {
@@ -164,7 +164,7 @@ class Page1 extends Component{
             <> 
                <div id="PrimeiroConteudo" className="container">
                     <div id="page1">
-                        <form onSubmit={this.cadastrar} className="form" id="form">
+                        <form onSubmit={this.cadastrar , this.pagina2} className="form" id="form">
                             <div className="box">
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>

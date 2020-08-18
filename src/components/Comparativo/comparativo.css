@@ -116,7 +116,7 @@
 .opt:hover {
     background-color: var(--color-primary);
     cursor: pointer;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .opt:hover .opt-text {
@@ -127,9 +127,26 @@
     color: #ffffff;
 } 
 
-.opt-icon > img {
+.opt:hover .icon-pdf {
+    background-image: url('../images/pdf-branco.svg');
+}
+
+.opt:hover .icon-wpp {
+    background-image: url('../images/whatsapp-branco.svg');
+}
+
+.icon {
+    background-size: cover;
     width: 25px;
-    color: #ffffff;
+    height: 25px;
+    display: inline-block;
+}
+.icon-pdf {
+    background-image: url('../images/pdf.svg');
+}
+
+.icon-wpp {
+    background-image: url('../images/whatsapp.svg');
 }
 
 .opt-text {
