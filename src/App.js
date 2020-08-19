@@ -15,11 +15,15 @@ class App extends Component{
   render(){
   
     return(      
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/">
         <Switch>             
           <Route exact path="/" component={Page1}/>
 
           <Route path="/pagecli/:data" component={Pagecli}/>
+
+          <Route path="*">
+            <h2>Pagina não encontrada</h2>
+          </Route>
 
         </Switch>
       </BrowserRouter>
