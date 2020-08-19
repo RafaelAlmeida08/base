@@ -84,7 +84,7 @@ class Pageselecao extends Component{
                                 data.tbl_entidade.length > 0 ? 
                                 data.tbl_entidade.map((index) => 
                                     <option id={index.codemp} value={index.cnpj}>
-                                        {index.nome}                                      
+                                        {index.abreviacao} - {index.nome}                                      
                                     </option>
                                     ) : <option>Nenhuma entidade cadastrada</option>
                             }
