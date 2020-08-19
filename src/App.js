@@ -21,7 +21,7 @@ class App extends Component{
 
           <Route path="/pagecli/:data" component={Pagecli}/>
 
-        </Switch>      
+        </Switch>
       </BrowserRouter>
     );
   }
