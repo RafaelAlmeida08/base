@@ -16,7 +16,7 @@
     "react-scripts": "^3.4.3",
     "react-text-mask": "^5.4.3"
   },
-  "homepage": "https://RafaelAlmeida08.github.io/base",
+  "homepage": "https://RafaelAlmeida08.github.io/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
