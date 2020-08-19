@@ -170,7 +170,6 @@ class Page1 extends Component{
                             <div className="box">
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>
-                                    <Link to="/pagecli/data">Pagecli</Link>
                                 </div>
                                 <hr />
                                 <div className="box-contato">
