@@ -19,7 +19,7 @@ class App extends Component{
         <Switch>             
           <Route exact path="/" component={Page1}/>
 
-          <Route path="/pagecli/:data" component={Pagecli}/>
+          <Route exact path="/pagecli/:data" component={Pagecli}/>
 
           <Route path="*">
             <h2>Pagina não encontrada</h2>
