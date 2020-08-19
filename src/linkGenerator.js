@@ -16,7 +16,7 @@ async function linkGenerator (data) {
     
     let link = gerarLink(data)
 
-    const r = await fetch(`https://is.gd/create.php?format=json&url=${link}`)
+    const r = await fetch(`https://is.gd/create.php?format=json&url=${link.replace('http://', 'www.')}`)
     const l = await r.json()
     return l.shorturl
 
