@@ -4,6 +4,21 @@
         width: 100% !important;
     }
 
+    #dataContato {
+        display: flex !important;
+        align-content: space-around !important;
+        flex-direction: row;
+    }
+
+    #nome, #telefone {
+        width: calc(100% / 2) !important;
+        margin: 0px 0px 0px 5px !important;
+    }
+
+    #logo {
+        display: none;
+    }
+
     #btn-group {
         flex-direction: row !important;
     }
