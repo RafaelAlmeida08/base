@@ -11,8 +11,8 @@
     }
 
     #nome, #telefone {
-        width: 40% !important;
-        margin: 0px 0px 0px 20px !important;
+        width: calc(100% / 2) !important;
+        margin: 0px 0px 0px 5px !important;
     }
 
     #logo {
