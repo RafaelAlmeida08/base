@@ -16,7 +16,7 @@ export default function CardPlano(props) {
         return total;
     }
 
-    function vender(e) {
+    function vender(e) { 
 
        window.location.href = "https://tecsaude.planium.io/web/venda/blank?tipocontratacao=ad&codigoproduto="+plano.btxplano+"&entidadecnpj="+ e.target.id + "&indicador=orcamento";
 
