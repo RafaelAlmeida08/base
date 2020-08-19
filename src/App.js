@@ -1,32 +1,37 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-import Home from './components/Home';
+import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
 import Page1 from './components/Page1';
-import Card from './components/Card';
 import Pagecli from './components/PageCli';
-import Pageselecao from './components/Pageselecao';
 import './global.css';
 
+var params = window.location.search.substring(1).split('&');
 
+console.log(params)
 
-
-class App extends Component{
-
-  render(){
+  class App extends Component{
   
-    return(
-      <BrowserRouter>
-
-        <Switch> 
-
-          <Route exact path="/" component={Page1}/>
-
-          <Route path="/pagecli/:data" component={Pagecli}/>
-
-        </Switch>
-      </BrowserRouter>
-    );
+    render(){
+      return(
+          <BrowserRouter>
+  
+            <Switch> 
+              
+              {params[0] == "" &&
+                <Route exact path="/" component={Page1}/>
+              }
+              {params[0] != "" &&
+                <Route path="/">
+                  <Pagecli data={params[0]} />
+                </Route>
+              }
+  
+            </Switch>
+          </BrowserRouter>
+  
+        );
+    }
   }
-}
+
+
 
 export default App;

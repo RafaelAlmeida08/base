@@ -1,11 +1,8 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
 import './styled.css'
 import CardPageCli from './../CardPageCli';
 
-const Pagecli = () => {
-
-   let {data} = useParams();
+const Pagecli = ({data}) => {
 
     let dados = JSON.parse(atob(data))
 

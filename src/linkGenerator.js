@@ -4,7 +4,7 @@
 
     let url = window.location.href.toString()
 
-    let base_url = `${url}pagecli/`;
+    let base_url = `${url}?`;
 
 
     const hash = btoa(JSON.stringify(data))

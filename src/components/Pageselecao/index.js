@@ -3,6 +3,7 @@ import Card from '../Card'
 import Sidebar from '../Sidebar';
 import './pagselecao.css';
 import data from '../../jsonformatter.json';
+import {useLocation} from 'react-router-dom';
 
 class Pageselecao extends Component{
 
