@@ -3,6 +3,7 @@ import '../Page1/style.css';
 import Pageselecao from '../Pageselecao';
 import InputMask from "react-input-mask";
 import data from '../../jsonformatter.json';
+import {Link} from 'react-router-dom'
 
 
 class Page1 extends Component{
@@ -110,7 +111,8 @@ class Page1 extends Component{
         return range;
     }
 
-    setTotalCred() {     
+    setTotalCred() {
+        
         document.getElementById('myModal').style.display="none";
         var range = this.setRange();
         let total = 0;
@@ -168,6 +170,7 @@ class Page1 extends Component{
                             <div className="box">
                                 <div className="box-superior">
                                     <h1>Dados básicos</h1>
+                                    <Link to="/pagecli/data">Pagecli</Link>
                                 </div>
                                 <hr />
                                 <div className="box-contato">

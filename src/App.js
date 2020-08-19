@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 import Home from './components/Home';
 import Page1 from './components/Page1';
 import Card from './components/Card';
@@ -14,16 +14,14 @@ class App extends Component{
 
   render(){
   
-    return(      
-      <BrowserRouter basename="/">
-        <Switch>             
+    return(
+      <BrowserRouter>
+
+        <Switch> 
+
           <Route exact path="/" component={Page1}/>
 
-          <Route exact path="/pagecli" component={Pagecli}/>
-
-          <Route path="*">
-            <h2>Pagina não encontrada</h2>
-          </Route>
+          <Route path="/pagecli/:data" component={Pagecli}/>
 
         </Switch>
       </BrowserRouter>
