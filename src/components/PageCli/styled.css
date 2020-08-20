@@ -4,6 +4,10 @@
     font-family: Montserrat, Helvetica, sans-serif;
 }
 
+.cardPageCli .body{
+    background-color: transparent !important;
+}
+
 .containerPageCli {
     display: flex;
 }
@@ -61,4 +65,27 @@
     overflow: auto;
     overflow: auto;
     max-width: 1280px;
+}
+
+@media(min-width: 320px) and (max-width:1024px) {
+    .containerPageCli{
+        flex-direction: column;
+
+    }
+
+    .sideBarPageCli{
+        width: 100%;
+        height: 60px;
+    }
+
+    .areaCards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .PageBody{
+        margin-top: 100px;
+    }
+
+    
 }
