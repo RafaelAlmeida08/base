@@ -18,7 +18,6 @@ class Comparativo extends Component {
                     total: '',
                     logo: '',
                     modalidade: '',
-                    logo:'',
                     id: ''
                 }
             ],
@@ -50,18 +49,17 @@ class Comparativo extends Component {
             let planos = this.props.planos;
             let total = 0;
 
-            planos.map((index) => {
+            return planos.map((index) => {
                 total = this.getTotal(index.btxplano);
                 index.preco = (total).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-            })
-            
-            return planos.map(planoInfo => (    
-                <CardPlano 
-                    plano={planoInfo} 
+
+                return <CardPlano 
+                    plano={index} 
                     passapage3={this.maisinformacoes} 
                     range={this.props.range}
                 />
-            )) 
+            })
+
         }
     }
 

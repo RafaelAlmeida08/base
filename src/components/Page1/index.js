@@ -3,8 +3,6 @@ import '../Page1/style.css';
 import Pageselecao from '../Pageselecao';
 import InputMask from "react-input-mask";
 import data from '../../jsonformatter.json';
-import {Link} from 'react-router-dom'
-
 
 class Page1 extends Component{
     constructor(props){
@@ -174,7 +172,7 @@ class Page1 extends Component{
                                 <hr />
                                 <div className="box-contato">
                                     <div className="contato-first">
-                                        <h3>Contato</h3>
+                                        <h3>Prospect</h3>
                                         <div id="div-input">
                                             <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
                                         </div>
@@ -199,7 +197,7 @@ class Page1 extends Component{
                                 
                                 <div className="box-meio">
                                     <div className="box-cidade">
-                                        <h3>Cidade</h3>
+                                        <h3>Praça</h3>
                                             <select required id="select1">
                                                 <option selected disabled>Selecione uma cidade...</option>
                                                 {
@@ -213,7 +211,7 @@ class Page1 extends Component{
                                             </select>
                                     </div>
                                     <div className="box-cred">
-                                        <h3>Beneficiários</h3>
+                                        <h3>Vidas</h3>
                                         <input 
                                             id="select2" 
                                             value={this.state.totalcred === 0 ? "" : this.state.totalcred} 

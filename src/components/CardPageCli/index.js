@@ -1,16 +1,14 @@
 import React from 'react';
-import styled from './styled.css'
+import './styled.css';
 
 export default ({dados}) => {
 
-    const verifyFnction = (e) => {
-        {console.log(dados)}
+    const verifyFunction = (e) => {
+        console.log(dados)
     }
 
-    console.log(dados)
-
     return(
-        <div id={dados.id} className="cardPageCli" onClick={verifyFnction}>
+        <div id={dados.id} className="cardPageCli" onClick={verifyFunction}>
             <div className="card-footer">
                 <span>{dados.produto}</span>
             </div>
