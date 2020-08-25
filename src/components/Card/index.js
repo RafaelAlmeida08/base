@@ -18,6 +18,7 @@ class Card extends Component{
         this.comparativo = this.comparativo.bind(this);
         this.getAbrangencia = this.getAbrangencia.bind(this);
         this.getAcomodacao = this.getAcomodacao.bind(this);
+        this.getSegmentacao = this.getSegmentacao.bind(this);
         };
 
     mostrarconteudo(id){
@@ -99,9 +100,18 @@ class Card extends Component{
     getAcomodacao(acomodacao) {
         switch (acomodacao) {
             case 'I':
-                return 'Individual';
+                return 'Enfermaria';
             case 'C':
-                return 'Coletiva';
+                return 'Apartamento';
+            default:
+                break;
+        }
+    }
+
+    getSegmentacao(segmentacao) {
+        switch (segmentacao) {
+            case 'AHCO':
+                return 'Amb + Hosp c/ Obst';
             default:
                 break;
         }
@@ -116,7 +126,7 @@ class Card extends Component{
                     data-produto={values.produto}
                     data-contratacao={values.tipocontratacao}
                     data-abrangencia={this.getAbrangencia(values.abrangencia)}
-                    data-segmentacao={values.segmentacao}
+                    data-segmentacao={this.getSegmentacao(values.segmentacao)}
                     data-acomodacao={this.getAcomodacao(values.acomodacao)}
                     data-coparticipacao={values.coparticipacao === true ? "Sim" : "Não"}
                     data-entidade={values.cnpj_entidade}

@@ -46,6 +46,8 @@ class Pageselecao extends Component{
         let cidade = this.getDataCidade();
         let entidade = this.getDataEntidade();
 
+        console.log(cidade);
+
         let planos = cidade[0].btxplanos.filter((plano) => {
             if(entidade[0].btxplanos.includes(plano)) {
                 return plano;
