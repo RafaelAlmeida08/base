@@ -28,21 +28,22 @@ class Page1 extends Component{
             },            
         };
         
-        this.modal      = this.modal.bind(this);
-        this.cadastrar  = this.cadastrar.bind(this);
-        this.contato    = this.contato.bind(this);
-        this.cidade     = this.cidade.bind(this);
-        this.telefone    = this.telefone.bind(this);
-        this.setRange   = this.setRange.bind(this);
-        this.setTotalCred = this.setTotalCred.bind(this);
-        this.setDataContato = this.setDataContato.bind(this);    
+        this.modal          = this.modal.bind(this);
+        this.cadastrar      = this.cadastrar.bind(this);
+        this.contato        = this.contato.bind(this);
+        this.cidade         = this.cidade.bind(this);
+        this.telefone       = this.telefone.bind(this);
+        this.setRange       = this.setRange.bind(this);
+        this.setTotalCred   = this.setTotalCred.bind(this);
+        this.setDataContato = this.setDataContato.bind(this);
+        this.getEstado      = this.getEstado.bind(this);
+        this.getCidadesOf   = this.getCidadesOf.bind(this);
+        this.createOptions  = this.createOptions.bind(this);
     }
 
    componentDidMount(){
         document.getElementById('container').style.display = 'none';         
     }
-
- 
 
     cadastrar(e){
         document.getElementById('page1').style.display = "none";
@@ -77,12 +78,12 @@ class Page1 extends Component{
     }
 
     cidade(event){
-        console.log(document.getElementById('select1').value);
+        console.log(document.getElementById('select-estado').value);
         this.setState(prevState => (
             {
                 contato: {
                     ...prevState.contato,
-                    cidade: document.getElementById('select1').value
+                    cidade: document.getElementById('select-estado').value
                 }
             }
         ));
@@ -127,7 +128,7 @@ class Page1 extends Component{
         let dataContato = {
             nome: document.getElementById('input-contato').value,
             telefone: document.getElementById('input-telefone').value,
-            cidade: document.getElementById('select1').value
+            cidade: document.getElementById('select-estado').value
         }
 
         this.setState({contato: dataContato});
@@ -158,6 +159,40 @@ class Page1 extends Component{
           } 
         } 
     }
+
+    getCidadesOf(estado) {
+        let cidades = [];
+        data.tbl_cidade.filter((index) => {
+            if(index.uf === estado) {
+                var objCidade = {
+                    nome: index.cidade, 
+                    ibge: index.codigo_ibge
+                }
+                cidades.push(objCidade);
+            }
+        });
+
+        return cidades;
+    }
+
+    createOptions(estado, cidade) {
+        var select = document.getElementById('select-estado');
+        var option = document.createElement('option');
+        option.value = cidade.ibge;
+        var optionText = document.createTextNode(cidade.nome + " - " + estado);
+        option.appendChild(optionText);
+        select.appendChild(option);
+    }
+
+    getEstado(e) {
+        var cidades = this.getCidadesOf(e.target.value);
+        var select = document.getElementById('select-estado');
+        select.innerHTML = '';
+        cidades.map((index) => {
+            this.createOptions(e.target.value, index);
+        });
+        select.style.display = 'unset';
+    }
     
     render(){
         return(
@@ -174,7 +209,13 @@ class Page1 extends Component{
                                     <div className="contato-first">
                                         <h3>Prospect</h3>
                                         <div id="div-input">
-                                            <input required id="input-contato" type="text" value={this.state.contato['nome']} onChange={this.contato}/>
+                                            <input 
+                                                required 
+                                                id="input-contato" 
+                                                type="text" 
+                                                value={this.state.contato['nome']} 
+                                                onChange={this.contato}
+                                            />
                                         </div>
                                     </div>
                                     <div className="contato-second">
@@ -199,15 +240,19 @@ class Page1 extends Component{
                                     <div className="box-cidade">
                                         <h3>Praça</h3>
                                             <select required id="select1">
-                                                <option selected disabled>Selecione uma cidade...</option>
-                                                {
-                                                    data.tbl_cidade.length > 0 ? 
-                                                    data.tbl_cidade.map((index) => 
-                                                        <option value={index.codigo_ibge}>
-                                                            {index.cidade + " - " + index.uf}
-                                                        </option>
-                                                    ) : <option>Nenhuma cidade cadastrada</option>
-                                                }
+                                                <option selected disabled>Selecione UF...</option>
+                                                <option value="SP" onClick={(e) => this.getEstado(e)}>
+                                                    SP
+                                                </option>
+                                                <option value="BA" onClick={(e) => this.getEstado(e)}>
+                                                    BA
+                                                </option>
+                                                <option value="DF" onClick={(e) => this.getEstado(e)}>
+                                                    DF
+                                                </option>
+                                            </select>
+                                            <select required id="select-estado">
+                                                <option selected disabled>Selecione estado...</option>
                                             </select>
                                     </div>
                                     <div className="box-cred">
@@ -284,9 +329,13 @@ class Page1 extends Component{
                                 </div>                                              
                             </div>                         
                         </div>
-                   </div>   
-               </div>
-               <Pageselecao telefone={this.state.contato.telefone} contato={this.state.contato} range={this.state.range}/>
+                    </div>   
+                </div>
+                <Pageselecao 
+                    telefone={this.state.contato.telefone} 
+                    contato={this.state.contato} 
+                    range={this.state.range}
+                />
             </>
            
             )
