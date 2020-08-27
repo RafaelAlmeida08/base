@@ -106,7 +106,7 @@ class Page3 extends Component{
     }
 
     dados(dados){
-
+        console.log(dados);
     }
 
     render(){
@@ -121,6 +121,7 @@ class Page3 extends Component{
                             <div className="conteudo conteudo-duplo">
                                 <div className="conteudo1">
                                 <span>{this.props.plano.produto}</span>
+                                <span>{this.dados(this.props.contato)}</span>
                                 </div>
                                 <div className="conteudo2">
                                 </div>                                    
@@ -228,11 +229,20 @@ class Page3 extends Component{
                                     </div>
                                     <div className="name">
                                         <span>
-                                            {this.props.plano.preco != 0
-                                                 ? <PDFDownloadLink document={<PDF data={this.props.plano}/>} fileName="plano.pdf">
+                                            {this.props.plano.preco != 0 ?
+                                                 <PDFDownloadLink 
+                                                        document={
+                                                            <PDF 
+                                                                data={this.props.plano}
+                                                                contato={this.props.contato} 
+                                                                vidas={this.props.vidas}
+                                                            />
+                                                            } 
+                                                        fileName="plano.pdf"
+                                                    >
                                                     {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
-                                                </PDFDownloadLink> : ""
-                                            }
+                                                </PDFDownloadLink>
+                                            : "" }
                                         </span>
                                     </div>
                                 </div>

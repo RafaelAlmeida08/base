@@ -129,6 +129,8 @@ class Page1 extends Component{
     }
 
     setDataContato() {
+        var option = document.getElementById('select-estado').value;
+        var cidade = document.getElementById(option).attributes['data-praca'].value;
         let dataContato = {
             nome: document.getElementById('input-contato').value,
             telefone: document.getElementById('input-telefone').value,
@@ -136,7 +138,8 @@ class Page1 extends Component{
             consultor: document.getElementById('input-consultor').value,
             telefone_consultor: document.getElementById('input-telefone-consultor').value,
             celular_consultor: document.getElementById('input-celular-consultor').value,
-            email_consultor: document.getElementById('input-email').value
+            email_consultor: document.getElementById('input-email').value,
+            praca: cidade
         }
 
         this.setState({contato: dataContato});
@@ -187,6 +190,10 @@ class Page1 extends Component{
         var select = document.getElementById('select-estado');
         var option = document.createElement('option');
         option.value = cidade.ibge;
+        option.id = cidade.ibge;
+        var praca = document.createAttribute("data-praca");
+        praca.value = cidade.nome + " - " + estado;
+        option.setAttributeNode(praca);
         var optionText = document.createTextNode(cidade.nome + " - " + estado);
         option.appendChild(optionText);
         select.appendChild(option);
@@ -221,7 +228,6 @@ class Page1 extends Component{
                                                 required 
                                                 id="input-contato" 
                                                 type="text" 
-                                                value={this.state.contato['nome']} 
                                                 className="input-text"
                                             />
                                         </div>
@@ -397,7 +403,7 @@ class Page1 extends Component{
                     telefone={this.state.contato.telefone} 
                     contato={this.state.contato} 
                     range={this.state.range}
-                    vidas={this.props.totalcred}
+                    vidas={this.state.totalcred}
                 />
             </>
            
