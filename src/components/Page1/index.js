@@ -9,9 +9,13 @@ class Page1 extends Component{
         super(props);
         this.state = {
             contato: {
-                nome: '',
-                cidade: '',
-                telefone: ''
+                nome:               '',
+                cidade:             '',
+                telefone:           '',
+                consultor:          '',
+                telefone_contato:   '',
+                celular_consultor:  '',
+                email_consultor:    ''
             },
             totalcred: 0,
             range: {
@@ -128,7 +132,11 @@ class Page1 extends Component{
         let dataContato = {
             nome: document.getElementById('input-contato').value,
             telefone: document.getElementById('input-telefone').value,
-            cidade: document.getElementById('select-estado').value
+            cidade: document.getElementById('select-estado').value,
+            consultor: document.getElementById('input-consultor').value,
+            telefone_consultor: document.getElementById('input-telefone-consultor').value,
+            celular_consultor: document.getElementById('input-celular-consultor').value,
+            email_consultor: document.getElementById('input-email').value
         }
 
         this.setState({contato: dataContato});
@@ -214,7 +222,7 @@ class Page1 extends Component{
                                                 id="input-contato" 
                                                 type="text" 
                                                 value={this.state.contato['nome']} 
-                                                onChange={this.contato}
+                                                className="input-text"
                                             />
                                         </div>
                                     </div>
@@ -263,6 +271,60 @@ class Page1 extends Component{
                                             onFocus={this.modal} 
                                             required
                                         />
+                                    </div>
+                                </div>
+                                <div className="box-corretor">
+                                    <div className="box-contato">
+                                        <div className="contato-first">
+                                            <h3>Nome do consultor:</h3>
+                                            <div id="div-input">
+                                                <input 
+                                                    required 
+                                                    id="input-consultor" 
+                                                    type="text" 
+                                                    value={this.state.contato['consultor']}
+                                                    className="input-text"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="contato-second">
+                                            <div className="box-telefone">
+                                                <h3>Telefone</h3>
+                                                <div id="div-input" >                                              
+                                                    <InputMask  
+                                                    required
+                                                    id="input-telefone-consultor"
+                                                    type="text" 
+                                                    value={this.state.contato['telefone_consultor']} 
+                                                    mask="(99) 99999-9999" 
+                                                    />
+                                                </div>                               
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                    <div className="box-meio">
+                                        <div className="box-cidade">
+                                            <h3>Celular</h3>
+                                            <div id="div-input" >                                              
+                                                <InputMask  
+                                                    id="input-celular-consultor"
+                                                    type="text" 
+                                                    value={this.state.contato['celular_consultor']} 
+                                                    mask="(99) 99999-9999" 
+                                                />
+                                            </div>   
+                                        </div>
+                                        <div className="box-cred">
+                                            <h3>E-mail</h3>
+                                            <div id="div-input">
+                                                <input 
+                                                    required 
+                                                    id="input-email" 
+                                                    type="text" 
+                                                    value={this.state.contato['email_consultor']} 
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="box-inferior">
@@ -335,6 +397,7 @@ class Page1 extends Component{
                     telefone={this.state.contato.telefone} 
                     contato={this.state.contato} 
                     range={this.state.range}
+                    vidas={this.props.totalcred}
                 />
             </>
            

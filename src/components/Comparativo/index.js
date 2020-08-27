@@ -202,7 +202,17 @@ class Comparativo extends Component {
                             </div>
                             <div className="opt-text">
                                 {this.props.planos.length > 0 && this.props.range
-                                    ?   <PDFDownloadLink document={<PDFComparativo data={this.props.planos} range={this.props.range}/>} fileName="plano.pdf" >
+                                    ?   <PDFDownloadLink 
+                                            document=
+                                            {
+                                                <PDFComparativo 
+                                                    data={this.props.planos} 
+                                                    range={this.props.range}
+                                                    contato={this.props.contato}
+                                                    vidas={this.props.vidas}
+                                                />
+                                            } 
+                                            fileName="proposta.pdf" >
                                             {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
                                         </PDFDownloadLink> 
                                     : "" }

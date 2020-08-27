@@ -97,7 +97,10 @@ class Pageselecao extends Component{
                         clickedPlan={this.state.clickedPlan} 
                         telefone={this.props.telefone} 
                         planos={this.state.planos}                  
-                        range={this.props.range}/>
+                        range={this.props.range}
+                        contato={this.props.contato}
+                        vidas={this.props.vidas}
+                    />
                 </div>
             </div>
         );
