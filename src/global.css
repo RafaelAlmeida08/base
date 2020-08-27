@@ -314,14 +314,14 @@ button:hover {
     margin: 20px 0px;
 }
 
-#search {
+.search {
     width: 100%;
     border: 2px solid var(--color-primary);
     margin: 15px 0px;
     border-radius: 5px;
 }
 
-#search > input {
+.search > input {
     appearance: none;
     outline: none;
     box-shadow: 0 0 0 0;
@@ -332,10 +332,10 @@ button:hover {
     padding: 3px;
 }
 
-#search > span {
+.search > span {
     margin: 8px;
 }
-#search > span > img {
+.search > span > img {
     width: 15px;
     height: 15px;
 }
