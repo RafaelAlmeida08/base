@@ -329,9 +329,9 @@ export default function PDF(props) {
                 <View style={styles.logoWrapper}>
                   <View style={styles.textWrapper}>                  
                     <Text style={styles.textCorretor}>Qualquer dúvida, entre em contato com nosso consultor:</Text>
-                    <Text>Telefone: {props.data.telefone_corretor}</Text>
-                    <Text>Celular: {props.data.celular_corretor}</Text>
-                    <Text>E-mail: {props.data.email_corretor}</Text>
+                    <Text>Telefone: {props.contato.telefone_consultor}</Text>
+                    <Text>Celular: {props.contato.celular_consultor}</Text>
+                    <Text>E-mail: {props.contato.email_consultor}</Text>
                   </View>
                 </View>
               </View>
