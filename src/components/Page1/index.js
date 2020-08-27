@@ -128,18 +128,21 @@ class Page1 extends Component{
        
     }
 
-    setDataContato() {
-        let dataContato = {
-            nome: document.getElementById('input-contato').value,
-            telefone: document.getElementById('input-telefone').value,
-            cidade: document.getElementById('select-estado').value,
-            consultor: document.getElementById('input-consultor').value,
-            telefone_consultor: document.getElementById('input-telefone-consultor').value,
-            celular_consultor: document.getElementById('input-celular-consultor').value,
-            email_consultor: document.getElementById('input-email').value
-        }
+    setDataContato() {            
+            var option = document.getElementById('select-estado').value;
+            var cidade = document.getElementById(option).attributes['data-praca'].value;
+            let dataContato = {
+                nome: document.getElementById('input-contato').value,
+                telefone: document.getElementById('input-telefone').value,
+                cidade: document.getElementById('select-estado').value,
+                consultor: document.getElementById('input-consultor').value,
+                telefone_consultor: document.getElementById('input-telefone-consultor').value,
+                celular_consultor: document.getElementById('input-celular-consultor').value,
+                email_consultor: document.getElementById('input-email').value,
+                praca: cidade
+            }
+            this.setState({contato: dataContato});
 
-        this.setState({contato: dataContato});
     }
 
     pagina2(e){
@@ -187,6 +190,10 @@ class Page1 extends Component{
         var select = document.getElementById('select-estado');
         var option = document.createElement('option');
         option.value = cidade.ibge;
+        option.id = cidade.ibge;
+        var praca = document.createAttribute("data-praca");
+        praca.value = cidade.nome + " - " + estado;
+        option.setAttributeNode(praca);
         var optionText = document.createTextNode(cidade.nome + " - " + estado);
         option.appendChild(optionText);
         select.appendChild(option);
@@ -396,7 +403,7 @@ class Page1 extends Component{
                     telefone={this.state.contato.telefone} 
                     contato={this.state.contato} 
                     range={this.state.range}
-                    vidas={this.props.totalcred}
+                    vidas={this.state.totalcred}
                 />
             </>
            

@@ -3,7 +3,7 @@
         flex-direction: row !important;
     }
 
-    #search{
+    .search{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -19,11 +19,11 @@
     }
 }
 
-#search{
+.search{
     overflow: hidden;
 }
 
-#search select{
+.search select{
     background-color: transparent;
     border: none;
 }
@@ -48,4 +48,8 @@
 
 hr {
     color: var(--color-primary);
+}
+
+#entidadeWrapper {
+    display: none;
 }

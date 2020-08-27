@@ -263,7 +263,7 @@ export default function PDF(props) {
           <Text style={styles.presentationText}>
             COTAÇÃO | PLANOS COLETIVOS POR ADESÃO
           </Text>
-        </View>
+        </View>  
       </Page>
       <Page size="A4" orientation="landscape" style={styles.defaultPage}>
         <View style={styles.secondPage}>
@@ -306,7 +306,7 @@ export default function PDF(props) {
                   <Text style={styles.demonstrationCardText}>PLANO: {plano.produto}</Text>
                   <Text style={styles.demonstrationCardText}>REGISTRO ANS: {plano.registroans}</Text>
                   <Text style={styles.demonstrationCardText}>QUANTIDADE DE VIDAS: {props.vidas}</Text>
-                  <Text style={styles.demonstrationCardText}>PRAÇA: {plano.praca}</Text>
+                  <Text style={styles.demonstrationCardText}>PRAÇA: {props.contato.praca}</Text>
                   <Text style={styles.demonstrationCardText}>SEGMENTAÇÃO: {plano.segmentacao}</Text>
                   <Text style={styles.demonstrationCardText}>ABRANGÊNCIA: {plano.abrangencia}</Text>
                   <Text style={styles.demonstrationCardText}>COPARTICIPAÇÃO: {plano.coparticipacao}</Text>
