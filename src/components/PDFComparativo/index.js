@@ -6,6 +6,8 @@ import imageContent from '../images/familia.jpg';
 import imageFooter from '../images/logo_header.png';
 
 export default function PDF(props) {
+  const {contato, vidas} = props;
+
   const styles = StyleSheet.create({
     defaultPage: {
       backgroundColor: "#ffffff",
@@ -305,8 +307,8 @@ export default function PDF(props) {
                 <View style={styles.demonstrationCard} wrap={false}>
                   <Text style={styles.demonstrationCardText}>PLANO: {plano.produto}</Text>
                   <Text style={styles.demonstrationCardText}>REGISTRO ANS: {plano.registroans}</Text>
-                  <Text style={styles.demonstrationCardText}>QUANTIDADE DE VIDAS: {props.vidas}</Text>
-                  <Text style={styles.demonstrationCardText}>PRAÇA: {props.contato.praca}</Text>
+                  <Text style={styles.demonstrationCardText}>QUANTIDADE DE VIDAS: {vidas}</Text>
+                  <Text style={styles.demonstrationCardText}>PRAÇA: {contato.praca}</Text>
                   <Text style={styles.demonstrationCardText}>SEGMENTAÇÃO: {plano.segmentacao}</Text>
                   <Text style={styles.demonstrationCardText}>ABRANGÊNCIA: {plano.abrangencia}</Text>
                   <Text style={styles.demonstrationCardText}>COPARTICIPAÇÃO: {plano.coparticipacao}</Text>
@@ -329,9 +331,9 @@ export default function PDF(props) {
                 <View style={styles.logoWrapper}>
                   <View style={styles.textWrapper}>                  
                     <Text style={styles.textCorretor}>Qualquer dúvida, entre em contato com nosso consultor:</Text>
-                    <Text>Telefone: {props.contato.telefone_consultor}</Text>
-                    <Text>Celular: {props.contato.celular_consultor}</Text>
-                    <Text>E-mail: {props.contato.email_consultor}</Text>
+                    <Text>Telefone: {contato.telefone_consultor}</Text>
+                    <Text>Celular: {contato.celular_consultor}</Text>
+                    <Text>E-mail: {contato.email_consultor}</Text>
                   </View>
                 </View>
               </View>

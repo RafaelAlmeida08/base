@@ -180,6 +180,7 @@ class Comparativo extends Component {
     test() {
         console.log(this.props.contato);
         console.log(this.props.data2);
+        console.log(this.props.vidas);
     }
 
     render() {
