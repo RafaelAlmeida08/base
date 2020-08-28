@@ -43,7 +43,7 @@
     height: 100%;
 }
 
-h1 {
+.textInicial {
     color: var(--color-primary);
     font-size: 14pt;
     margin: 20px auto;
