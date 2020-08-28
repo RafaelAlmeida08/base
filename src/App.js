@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
-import Page1 from './components/Page1';
+import PageInicial from './components/PageInicial';
 import Pagecli from './components/PageCli';
 import './global.css';
 
@@ -17,7 +17,7 @@ console.log(params)
             <Switch> 
               
               {params[0] == "" &&
-                <Route exact path="/" component={Page1}/>
+                <Route exact path="/" component={PageInicial}/>
               }
               {params[0] != "" &&
                 <Route path="/">
