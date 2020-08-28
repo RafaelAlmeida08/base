@@ -70,11 +70,6 @@
     }
 }
 
-#PrimeiroConteudo{
-    position: fixed;
-    top: 0;
-}
-
 input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
@@ -96,7 +91,7 @@ input {
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     max-width: 715px;
     height: 330px;
     border: 1px solid #d4dbe0;
@@ -281,10 +276,6 @@ input[type=text]:focus {
 
 #page1{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
 }
 
 #PrimeiroConteudo {
