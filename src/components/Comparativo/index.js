@@ -30,7 +30,6 @@ class Comparativo extends Component {
         this.compartilharWpp = this.compartilharWpp.bind(this);
         this.compartilhar = this.compartilhar.bind(this);
         this.getTotal = this.getTotal.bind(this);
-        this.test = this.test.bind(this);
     }
 
     getPlanos() {
@@ -177,16 +176,9 @@ class Comparativo extends Component {
         }
     }
 
-    test() {
-        console.log(this.props.contato);
-        console.log(this.props.data2);
-        console.log(this.props.vidas);
-    }
-
     render() {
         return(
             <div id="comparativo">
-                {this.test()}               
                 <Page3
                     plano={this.state.data2}
                     contato={this.props.contato}

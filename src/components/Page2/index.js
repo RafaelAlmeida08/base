@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Modal from '../Modal';
-import data from '../../jsonformatter.json';
 
 class Page2 extends Component{
     constructor(props){

@@ -200,6 +200,7 @@ class Page1 extends Component{
     }
 
     getEstado(e) {
+        console.log(e.target.value);
         var cidades = this.getCidadesOf(e.target.value);
         var select = document.getElementById('select-estado');
         select.innerHTML = '';
@@ -253,15 +254,15 @@ class Page1 extends Component{
                                 <div className="box-meio">
                                     <div className="box-cidade">
                                         <h3>Praça</h3>
-                                            <select required id="select1">
+                                            <select required id="select1" onChange={(e) => this.getEstado(e)}>
                                                 <option selected disabled>Selecione UF...</option>
-                                                <option value="SP" onClick={(e) => this.getEstado(e)}>
+                                                <option value="SP">
                                                     SP
                                                 </option>
-                                                <option value="BA" onClick={(e) => this.getEstado(e)}>
+                                                <option value="BA">
                                                     BA
                                                 </option>
-                                                <option value="DF" onClick={(e) => this.getEstado(e)}>
+                                                <option value="DF">
                                                     DF
                                                 </option>
                                             </select>

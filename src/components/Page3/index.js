@@ -22,7 +22,8 @@ class Page3 extends Component{
         this.imprimir                = this.imprimir.bind(this);
         this.informacoes             = this.informacoes.bind(this);
         this.optcompartilharmobile   = this.optcompartilharmobile.bind(this);
-        this.dados                   = this.dados.bind(this);
+        this.dadosContato            = this.dadosContato.bind(this);
+        this.dadosPlanos             = this.dadosPlanos.bind(this);
     }
 
     componentDidMount(){
@@ -105,8 +106,33 @@ class Page3 extends Component{
         document.getElementById('page3').style.display='none';
     }
 
-    dados(dados){
-        console.log(dados);
+    dadosContato(dados){
+        var obj = {
+            nome: dados.nome,
+            telefone: dados.telefone,
+            cidade: dados.cidade,
+            consultor: dados.consultor,
+            telefone_consultor: dados.telefone_consultor,
+            celular_consultor: dados.celular_consultor,
+            email_consultor: dados.email_consultor,
+            praca: dados.praca
+        }
+        
+        return obj;
+    }
+
+    dadosPlanos(dados) {
+        var obj = {
+            produto: dados.produto,
+            registroans: dados.registroans,
+            segmentacao: dados.segmentacao,
+            abrangencia: dados.abrangencia,
+            coparticipacao: dados.coparticipacao,
+            acomodacao: dados.acomodacao,
+            valor: dados.preco
+        }
+
+        return obj;
     }
 
     render(){
@@ -121,7 +147,6 @@ class Page3 extends Component{
                             <div className="conteudo conteudo-duplo">
                                 <div className="conteudo1">
                                 <span>{this.props.plano.produto}</span>
-                                <span>{this.dados(this.props.contato)}</span>
                                 </div>
                                 <div className="conteudo2">
                                 </div>                                    
@@ -233,8 +258,8 @@ class Page3 extends Component{
                                                  <PDFDownloadLink 
                                                         document={
                                                             <PDF 
-                                                                data={this.props.plano}
-                                                                contato={this.props.contato} 
+                                                                plano={this.dadosPlanos(this.props.plano)}
+                                                                dados={this.dadosContato(this.props.contato)} 
                                                                 vidas={this.props.vidas}
                                                             />
                                                             } 

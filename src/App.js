@@ -6,8 +6,6 @@ import './global.css';
 
 var params = window.location.search.substring(1).split('&');
 
-console.log(params)
-
   class App extends Component{
   
     render(){

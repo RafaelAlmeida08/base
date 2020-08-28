@@ -5,8 +5,6 @@ import imageContent from '../images/familia.jpg';
 import imageFooter from '../images/logo_header.png';
 
 export default function PDF(props) {
-  const {contato, vidas} = props;
-
   const styles = StyleSheet.create({
     defaultPage: {
       backgroundColor: "#ffffff",
@@ -140,6 +138,14 @@ export default function PDF(props) {
       fontWeight: 600,
       marginBottom: 7
     },
+    demonstrationCardTextFooter: {
+      color: '#fffffff',
+      fontSize: 17,
+      fontWeight: 600,
+      marginTop: 7,
+      marginBottom: 7,
+      textAlign: "center"
+    },
     demonstrationFooter: {
       width:'100%',
       height: '60px',
@@ -194,7 +200,7 @@ export default function PDF(props) {
           <View style={styles.content}>
             <View style={styles.contentTextWrapper}>
               <Text style={styles.textTitle}>
-                Olá, {props.contato.nome}
+                 Olá, {props.dados.nome ? props.dados.nome : "Nome do Prospect"}
               </Text>
               <Text style={styles.textContent}>
                 Somos a  TECSAÚDE. Uma parceira inovadora e tecnológica,  
@@ -226,16 +232,24 @@ export default function PDF(props) {
           <View style={styles.demonstrationCardWrapper} >
             { 
                 <View style={styles.demonstrationCard} wrap={false}>
-                  <Text style={styles.demonstrationCardText}>PLANO: {props.data['produto']}</Text>
-                  <Text style={styles.demonstrationCardText}>REGISTRO ANS: {props.data.registroans}</Text>
-                  <Text style={styles.demonstrationCardText}>QUANTIDADE DE VIDAS: {vidas}</Text>
-                  <Text style={styles.demonstrationCardText}>PRAÇA: {contato.praca}</Text>
-                  <Text style={styles.demonstrationCardText}>SEGMENTAÇÃO: {props.data.segmentacao}</Text>
-                  <Text style={styles.demonstrationCardText}>ABRANGÊNCIA: {props.data.abrangencia}</Text>
-                  <Text style={styles.demonstrationCardText}>COPARTICIPAÇÃO: {props.data.coparticipacao}</Text>
-                  <Text style={styles.demonstrationCardText}>ACOMODAÇÃO: {props.data.acomodacao}</Text>
-                  <Text style={styles.demonstrationCardText}>VALOR: {props.data.preco}</Text>
-                  <Text style={styles.demonstrationCardText}>RESUMO DE REDE</Text>
+                  <Text style={styles.demonstrationCardText}>
+                    PLANO: {props.plano.produto ? props.plano.produto : "Nome do Plano"}
+                  </Text>
+                  <Text style={styles.demonstrationCardText}>
+                    REGISTRO ANS: {props.plano.registroans ? props.plano.registroans : "ANS"}
+                  </Text>
+                  <Text style={styles.demonstrationCardText}>
+                    QUANTIDADE DE VIDAS: {props.vidas}
+                  </Text>
+                  <Text style={styles.demonstrationCardText}>
+                    PRAÇA: {props.dados.praca}
+                  </Text>
+                  <Text style={styles.demonstrationCardText}>SEGMENTAÇÃO: {props.plano.segmentacao}</Text>
+                  <Text style={styles.demonstrationCardText}>ABRANGÊNCIA: {props.plano.abrangencia}</Text>
+                  <Text style={styles.demonstrationCardText}>COPARTICIPAÇÃO: {props.plano.coparticipacao}</Text>
+                  <Text style={styles.demonstrationCardText}>ACOMODAÇÃO: {props.plano.acomodacao}</Text>
+                  <Text style={styles.demonstrationCardText}>VALOR: {props.plano.valor}</Text>
+                  <Text style={styles.demonstrationCardTextFooter}>RESUMO DE REDE</Text>
                 </View>
               }
           </View>
@@ -251,9 +265,9 @@ export default function PDF(props) {
                 <View style={styles.logoWrapper}>
                   <View style={styles.textWrapper}>                  
                     <Text style={styles.textCorretor}>Qualquer dúvida, entre em contato com nosso consultor:</Text>
-                    <Text>Telefone: {contato['telefone_consultor']}</Text>
-                    <Text>Celular: {contato.celular_consultor}</Text>
-                    <Text>E-mail: {contato.email_consultor}</Text>
+                    <Text>Telefone: {props.dados.telefone_consultor}</Text>
+                    <Text>Celular: {props.dados.celular_consultor}</Text>
+                    <Text>E-mail: {props.dados.email_consultor}</Text>
                   </View>
                 </View>
               </View>
