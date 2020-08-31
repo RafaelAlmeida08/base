@@ -342,7 +342,7 @@ class Page3 extends Component{
                                     <i id="downarrow1" onClick={this.dadoshospitalares} className="arrow down"></i>
                                 </div>
                         </div>
-                            <div id="dadoshospitalares" className="hospitais">
+                            <div id="dadoshospitalares" >
                                 {this.redes()}
                             </div>
                     </div>

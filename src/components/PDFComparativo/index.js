@@ -36,7 +36,7 @@ export default function PDF(props) {
     },
     logo: {
       width: '240px',
-      height: '120px',
+      height: '100px',
       display: 'block',
       marginHorizontal: 'auto',
       marginBottom: 0
