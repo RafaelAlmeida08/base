@@ -86,7 +86,7 @@ export default function PDF(props) {
     },
     imageContent: {
       width: '240px',
-      height: '220px',
+      height: '200px',
       marginTop: 80,
       marginLeft: -14,
       borderRadius: 20
