@@ -28,13 +28,15 @@
         padding: 20px 0px !important;
         height: auto !important;
     }
-
+ 
     .btn > button {
         width: 100% !important;
         height: 100% !important;
     }
 }
-
+table {
+    width: 100%;
+}
 .coluna-card{
     display: flex;
     flex-direction: column;

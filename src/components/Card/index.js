@@ -197,7 +197,7 @@ class Card extends Component{
 
                 </div>
                 <button id="btn-1" onClick={ () => {
-                     document.getElementById('PrimeiroConteudo').style.display = '';
+                     document.getElementById('PrimeiroConteudo').style.display = 'unset';
                      document.getElementById('container').style.display = 'none';                     
                 }} >Voltar</button>
                 <div id="wrapper-comparativo">
