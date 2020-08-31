@@ -24,6 +24,8 @@ class Page3 extends Component{
         this.optcompartilharmobile   = this.optcompartilharmobile.bind(this);
         this.dadosContato            = this.dadosContato.bind(this);
         this.dadosPlanos             = this.dadosPlanos.bind(this);
+        this.redes                   = this.redes.bind(this); 
+        this.showRedes               = this.showRedes.bind(this); 
     }
 
     componentDidMount(){
@@ -35,16 +37,14 @@ class Page3 extends Component{
 
     dadoshospitalares(){
         var a = document.getElementById('dadoshospitalares');
-        if(a.style.display===''){
+        if(a.style.display === ''){
             document.getElementById('dadoshospitalares').style.display  = 'initial';
             document.getElementById('rightarrow1').style.display        = 'none';
             document.getElementById('downarrow1').style.display         = 'block'
-            document.getElementById('dropdown2').style.top              = '88%';
         }else{
             document.getElementById('dadoshospitalares').style.display  = '';
             document.getElementById('rightarrow1').style.display        = 'block';
             document.getElementById('downarrow1').style.display         = 'none'
-            document.getElementById('dropdown2').style.top              = '77%';
         }
 
 
@@ -135,6 +135,163 @@ class Page3 extends Component{
         return obj;
     }
 
+    showRedes(redes) {
+        return (
+            redes.map((rede) => {
+               return <p>{rede.hospital} | {rede.regiao} | {rede.municipio}</p>
+            })
+        );
+    }
+
+    redes() {
+        var redes = [];
+        var uf = this.props.contato.praca ? this.props.contato.praca : "";
+        var plano = this.props.plano.produto ? this.props.plano.produto : "" ;
+        if (uf.includes("SP")) {
+            if(plano.includes("Estilo")) {
+                redes.push.apply(redes, [
+                    {
+                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. LeForte",
+                        regiao: "Oeste",
+                        municipio: "São Paulo" 
+                    }
+                ]);
+                console.log(redes);
+            } else if(plano.includes("Absoluto")) {
+                redes.push.apply(redes, [
+                    {
+                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. LeForte",
+                        regiao: "Oeste",
+                        municipio: "São Paulo" 
+                    },
+                    {
+                        hospital: "Hosp. e Mat. Santa Joana",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Ipiranga",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Santana",
+                        regiao: "Norte",
+                        municipio: "São Paulo"
+                    }
+                ]);
+            } else if (plano.includes("Superior")) {
+                redes.push.apply(redes, [
+                    {
+                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. LeForte",
+                        regiao: "Oeste",
+                        municipio: "São Paulo" 
+                    },
+                    {
+                        hospital: "Hosp. e Mat. Santa Joana",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Ipiranga",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Santana",
+                        regiao: "Norte",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Infantil Sabará",
+                        regiao: "Oeste",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Santa Catarina",
+                        regiao: "Centro",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Camilo Pompéia",
+                        regiao: "Oeste",
+                        municipio: "São Paulo"
+                    }
+                ]);
+            } else if (plano.includes("Executivo")) {
+                redes.push.apply(redes, [
+                    {
+                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. LeForte",
+                        regiao: "Oeste",
+                        municipio: "São Paulo" 
+                    },
+                    {
+                        hospital: "Hosp. e Mat. Santa Joana",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Ipiranga",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. São Camilo | Santana",
+                        regiao: "Norte",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Infantil Sabará",
+                        regiao: "Oeste",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Santa Catarina",
+                        regiao: "Centro",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Camilo Pompéia",
+                        regiao: "Oeste",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Israelita Albert Einstein | Unidade Morumbi",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    },
+                    {
+                        hospital: "Hosp. Sirio-Libanês",
+                        regiao: "Sul",
+                        municipio: "São Paulo"
+                    }
+                ]);
+            }
+
+            return this.showRedes(redes);
+        }
+    }
+
     render(){
         return(
             <div id="TerceiroConteudo">
@@ -175,42 +332,19 @@ class Page3 extends Component{
                             <div className="conteudo">
                                 <span>{this.props.plano.coparticipacao}</span>
                             </div>
-                        </div>{/*
+                        </div>
                         <div className="linha hospitalares">
                             <div className="titulo">
-                                <label>Hospitalares</label>
-                            </div>
-                            <div className="conteudo conteudo-duplos">
-                                <div className="conteudo1">
-                                    <span>144 hospitais</span>
-                                </div>
-                                <div className="conteudo2">
-                                    <span>28 Laboratórios</span>
-                                </div>
+                                <label>Hospitais</label>
                             </div>
                                 <div className="dropdown" id="dropdown1">
                                     <i id="rightarrow1" onClick={this.dadoshospitalares} className="arrow right"></i>
                                     <i id="downarrow1" onClick={this.dadoshospitalares} className="arrow down"></i>
                                 </div>
                         </div>
-                            <div id="dadoshospitalares" className="linha hospitalares">
-                                <h1>Algo aqui</h1>
+                            <div id="dadoshospitalares" className="hospitalares">
+                                {this.redes()}
                             </div>
-                        <div className="linha valores">
-                            <div className="titulo">
-                                <label>Valores</label>
-                            </div>
-                            <div className="conteudo">
-                                <span>Algo aqui</span>
-                            </div>
-                            <div className="dropdown" id="dropdown2">
-                                <i id="rightarrow2" onClick={this.dadosvalores} className="arrow right"></i>
-                                <i id="downarrow2" onClick={this.dadosvalores} className="arrow down"></i>
-                            </div>
-                        </div>
-                            <div id="dadosvalores" className="linha valores">
-                                <h1>algo</h1>
-                        </div>*/}
                     </div>
                     <div className="footer">
                         <div className="conteudo-valor">
@@ -287,37 +421,27 @@ class Page3 extends Component{
                                 <img src={require('../images/share.png')} alt="bullets"/>
                             </div>                            
                             <div id="optmobile">
-                                <div className="opt1">
-                                    <div className="icon">
-                                        <img src={require('../images/email.svg')} alt="email"/>
-                                    </div>
-                                    <div className="name">
-                                        <span onClick={this.enviaremail}>Enviar por e-mail</span>
-                                    </div>
+                            <div className="opt1">
+                                <div className="icon-info">
+                                        <span className="icon opt-pdf"></span>
                                 </div>
-                                <div className="opt1">
-                                    <div className="icon">
-                                        <img src={require('../images/compartilhar.svg')} alt="compartilhar"/>
-                                    </div>
-                                    <div className="name">
-                                        <span onClick={this.compartilhar} >Compartilhar</span>
-                                    </div>
-                                </div>
-                                <div className="opt1">
-                                    <div className="icon">
-                                        <img src={require('../images/imprimir.svg')} alt="imprimir"/>
-                                    </div>
-                                    <div className="name">
-                                        <span onClick={this.imprimir}>Imprimir</span>
-                                    </div>
-                                </div>
-                                <div className="opt1">
-                                    <div className="icon">
-                                        <img src={require('../images/pdf.svg')} alt="imprimir"/>
-                                    </div>
-                                    <div className="name">
-                                        <span>
-                                        </span>
+                                <div className="name">
+                                    <span>
+                                        {this.props.plano.preco != 0 ?
+                                            <PDFDownloadLink 
+                                                document={
+                                                    <PDF 
+                                                        plano={this.dadosPlanos(this.props.plano)}
+                                                        dados={this.dadosContato(this.props.contato)} 
+                                                        vidas={this.props.vidas}
+                                                    />
+                                                } 
+                                                fileName="plano.pdf"
+                                            >
+                                                {({ blob, url, loading, error }) => (loading ? 'Carregando documento...' : 'PDF')}
+                                            </PDFDownloadLink>
+                                            : "" }
+                                    </span>
                                     </div>
                                 </div>
                             </div>

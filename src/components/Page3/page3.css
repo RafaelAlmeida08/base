@@ -181,3 +181,7 @@
 .opt1:hover .opt-pdf {
     background-image: url('../images/pdf-branco.svg') !important;
 }
+
+#dadoshospitalares > p {
+    text-align: center;
+}

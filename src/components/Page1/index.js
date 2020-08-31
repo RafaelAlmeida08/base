@@ -289,7 +289,6 @@ class Page1 extends Component{
                                                     required 
                                                     id="input-consultor" 
                                                     type="text" 
-                                                    value={this.state.contato['consultor']}
                                                     className="input-text"
                                                 />
                                             </div>
