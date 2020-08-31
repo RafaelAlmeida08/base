@@ -35,7 +35,7 @@ export default function PDF(props) {
       borderBottom: '14 solid #ffffff'
     },
     logo: {
-      width: '200px',
+      width: '240px',
       height: '120px',
       display: 'block',
       marginHorizontal: 'auto',
@@ -85,8 +85,8 @@ export default function PDF(props) {
       color: '#ffffff'
     },
     imageContent: {
-      width: '280px',
-      height: '250px',
+      width: '240px',
+      height: '220px',
       marginTop: 80,
       marginLeft: -14,
       borderRadius: 20
