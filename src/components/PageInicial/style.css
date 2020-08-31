@@ -1,3 +1,10 @@
+@media (min-width: 320px) and (max-width: 479px){
+    #LogoInicial {
+        width: 70% !important;
+    }
+}
+
+
 #wrapperInicial {
     height: 60%;
     width: 100%;
@@ -16,7 +23,7 @@
 }
 
 #LogoInicial {
-    width: 350px;
+    width: 30%;
     height: 70%;
     display: block;
     margin: 20px auto 0;

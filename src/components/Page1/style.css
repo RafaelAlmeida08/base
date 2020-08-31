@@ -207,7 +207,9 @@ input {
     margin-bottom: 30px;
 }
 
-.box-contato, .box-meio h3{
+.box-contato, .box-meio label{
+    font-weight: 600;
+    font-size: 13pt;
     color: var(--color-primary);
 }
 
@@ -219,7 +221,7 @@ input {
     width: 50%;
 }
 
-input[type=text] {
+input[type=text] , input[type=email] {
     font-size: 11pt;
     border-bottom: 1px solid var(--color-primary);
     transition: all 0.5s;
@@ -233,7 +235,7 @@ input[type=text] {
     box-shadow: 0 0 0 0;
 }
 
-input[type=text]:focus {
+input[type=text]:focus , input[type=text]:focus {
     background: #1c336224;
     border-radius: 3px;
 }

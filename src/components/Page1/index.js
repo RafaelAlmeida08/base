@@ -221,9 +221,12 @@ class Page1 extends Component{
                                     <h1>Dados básicos</h1>
                                 </div>
                                 <hr />
+                                <p>( <sup>*</sup> ) Campos obrigatório</p>
                                 <div className="box-contato">
                                     <div className="contato-first">
-                                        <h3>Prospect</h3>
+                                        <label>
+                                            Prospect <sup>*</sup>
+                                        </label>
                                         <div id="div-input">
                                             <input 
                                                 required 
@@ -235,15 +238,15 @@ class Page1 extends Component{
                                     </div>
                                     <div className="contato-second">
                                         <div className="box-telefone">
-                                            <h3>Telefone</h3>
+                                            <label>
+                                                Telefone <sup>*</sup>
+                                            </label>
                                             <div id="div-input" >                                              
                                                 <InputMask  
-                                                required
-                                                id="input-telefone"
-                                                type="text" 
-                                                value={this.state.contato['telefone']} 
-                                                onChange={this.telefone}  
-                                                mask="(99) 99999-9999" 
+                                                    required
+                                                    id="input-telefone"
+                                                    type="text" 
+                                                    mask="(99) 99999-9999"
                                                 />
                                             </div>
                                                                             
@@ -253,7 +256,9 @@ class Page1 extends Component{
                                 
                                 <div className="box-meio">
                                     <div className="box-cidade">
-                                        <h3>Praça</h3>
+                                        <label>
+                                            Praça <sup>*</sup>
+                                        </label>
                                             <select required id="select1" onChange={(e) => this.getEstado(e)}>
                                                 <option selected disabled>Selecione UF...</option>
                                                 <option value="SP">
@@ -271,7 +276,9 @@ class Page1 extends Component{
                                             </select>
                                     </div>
                                     <div className="box-cred">
-                                        <h3>Vidas</h3>
+                                        <label>
+                                            Vidas <sup>*</sup>
+                                        </label>
                                         <input 
                                             id="select2" 
                                             value={this.state.totalcred === 0 ? "" : this.state.totalcred} 
@@ -283,7 +290,9 @@ class Page1 extends Component{
                                 <div className="box-corretor">
                                     <div className="box-contato">
                                         <div className="contato-first">
-                                            <h3>Nome do consultor:</h3>
+                                            <label>
+                                                Nome do consultor <sup>*</sup>
+                                            </label>
                                             <div id="div-input">
                                                 <input 
                                                     required 
@@ -295,13 +304,14 @@ class Page1 extends Component{
                                         </div>
                                         <div className="contato-second">
                                             <div className="box-telefone">
-                                                <h3>Telefone</h3>
+                                                <label for="input-telefone-consultor">
+                                                    Telefone <sup>*</sup>
+                                                </label>
                                                 <div id="div-input" >                                              
                                                     <InputMask  
                                                     required
                                                     id="input-telefone-consultor"
                                                     type="text" 
-                                                    value={this.state.contato['telefone_consultor']} 
                                                     mask="(99) 99999-9999" 
                                                     />
                                                 </div>                               
@@ -310,24 +320,26 @@ class Page1 extends Component{
                                     </div>
                                     <div className="box-meio">
                                         <div className="box-cidade">
-                                            <h3>Celular</h3>
+                                            <label for="input-celular-consultor">
+                                                Celular
+                                            </label>
                                             <div id="div-input" >                                              
                                                 <InputMask  
                                                     id="input-celular-consultor"
                                                     type="text" 
-                                                    value={this.state.contato['celular_consultor']} 
                                                     mask="(99) 99999-9999" 
                                                 />
                                             </div>   
                                         </div>
                                         <div className="box-cred">
-                                            <h3>E-mail</h3>
+                                            <label for="input-email">
+                                                E-mail <sup>*</sup>
+                                            </label>
                                             <div id="div-input">
                                                 <input 
                                                     required 
                                                     id="input-email" 
-                                                    type="text" 
-                                                    value={this.state.contato['email_consultor']} 
+                                                    type="email" 
                                                 />
                                             </div>
                                         </div>
