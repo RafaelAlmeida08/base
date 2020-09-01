@@ -92,6 +92,8 @@ class Card extends Component{
                 return 'Grupo de Municípios';
             case 'N':
                 return 'Nacional';
+            case 'M':
+                return 'Municipal';
             default:
                 break;
         }

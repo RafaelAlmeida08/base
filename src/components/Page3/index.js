@@ -283,7 +283,7 @@ class Page3 extends Component{
 
     redesBA(plano) {
         var redes = [];
-        if (plano.includes("Classico Reconcavo")) {
+        if (plano.includes("Classico Reconcavo") || plano.includes("Clássico Reconcavo")) {
             redes.push.apply(redes, [
                 {
                     hospital: "Hosp. Unimed de Feira de Santana",
@@ -296,8 +296,7 @@ class Page3 extends Component{
                     municipio: "Santo Antonio de Jesus"
                 }
             ]);
-            console.log("Primeiro");
-        } else if (plano.includes("Clássico Baixo Sul")) {
+        } else if (plano.includes("Clássico Baixo Sul") || plano.includes("Classico Baixo Sul")) {
             redes.push.apply(redes, [
                 {
                     hospital: "Sta. Casa de Misericórdia de Ilhéus",
@@ -310,7 +309,6 @@ class Page3 extends Component{
                     municipio: "Itabuna"
                 }
             ]);
-            console.log("Segundo");
         } else if (plano.includes("Classico Salvador")) {
             redes.push.apply(redes, [
                 {
@@ -760,9 +758,22 @@ class Page3 extends Component{
 
     showRedes(redes) {
         return (
-            redes.map((rede) => {
-               return <p>{rede.hospital} | {rede.regiao} | {rede.municipio}</p>
-            })
+            <>
+                <div className="linha hospitalares">
+                <div className="titulo">
+                    <label>Hospitais</label>
+                </div>
+                    <div className="dropdown" id="dropdown1">
+                        <i id="rightarrow1" onClick={this.dadoshospitalares} className="arrow right"></i>
+                        <i id="downarrow1" onClick={this.dadoshospitalares} className="arrow down"></i>
+                    </div>
+                </div>
+                <div id="dadoshospitalares" >
+                    {redes.map((rede) => {
+                        return <p>{rede.hospital} | {rede.regiao} | {rede.municipio}</p>
+                    })}
+                </div>
+            </>
         );
     }
 
@@ -819,18 +830,7 @@ class Page3 extends Component{
                                 <span>{this.props.plano.coparticipacao}</span>
                             </div>
                         </div>
-                        <div className="linha hospitalares">
-                            <div className="titulo">
-                                <label>Hospitais</label>
-                            </div>
-                                <div className="dropdown" id="dropdown1">
-                                    <i id="rightarrow1" onClick={this.dadoshospitalares} className="arrow right"></i>
-                                    <i id="downarrow1" onClick={this.dadoshospitalares} className="arrow down"></i>
-                                </div>
-                        </div>
-                            <div id="dadoshospitalares" >
-                                {this.redes()}
-                            </div>
+                        {this.redes()}
                     </div>
                     <div className="footer">
                         <div className="conteudo-valor">

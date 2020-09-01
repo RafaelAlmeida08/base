@@ -321,10 +321,11 @@ class Page1 extends Component{
                                     <div className="box-meio">
                                         <div className="box-cidade">
                                             <label for="input-celular-consultor">
-                                                Celular
+                                                Celular <sup>*</sup>
                                             </label>
                                             <div id="div-input" >                                              
-                                                <InputMask  
+                                                <InputMask
+                                                    required
                                                     id="input-celular-consultor"
                                                     type="text" 
                                                     mask="(99) 99999-9999" 
