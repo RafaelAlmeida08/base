@@ -24,7 +24,9 @@ class Page3 extends Component{
         this.optcompartilharmobile   = this.optcompartilharmobile.bind(this);
         this.dadosContato            = this.dadosContato.bind(this);
         this.dadosPlanos             = this.dadosPlanos.bind(this);
-        this.redes                   = this.redes.bind(this); 
+        this.redesSP                 = this.redesSP.bind(this); 
+        this.redesBA                 = this.redesBA.bind(this); 
+        this.redesDF                 = this.redesDF.bind(this); 
         this.showRedes               = this.showRedes.bind(this); 
     }
 
@@ -134,6 +136,627 @@ class Page3 extends Component{
 
         return obj;
     }
+    
+    redesSP(plano) {
+        var redes = [];
+        if(plano.includes("Estilo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. LeForte",
+                    regiao: "Oeste",
+                    municipio: "São Paulo" 
+                }
+            ]);
+        } else if(plano.includes("Absoluto")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. LeForte",
+                    regiao: "Oeste",
+                    municipio: "São Paulo" 
+                },
+                {
+                    hospital: "Hosp. e Mat. Santa Joana",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Ipiranga",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Santana",
+                    regiao: "Norte",
+                    municipio: "São Paulo"
+                }
+            ]);
+        } else if (plano.includes("Superior")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. LeForte",
+                    regiao: "Oeste",
+                    municipio: "São Paulo" 
+                },
+                {
+                    hospital: "Hosp. e Mat. Santa Joana",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Ipiranga",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Santana",
+                    regiao: "Norte",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Infantil Sabará",
+                    regiao: "Oeste",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Santa Catarina",
+                    regiao: "Centro",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Camilo Pompéia",
+                    regiao: "Oeste",
+                    municipio: "São Paulo"
+                }
+            ]);
+        } else if (plano.includes("Executivo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. LeForte",
+                    regiao: "Oeste",
+                    municipio: "São Paulo" 
+                },
+                {
+                    hospital: "Hosp. e Mat. Santa Joana",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Ipiranga",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. São Camilo | Santana",
+                    regiao: "Norte",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Infantil Sabará",
+                    regiao: "Oeste",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Santa Catarina",
+                    regiao: "Centro",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Camilo Pompéia",
+                    regiao: "Oeste",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Israelita Albert Einstein | Unidade Morumbi",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                },
+                {
+                    hospital: "Hosp. Sirio-Libanês",
+                    regiao: "Sul",
+                    municipio: "São Paulo"
+                }
+            ]);
+        }
+
+        return this.showRedes(redes);
+    }
+
+    redesBA(plano) {
+        var redes = [];
+        if (plano.includes("Classico Reconcavo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Unimed de Feira de Santana",
+                    regiao: "Caseb",
+                    municipio: "Feira de Santana"
+                },
+                {
+                    hospital: "Hospital Incar",
+                    regiao: "Centro",
+                    municipio: "Santo Antonio de Jesus"
+                }
+            ]);
+            console.log("Primeiro");
+        } else if (plano.includes("Clássico Baixo Sul")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Sta. Casa de Misericórdia de Ilhéus",
+                    regiao: "Centro",
+                    municipio: "Ilhéus"
+                }, 
+                {
+                    hospital: "Hosp. Calixto Midjei Filho",
+                    regiao: "Pontalzinho",
+                    municipio: "Itabuna"
+                }
+            ]);
+            console.log("Segundo");
+        } else if (plano.includes("Classico Salvador")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. da Sagrada Familia",
+                    regiao: "Bonfim",
+                    municipio: "Salvador"
+                }, 
+                {
+                    hospital: "Hosp. da Cidade",
+                    regiao: "Caixa D'Agua",
+                    municipio: "Salvador"
+                }
+            ])
+        } else if (plano.includes("Estilo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Unimed de Feira de Santana",
+                    regiao: "Caseb",
+                    municipio: "Feira de Santana"
+                },
+                {
+                    hospital: "Hospital Incar",
+                    regiao: "Centro",
+                    municipio: "Santo Antonio de Jesus"
+                },
+                {
+                    hospital: "Sta. Casa de Misericórdia de Ilhéus",
+                    regiao: "Centro",
+                    municipio: "Ilhéus"
+                }, 
+                {
+                    hospital: "Hosp. Calixto Midjei Filho",
+                    regiao: "Pontalzinho",
+                    municipio: "Itabuna"
+                },
+                {
+                    hospital: "Hosp. da Sagrada Familia",
+                    regiao: "Bonfim",
+                    municipio: "Salvador"
+                }, 
+                {
+                    hospital: "Hosp. da Cidade",
+                    regiao: "Caixa D'Agua",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. da Bahia",
+                    regiao: "Pituba",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Jorge Valente",
+                    regiao: "Federação",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Santa Izabel",
+                    regiao: "Nazare",
+                    municipio: "Salvador"
+                }
+            ])
+        } else if (plano.includes("Absoluto")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Unimed de Feira de Santana",
+                    regiao: "Caseb",
+                    municipio: "Feira de Santana"
+                },
+                {
+                    hospital: "Hospital Incar",
+                    regiao: "Centro",
+                    municipio: "Santo Antonio de Jesus"
+                },
+                {
+                    hospital: "Sta. Casa de Misericórdia de Ilhéus",
+                    regiao: "Centro",
+                    municipio: "Ilhéus"
+                }, 
+                {
+                    hospital: "Hosp. Calixto Midjei Filho",
+                    regiao: "Pontalzinho",
+                    municipio: "Itabuna"
+                },
+                {
+                    hospital: "Hosp. da Sagrada Familia",
+                    regiao: "Bonfim",
+                    municipio: "Salvador"
+                }, 
+                {
+                    hospital: "Hosp. da Cidade",
+                    regiao: "Caixa D'Agua",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. da Bahia",
+                    regiao: "Pituba",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Jorge Valente",
+                    regiao: "Federação",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Santa Izabel",
+                    regiao: "Nazare",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. São Rafael",
+                    regiao: "Pau de Lima",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Clima",
+                    regiao: "Candeias",
+                    municipio: "Candeias"
+                }
+            ])
+        } else if (plano.includes("Superior")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Unimed de Feira de Santana",
+                    regiao: "Caseb",
+                    municipio: "Feira de Santana"
+                },
+                {
+                    hospital: "Hospital Incar",
+                    regiao: "Centro",
+                    municipio: "Santo Antonio de Jesus"
+                },
+                {
+                    hospital: "Sta. Casa de Misericórdia de Ilhéus",
+                    regiao: "Centro",
+                    municipio: "Ilhéus"
+                }, 
+                {
+                    hospital: "Hosp. Calixto Midjei Filho",
+                    regiao: "Pontalzinho",
+                    municipio: "Itabuna"
+                },
+                {
+                    hospital: "Hosp. da Sagrada Familia",
+                    regiao: "Bonfim",
+                    municipio: "Salvador"
+                }, 
+                {
+                    hospital: "Hosp. da Cidade",
+                    regiao: "Caixa D'Agua",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. da Bahia",
+                    regiao: "Pituba",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Jorge Valente",
+                    regiao: "Federação",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Santa Izabel",
+                    regiao: "Nazare",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. São Rafael",
+                    regiao: "Pau de Lima",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Clima",
+                    regiao: "Candeias",
+                    municipio: "Candeias"
+                },
+                {
+                    hospital: "Hosp. Português",
+                    regiao: "Graça",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "SOKIDS",
+                    regiao: "Centro",
+                    municipio: "Lauro de Freitas"
+                }
+            ])
+        } else if (plano.includes("Executivo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Unimed de Feira de Santana",
+                    regiao: "Caseb",
+                    municipio: "Feira de Santana"
+                },
+                {
+                    hospital: "Hospital Incar",
+                    regiao: "Centro",
+                    municipio: "Santo Antonio de Jesus"
+                },
+                {
+                    hospital: "Sta. Casa de Misericórdia de Ilhéus",
+                    regiao: "Centro",
+                    municipio: "Ilhéus"
+                }, 
+                {
+                    hospital: "Hosp. Calixto Midjei Filho",
+                    regiao: "Pontalzinho",
+                    municipio: "Itabuna"
+                },
+                {
+                    hospital: "Hosp. da Sagrada Familia",
+                    regiao: "Bonfim",
+                    municipio: "Salvador"
+                }, 
+                {
+                    hospital: "Hosp. da Cidade",
+                    regiao: "Caixa D'Agua",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. da Bahia",
+                    regiao: "Pituba",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Jorge Valente",
+                    regiao: "Federação",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Santa Izabel",
+                    regiao: "Nazare",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. São Rafael",
+                    regiao: "Pau de Lima",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "Hosp. Clima",
+                    regiao: "Candeias",
+                    municipio: "Candeias"
+                },
+                {
+                    hospital: "Hosp. Português",
+                    regiao: "Graça",
+                    municipio: "Salvador"
+                },
+                {
+                    hospital: "SOKIDS",
+                    regiao: "Centro",
+                    municipio: "Lauro de Freitas"
+                },
+                {
+                    hospital: "Hosp. Aliança",
+                    regiao: "Rio Vermelho",
+                    municipio: "Salvador"
+                }
+            ])
+        }
+
+        return this.showRedes(redes);
+    }
+
+    redesDF(plano) {
+        var redes = [];
+        if (plano.includes("Clássico")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Santa Helena",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília",
+                },
+                {
+                    hospital: "Hob Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                }
+            ])
+        } else if (plano.includes("Estilo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Santa Helena",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília",
+                },
+                {
+                    hospital: "Hob Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Santa Marta",
+                    regiao: "Taguatinga",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. São Mateus",
+                    regiao: "Cruzeiro",
+                    municipio: "Brasília"
+                }
+            ])
+        } else if (plano.includes("Absoluto")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Santa Helena",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília",
+                },
+                {
+                    hospital: "Hob Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Santa Marta",
+                    regiao: "Taguatinga",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. São Mateus",
+                    regiao: "Cruzeiro",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Daher Lago Sul",
+                    regiao: "Lago Sul",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. Alvorda de Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. do Coração do Brasil",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                }
+            ])
+        } else if (plano.includes("Superior")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Santa Helena",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília",
+                },
+                {
+                    hospital: "Hob Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Santa Marta",
+                    regiao: "Taguatinga",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. São Mateus",
+                    regiao: "Cruzeiro",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Daher Lago Sul",
+                    regiao: "Lago Sul",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. Alvorda de Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. do Coração do Brasil",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Brasília",
+                    regiao: "Lago Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Prontonorte",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília"
+                }
+            ])
+        } else if (plano.includes("Executivo")) {
+            redes.push.apply(redes, [
+                {
+                    hospital: "Hosp. Santa Helena",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília",
+                },
+                {
+                    hospital: "Hob Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Santa Marta",
+                    regiao: "Taguatinga",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. São Mateus",
+                    regiao: "Cruzeiro",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Daher Lago Sul",
+                    regiao: "Lago Sul",
+                    municipio: "Brasília"
+                }, 
+                {
+                    hospital: "Hosp. Alvorda de Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. do Coração do Brasil",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Brasília",
+                    regiao: "Lago Sul",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Prontonorte",
+                    regiao: "Asa Norte",
+                    municipio: "Brasília"
+                },
+                {
+                    hospital: "Hosp. Sírio-Libanês Brasília",
+                    regiao: "Asa Sul",
+                    municipio: "Brasília"
+                }
+            ])
+        }
+
+        return this.showRedes(redes);
+    }
 
     showRedes(redes) {
         return (
@@ -144,151 +767,14 @@ class Page3 extends Component{
     }
 
     redes() {
-        var redes = [];
         var uf = this.props.contato.praca ? this.props.contato.praca : "";
         var plano = this.props.plano.produto ? this.props.plano.produto : "" ;
         if (uf.includes("SP")) {
-            if(plano.includes("Estilo")) {
-                redes.push.apply(redes, [
-                    {
-                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. LeForte",
-                        regiao: "Oeste",
-                        municipio: "São Paulo" 
-                    }
-                ]);
-                console.log(redes);
-            } else if(plano.includes("Absoluto")) {
-                redes.push.apply(redes, [
-                    {
-                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. LeForte",
-                        regiao: "Oeste",
-                        municipio: "São Paulo" 
-                    },
-                    {
-                        hospital: "Hosp. e Mat. Santa Joana",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Ipiranga",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Santana",
-                        regiao: "Norte",
-                        municipio: "São Paulo"
-                    }
-                ]);
-            } else if (plano.includes("Superior")) {
-                redes.push.apply(redes, [
-                    {
-                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. LeForte",
-                        regiao: "Oeste",
-                        municipio: "São Paulo" 
-                    },
-                    {
-                        hospital: "Hosp. e Mat. Santa Joana",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Ipiranga",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Santana",
-                        regiao: "Norte",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Infantil Sabará",
-                        regiao: "Oeste",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Santa Catarina",
-                        regiao: "Centro",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Camilo Pompéia",
-                        regiao: "Oeste",
-                        municipio: "São Paulo"
-                    }
-                ]);
-            } else if (plano.includes("Executivo")) {
-                redes.push.apply(redes, [
-                    {
-                        hospital: "Hosp. Beneficência Portuguesa | São Joaquim",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. LeForte",
-                        regiao: "Oeste",
-                        municipio: "São Paulo" 
-                    },
-                    {
-                        hospital: "Hosp. e Mat. Santa Joana",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Ipiranga",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. São Camilo | Santana",
-                        regiao: "Norte",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Infantil Sabará",
-                        regiao: "Oeste",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Santa Catarina",
-                        regiao: "Centro",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Camilo Pompéia",
-                        regiao: "Oeste",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Israelita Albert Einstein | Unidade Morumbi",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    },
-                    {
-                        hospital: "Hosp. Sirio-Libanês",
-                        regiao: "Sul",
-                        municipio: "São Paulo"
-                    }
-                ]);
-            }
-
-            return this.showRedes(redes);
+            return this.redesSP(plano);            
+        } else if (uf.includes("BA")) {
+            return this.redesBA(plano);
+        } else if (uf.includes("DF")) {
+            return this.redesDF(plano);
         }
     }
 
