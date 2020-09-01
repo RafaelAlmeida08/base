@@ -581,7 +581,7 @@ class Page3 extends Component{
                 {
                     hospital: "Hosp. Santa Helena",
                     regiao: "Asa Norte",
-                    municipio: "Brasília",
+                    municipio: "Brasília"
                 },
                 {
                     hospital: "Hob Brasília",
@@ -594,7 +594,7 @@ class Page3 extends Component{
                 {
                     hospital: "Hosp. Santa Helena",
                     regiao: "Asa Norte",
-                    municipio: "Brasília",
+                    municipio: "Brasília"
                 },
                 {
                     hospital: "Hob Brasília",
@@ -761,7 +761,7 @@ class Page3 extends Component{
             <>
                 <div className="linha hospitalares">
                 <div className="titulo">
-                    <label>Hospitais</label>
+                    <label>Rede Credenciada</label>
                 </div>
                     <div className="dropdown" id="dropdown1">
                         <i id="rightarrow1" onClick={this.dadoshospitalares} className="arrow right"></i>

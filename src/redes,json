@@ -1,0 +1,654 @@
+{
+    "SP": [
+        {
+            "id": 1,
+            "nome": "Estilo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Beneficência Portuguesa | São Joaquim",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. LeForte",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo" 
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "Absoluto",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Beneficência Portuguesa | São Joaquim",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. LeForte",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo" 
+                },
+                {
+                    "hospital": "Hosp. e Mat. Santa Joana",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Ipiranga",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Santana",
+                    "regiao": "Norte",
+                    "municipio": "São Paulo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nome": "Superior",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Beneficência Portuguesa | São Joaquim",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. LeForte",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo" 
+                },
+                {
+                    "hospital": "Hosp. e Mat. Santa Joana",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Ipiranga",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Santana",
+                    "regiao": "Norte",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Infantil Sabará",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Santa Catarina",
+                    "regiao": "Centro",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Camilo Pompéia",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nome": "Executivo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Beneficência Portuguesa | São Joaquim",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. LeForte",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo" 
+                },
+                {
+                    "hospital": "Hosp. e Mat. Santa Joana",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Ipiranga",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. São Camilo | Santana",
+                    "regiao": "Norte",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Infantil Sabará",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Santa Catarina",
+                    "regiao": "Centro",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Camilo Pompéia",
+                    "regiao": "Oeste",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Israelita Albert Einstein | Unidade Morumbi",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                },
+                {
+                    "hospital": "Hosp. Sirio-Libanês",
+                    "regiao": "Sul",
+                    "municipio": "São Paulo"
+                }
+            ]
+        }
+    ],
+    "DF": [
+        {
+            "id": 1,
+            "nome": "Clássico",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Santa Helena",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hob Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "Estilo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Santa Helena",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hob Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Santa Marta",
+                    "regiao": "Taguatinga",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. São Mateus",
+                    "regiao": "Cruzeiro",
+                    "municipio": "Brasília"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nome": "Absoluto",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Santa Helena",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hob Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Santa Marta",
+                    "regiao": "Taguatinga",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. São Mateus",
+                    "regiao": "Cruzeiro",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Daher Lago Sul",
+                    "regiao": "Lago Sul",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. Alvorda de Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. do Coração do Brasil",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nome": "Superior",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Santa Helena",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hob Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Santa Marta",
+                    "regiao": "Taguatinga",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. São Mateus",
+                    "regiao": "Cruzeiro",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Daher Lago Sul",
+                    "regiao": "Lago Sul",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. Alvorda de Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                   "hospital": "Hosp. do Coração do Brasil",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Brasília",
+                    "regiao": "Lago Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Prontonorte",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nome": "Executivo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Santa Helena",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hob Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Santa Marta",
+                    "regiao": "Taguatinga",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. São Mateus",
+                    "regiao": "Cruzeiro",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Daher Lago Sul",
+                    "regiao": "Lago Sul",
+                    "municipio": "Brasília"
+                }, 
+                {
+                    "hospital": "Hosp. Alvorda de Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. do Coração do Brasil",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Brasília",
+                    "regiao": "Lago Sul",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Prontonorte",
+                    "regiao": "Asa Norte",
+                    "municipio": "Brasília"
+                },
+                {
+                    "hospital": "Hosp. Sírio-Libanês Brasília",
+                    "regiao": "Asa Sul",
+                    "municipio": "Brasília"
+                }
+            ]
+        }
+    ],
+    "BA": [
+        {
+            "id": 1,
+            "nome": "Clássico Reconcavo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Unimed de Feira de Santana",
+                    "regiao": "Caseb",
+                    "municipio": "Feira de Santana"
+                },
+                {
+                    "hospital": "Hospital Incar",
+                    "regiao": "Centro",
+                    "municipio": "Santo Antonio de Jesus"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nome":"Clássico Baixo Sul",
+            "hospitais": [
+                {
+                    "hospital": "Sta. Casa de Misericórdia de Ilhéus",
+                    "regiao": "Centro",
+                    "municipio": "Ilhéus"
+                }, 
+                {
+                    "hospital": "Hosp. Calixto Midjei Filho",
+                    "regiao": "Pontalzinho",
+                    "municipio": "Itabuna"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nome": "Clássico Salvador",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. da Sagrada Familia",
+                    "regiao": "Bonfim",
+                    "municipio": "Salvador"
+                }, 
+                {
+                    "hospital": "Hosp. da Cidade",
+                    "regiao": "Caixa D'Agua",
+                    "municipio": "Salvador"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nome": "Estilo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Unimed de Feira de Santana",
+                    "regiao": "Caseb",
+                    "municipio": "Feira de Santana"
+                },
+                {
+                    "hospital": "Hospital Incar",
+                    "regiao": "Centro",
+                    "municipio": "Santo Antonio de Jesus"
+                },
+                {
+                    "hospital": "Sta. Casa de Misericórdia de Ilhéus",
+                    "regiao": "Centro",
+                    "municipio": "Ilhéus"
+                }, 
+                {
+                    "hospital": "Hosp. Calixto Midjei Filho",
+                    "regiao": "Pontalzinho",
+                    "municipio": "Itabuna"
+                },
+                {
+                    "hospital": "Hosp. da Sagrada Familia",
+                    "regiao": "Bonfim",
+                    "municipio": "Salvador"
+                }, 
+                {
+                    "hospital": "Hosp. da Cidade",
+                    "regiao": "Caixa D'Agua",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. da Bahia",
+                    "regiao": "Pituba",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Jorge Valente",
+                    "regiao": "Federação",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Santa Izabel",
+                    "regiao": "Nazare",
+                    "municipio": "Salvador"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nome": "Absoluto",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Unimed de Feira de Santana",
+                    "regiao": "Caseb",
+                    "municipio": "Feira de Santana"
+                },
+                {
+                    "hospital": "Hospital Incar",
+                    "regiao": "Centro",
+                    "municipio": "Santo Antonio de Jesus"
+                },
+                {
+                    "hospital": "Sta. Casa de Misericórdia de Ilhéus",
+                    "regiao": "Centro",
+                    "municipio": "Ilhéus"
+                }, 
+                {
+                    "hospital": "Hosp. Calixto Midjei Filho",
+                    "regiao": "Pontalzinho",
+                    "municipio": "Itabuna"
+                },
+                {
+                    "hospital": "Hosp. da Sagrada Familia",
+                    "regiao": "Bonfim",
+                    "municipio": "Salvador"
+                }, 
+                {
+                    "hospital": "Hosp. da Cidade",
+                    "regiao": "Caixa D'Agua",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. da Bahia",
+                    "regiao": "Pituba",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Jorge Valente",
+                    "regiao": "Federação",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Santa Izabel",
+                    "regiao": "Nazare",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. São Rafael",
+                    "regiao": "Pau de Lima",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Clima",
+                    "regiao": "Candeias",
+                    "municipio": "Candeias"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nome": "Superior",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Unimed de Feira de Santana",
+                    "regiao": "Caseb",
+                    "municipio": "Feira de Santana"
+                },
+                {
+                    "hospital": "Hospital Incar",
+                    "regiao": "Centro",
+                    "municipio": "Santo Antonio de Jesus"
+                },
+                {
+                    "hospital": "Sta. Casa de Misericórdia de Ilhéus",
+                    "regiao": "Centro",
+                    "municipio": "Ilhéus"
+                }, 
+                {
+                    "hospital": "Hosp. Calixto Midjei Filho",
+                    "regiao": "Pontalzinho",
+                    "municipio": "Itabuna"
+                },
+                {
+                    "hospital": "Hosp. da Sagrada Familia",
+                    "regiao": "Bonfim",
+                    "municipio": "Salvador"
+                }, 
+                {
+                    "hospital": "Hosp. da Cidade",
+                    "regiao": "Caixa D'Agua",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. da Bahia",
+                    "regiao": "Pituba",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Jorge Valente",
+                    "regiao": "Federação",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Santa Izabel",
+                    "regiao": "Nazare",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. São Rafael",
+                    "regiao": "Pau de Lima",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Clima",
+                    "regiao": "Candeias",
+                    "municipio": "Candeias"
+                },
+                {
+                    "hospital": "Hosp. Português",
+                    "regiao": "Graça",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "SOKIDS",
+                    "regiao": "Centro",
+                    "municipio": "Lauro de Freitas"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nome": "Executivo",
+            "hospitais": [
+                {
+                    "hospital": "Hosp. Unimed de Feira de Santana",
+                    "regiao": "Caseb",
+                    "municipio": "Feira de Santana"
+                },
+                {
+                    "hospital": "Hospital Incar",
+                    "regiao": "Centro",
+                    "municipio": "Santo Antonio de Jesus"
+                },
+                {
+                    "hospital": "Sta. Casa de Misericórdia de Ilhéus",
+                    "regiao": "Centro",
+                    "municipio": "Ilhéus"
+                }, 
+                {
+                    "hospital": "Hosp. Calixto Midjei Filho",
+                    "regiao": "Pontalzinho",
+                    "municipio": "Itabuna"
+                },
+                {
+                    "hospital": "Hosp. da Sagrada Familia",
+                    "regiao": "Bonfim",
+                    "municipio": "Salvador"
+                }, 
+                {
+                    "hospital": "Hosp. da Cidade",
+                    "regiao": "Caixa D'Agua",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. da Bahia",
+                    "regiao": "Pituba",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Jorge Valente",
+                    "regiao": "Federação",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Santa Izabel",
+                    "regiao": "Nazare",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. São Rafael",
+                    "regiao": "Pau de Lima",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "Hosp. Clima",
+                    "regiao": "Candeias",
+                    "municipio": "Candeias"
+                },
+                {
+                    "hospital": "Hosp. Português",
+                    "regiao": "Graça",
+                    "municipio": "Salvador"
+                },
+                {
+                    "hospital": "SOKIDS",
+                    "regiao": "Centro",
+                    "municipio": "Lauro de Freitas"
+                },
+                {
+                    "hospital": "Hosp. Aliança",
+                    "regiao": "Rio Vermelho",
+                    "municipio": "Salvador"
+                }
+            ]
+        }
+    ]
+}
