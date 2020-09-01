@@ -24,7 +24,6 @@ export default function CardPlano(props) {
 
     return (
         <div className="card-plano" id={plano.btxplano}>
-        {console.log(plano)}
             <div className="card-plano-header" role="header">
                 <h2 className="card-plano-title">
                     {plano.produto}
@@ -44,6 +43,14 @@ export default function CardPlano(props) {
                 </div>
                 <div className="card-plano-datas">
                     <table key={plano.btxplano}>
+                        <tr>
+                            <td>
+                                Vidas
+                            </td>
+                            <td>
+                                {props.vidas}
+                            </td>
+                        </tr>
                         <tr>
                             <td>
                                 Acomodação

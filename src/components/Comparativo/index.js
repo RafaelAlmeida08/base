@@ -57,6 +57,7 @@ class Comparativo extends Component {
                     plano={index} 
                     passapage3={this.maisinformacoes} 
                     range={this.props.range}
+                    vidas={this.props.vidas}
                 />
             })
 
