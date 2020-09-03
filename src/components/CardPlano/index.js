@@ -61,10 +61,10 @@ export default function CardPlano(props) {
                         </tr>
                         <tr>
                             <td>
-                                Coparticipação
+                                <strong>Coparticipação</strong>
                             </td>
                             <td>
-                                {plano.coparticipacao}
+                                <strong>{plano.coparticipacao}</strong>
                             </td>
                         </tr>
                         <tr>

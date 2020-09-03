@@ -16,9 +16,17 @@ export default function PDF(props) {
       width: '100%',
       height: '100%'
     },
+    wrapperSecond: {
+      backgroundColor: '#76BE8C',
+      height: '240px',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    },
     wrapper: {
       backgroundColor: '#76BE8C',
-      height: '400px',
+      height: '280px',
       width: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -26,23 +34,25 @@ export default function PDF(props) {
     },
     logoWrapper: {
       width: '100%',
-      height: '40%',
+      height: '145px',
       backgroundColor: '#003663',
       borderTop: '14 solid #ffffff',
       borderBottom: '14 solid #ffffff'
     },
     logo: {
-      width: '240px',
-      height: '120px',
+      width: '250px',
+      height: '110px',
       display: 'block',
       marginHorizontal: 'auto',
-      marginBottom: 0
+      marginVertical: 2
     },  
     presentationText: {
       width: '100%',
       textAlign: 'center',
       color: '#003663',
-      marginTop: 12
+      marginTop: 12,
+      fontSize: 15,
+      fontWeight: 600
     },
     secondPage: {
       display: 'flex',
@@ -79,11 +89,13 @@ export default function PDF(props) {
     },
     textContent: {
       marginBottom: 20,
-      color: '#ffffff'
+      color: '#ffffff',
+      fontSize: 20,
+      textAlign: "left"
     },
     imageContent: {
-      width: '240px',
-      height: '220px',
+      width: '290px',
+      height: '250px',
       marginTop: 80,
       marginLeft: -14,
       borderRadius: 20
@@ -126,7 +138,7 @@ export default function PDF(props) {
     demonstrationCard: {
       backgroundColor: '#003663',
       width: '45%',
-      height: '450px',
+      height: '440px',
       paddingHorizontal: 20,
       paddingVertical: 15,
       marginTop: 35,
@@ -134,17 +146,22 @@ export default function PDF(props) {
     },
     demonstrationCardText: {
       color: '#fffffff',
-      fontSize: 17,
+      fontSize: 12,
       fontWeight: 600,
       marginBottom: 7
     },
-    demonstrationCardTextFooter: {
+    demonstrationCardTextCenter: {
       color: '#fffffff',
-      fontSize: 17,
+      fontSize: 16,
       fontWeight: 600,
-      marginTop: 7,
-      marginBottom: 7,
+      marginBottom: 10,
       textAlign: "center"
+    },
+    demonstrationRede: {
+      color: '#fffffff',
+      fontSize: 12,
+      fontWeight: 500,
+      marginBottom: 5
     },
     demonstrationFooter: {
       width:'100%',
@@ -158,7 +175,7 @@ export default function PDF(props) {
     },
     text: {
       color: '#003663',
-      fontSize: 17,
+      fontSize: 15,
       fontWeight: 900,
       textAlign: 'center',
       marginBottom: 30
@@ -171,13 +188,13 @@ export default function PDF(props) {
       color: "#ffffff"
     },
     imageCenter: {
-      width: '140px',
-      height: '80px',
+      width: '200px',
+      height: '100px',
       display: 'block',
       marginHorizontal: 'auto',
     },
     imageCenterWrapper: {
-      marginVertical: 10
+      marginVertical: 20
     }
   });
   
@@ -249,7 +266,13 @@ export default function PDF(props) {
                   <Text style={styles.demonstrationCardText}>COPARTICIPAÇÃO: {props.plano.coparticipacao}</Text>
                   <Text style={styles.demonstrationCardText}>ACOMODAÇÃO: {props.plano.acomodacao}</Text>
                   <Text style={styles.demonstrationCardText}>VALOR: {props.plano.valor}</Text>
-                  <Text style={styles.demonstrationCardTextFooter}>RESUMO DE REDE</Text>
+                  <Text style={styles.demonstrationCardTextCenter}>RESUMO DE REDE</Text>
+                  {
+                    props.hospitais != undefined ? 
+                    props.hospitais.map((hospital) => (
+                      <Text style={styles.demonstrationRede}>{hospital.hospital}</Text>
+                    ))
+                  : <Text>Sem rede</Text>}
                 </View>
               }
           </View>
@@ -260,7 +283,7 @@ export default function PDF(props) {
       </Page>
       <Page size="A4" orientation="landscape" style={styles.secondPage}>
           <View style={styles.firstPage}>
-              <View style={styles.wrapper}>
+              <View style={styles.wrapperSecond}>
                 <Text style={styles.text}>OBRIGADO POR ESCOLHER A TECSAÚDE</Text>
                 <View style={styles.logoWrapper}>
                   <View style={styles.textWrapper}>                  

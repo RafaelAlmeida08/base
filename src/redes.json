@@ -95,7 +95,7 @@
         },
         {
             "id": 4,
-            "nome": "Executivo",
+            "nome": "Exclusivo",
             "hospitais": [
                 {
                     "hospital": "Hosp. Beneficência Portuguesa | São Joaquim",
@@ -287,7 +287,7 @@
         },
         {
             "id": 5,
-            "nome": "Executivo",
+            "nome": "Exclusivo",
             "hospitais": [
                 {
                     "hospital": "Hosp. Santa Helena",

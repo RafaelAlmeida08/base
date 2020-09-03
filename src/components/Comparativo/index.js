@@ -6,6 +6,7 @@ import linkGenerator from './../../linkGenerator'
 import PDFComparativo from '../PDFComparativo';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import data from '../../jsonformatter.json';
+import rede from '../../redes.json';
 
 class Comparativo extends Component {
     constructor(props) {
@@ -25,11 +26,158 @@ class Comparativo extends Component {
         };
 
         this.renderCardPlano = this.renderCardPlano.bind(this);
-        this.pageselecao = this.pageselecao.bind(this);
+        this.pageselecao     = this.pageselecao.bind(this);
         this.maisinformacoes = this.maisinformacoes.bind(this);      
         this.compartilharWpp = this.compartilharWpp.bind(this);
-        this.compartilhar = this.compartilhar.bind(this);
-        this.getTotal = this.getTotal.bind(this);
+        this.compartilhar    = this.compartilhar.bind(this);
+        this.getTotal        = this.getTotal.bind(this);
+        this.getPlanoData    = this.getPlanoData.bind(this);
+        this.getRedesSP      = this.getRedesSP.bind(this);
+        this.getRedesBA      = this.getRedesBA.bind(this);
+        this.getRedesDF      = this.getRedesDF.bind(this);
+    }
+
+    getRedesSP(produto) {
+        if (produto.includes("Estilo")) {
+            return rede.SP.filter((rede) => {
+                if (rede.nome == "Estilo") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Absoluto")) {
+            return rede.SP.filter((rede) => {
+                if (rede.nome == "Absoluto") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Superior")) {
+            return rede.SP.filter((rede) => {
+               if (rede.nome == "Superior") {
+                    return rede.hospitais;
+               } 
+            })
+        } else if (produto.includes("Exclusivo")) {
+            return rede.SP.filter((rede) => {
+                if (rede.nome == "Exclusivo") {
+                    return rede.hospitais;
+                }
+            })
+        } else {
+            return []
+        }
+    }
+
+    getRedesBA(produto) {
+        if (produto.includes("Clássico Reconcavo")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Clássico Reconcavo") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Clássico Baixo Sul")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Clássico Baixo Sul") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Clássico Salvador")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Clássico Salvador") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Estilo")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Estilo") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Absoluto")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Absoluto") {
+                    return rede.hospitais;
+                }
+            });
+        } else if (produto.includes("Superior")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Superior") { 
+                    return rede.hospitais;
+                }    
+            });
+        } else if (produto.includes("Exclusivo")) {
+            return rede.BA.filter((rede) => {
+                if (rede.nome == "Exclusivo") { 
+                    return rede.hospitais;
+                }
+            })
+        } else {
+            return []
+        }
+    }
+
+    getRedesDF(produto) {
+        if (produto.includes("Clássico")) {
+            return rede.DF.filter((rede) => {
+                if (rede.nome == "Clássico") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Estilo")) {
+            return rede.DF.filter((rede) => {
+                if (rede.nome == "Estilo") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Absoluto")) {
+            return rede.DF.filter((rede) => {
+                if (rede.nome == "Absoluto") {
+                    return rede.hospitais;
+                }
+            })
+        } else if (produto.includes("Superior")) {
+            return rede.DF.filter((rede) => {
+               if (rede.nome == "Superior") {
+                    return rede.hospitais;
+               } 
+            })
+        } else {
+            return []
+        }
+    }
+
+    getPlanoData(plano) {
+        var praca = this.props.contato.praca;
+        var planos = plano;
+
+        planos.map((index) => {
+            if (praca.includes("SP")) {
+                var hospitais = this.getRedesSP(index.produto);
+                if (hospitais.length > 0) {                    
+                    index.hospitais = hospitais[0].hospitais;
+                } else {
+                    index.hospitais = hospitais;
+                }
+            } else if (praca.includes("DF")) {
+                var hospitais = this.getRedesDF(index.produto);
+                if (hospitais.length > 0) {
+                    index.hospitais = hospitais[0].hospitais;
+                } else {
+                    index.hospitais = hospitais;
+                }
+                
+            } else if (praca.includes("BA")) {
+                var hospitais = this.getRedesBA(index.produto);
+                if (hospitais.length > 0) {
+                    index.hospitais = hospitais[0].hospitais;
+                } else {
+                    index.hospitais = hospitais;
+                }
+            }
+
+        })
+        console.log(planos);
+        return planos;
+
     }
 
     getPlanos() {
@@ -136,7 +284,6 @@ class Comparativo extends Component {
         let linkWpp = `https://wa.me/${number}?text=`
         
         linkGenerator(this.props.planos).then(r => {
-            console.log(this.props.planos)
             let msg = escape(`Para visualizar seu comparativo, por favor acesse: ${r}`)
             window.open(`${linkWpp}${msg}`);
         })
@@ -186,7 +333,7 @@ class Comparativo extends Component {
                     vidas={this.props.vidas}
                 />
                 <div id="header-comparativo">
-                    <h1>Comparativo</h1>                
+                    <h1>Comparativo</h1>               
                     <div id="wrapper-opt">
                         <div 
                             className="opt" 
@@ -204,12 +351,12 @@ class Comparativo extends Component {
                                 <span className="icon icon-pdf"></span>
                             </div>
                             <div className="opt-text">
-                                {this.props.planos.length > 0 && this.props.range
+                            {this.props.planos.length > 0 && this.props.range
                                     ?   <PDFDownloadLink 
                                             document=
                                             {
                                                 <PDFComparativo 
-                                                    data={this.props.planos} 
+                                                    data={this.getPlanoData(this.props.planos)} 
                                                     range={this.props.range}
                                                     contato={this.props.contato}
                                                     vidas={this.props.vidas}

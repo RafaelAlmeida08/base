@@ -192,8 +192,11 @@ class Page1 extends Component{
         option.value = cidade.ibge;
         option.id = cidade.ibge;
         var praca = document.createAttribute("data-praca");
+        var required = document.createAttribute("required");
         praca.value = cidade.nome + " - " + estado;
+        required.value = true;
         option.setAttributeNode(praca);
+        option.setAttributeNode(required);
         var optionText = document.createTextNode(cidade.nome + " - " + estado);
         option.appendChild(optionText);
         select.appendChild(option);
@@ -225,7 +228,7 @@ class Page1 extends Component{
                                 <div className="box-contato">
                                     <div className="contato-first">
                                         <label>
-                                            Prospect <sup>*</sup>
+                                            Cliente <sup>*</sup>
                                         </label>
                                         <div id="div-input">
                                             <input 

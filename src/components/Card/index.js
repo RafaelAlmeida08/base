@@ -102,9 +102,9 @@ class Card extends Component{
     getAcomodacao(acomodacao) {
         switch (acomodacao) {
             case 'I':
-                return 'Enfermaria';
-            case 'C':
                 return 'Apartamento';
+            case 'C':
+                return 'Enfermaria';
             default:
                 break;
         }
