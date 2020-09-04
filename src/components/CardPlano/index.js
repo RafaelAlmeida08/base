@@ -45,7 +45,7 @@ export default function CardPlano(props) {
                     <table key={plano.btxplano}>
                         <tr>
                             <td>
-                                Vidas
+                                <strong>Vidas</strong>
                             </td>
                             <td>
                                 {props.vidas}
@@ -53,7 +53,7 @@ export default function CardPlano(props) {
                         </tr>
                         <tr>
                             <td>
-                                Acomodação
+                                <strong>Acomodação</strong>
                             </td>
                             <td>
                                 {plano.acomodacao}
@@ -64,12 +64,12 @@ export default function CardPlano(props) {
                                 <strong>Coparticipação</strong>
                             </td>
                             <td>
-                                <strong>{plano.coparticipacao}</strong>
+                                {plano.coparticipacao}
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Abrangencia
+                                <strong>Abrangencia</strong>
                             </td>
                             <td>
                                 {plano.abrangencia}

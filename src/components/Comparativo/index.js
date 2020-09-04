@@ -283,7 +283,20 @@ class Comparativo extends Component {
 
         let linkWpp = `https://wa.me/${number}?text=`
         
-        linkGenerator(this.props.planos).then(r => {
+        var data = {
+            planos: this.props.planos,
+            contato: {
+                nome: this.props.contato.nome,
+                praca: this.props.contato.praca,
+                consultor: this.props.contato.consultor,
+                telefone_consultor: this.props.contato.telefone_consultor,
+                celular_consultor: this.props.contato.celular_consultor,
+                email_consultor: this.props.contato.email_consultor
+            },
+            vidas: this.props.vidas
+        };
+
+        linkGenerator(data).then(r => {
             let msg = escape(`Para visualizar seu comparativo, por favor acesse: ${r}`)
             window.open(`${linkWpp}${msg}`);
         })

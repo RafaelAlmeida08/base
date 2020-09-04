@@ -13,11 +13,13 @@
 }
 
 async function linkGenerator (data) {
-    
-    let link = gerarLink(data)
+    console.log(data);
+    let link = gerarLink(data);
+    var link_encode = encodeURIComponent(link.replace("http://", "www."));
 
-    const r = await fetch(`https://is.gd/create.php?format=json&url=${link.replace('http://', 'www.')}`)
+    const r = await fetch('https://is.gd/create.php?format=json&url='+ link_encode)
     const l = await r.json()
+
     return l.shorturl
 
 }

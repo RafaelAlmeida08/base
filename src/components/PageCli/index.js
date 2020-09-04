@@ -32,7 +32,7 @@ const Pagecli = ({data}) => {
                     <hr/>
                     </div>
                     <div className="areaCards">
-                        { dados.map( (data) => {
+                        { dados.planos.map( (data) => {
                             return <CardPageCli dados={data} />
                         } ) }
                     </div>
