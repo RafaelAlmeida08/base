@@ -284,8 +284,7 @@ export default function PDF(props) {
                 <Text style={styles.text}>OBRIGADO POR ESCOLHER A TECSAÚDE</Text>
                 <View style={styles.logoWrapper}>
                   <View style={styles.textWrapper}>                  
-                    <Text style={styles.textCorretor}>Qualquer dúvida, entre em contato com nosso consultor:</Text>
-                    <Text>Consultor: {data.contato.consultor}</Text>
+                    <Text style={styles.textCorretor}>Qualquer dúvida, entre em contato com nosso consultor: {data.contato.consultor}</Text>
                     <Text>Telefone: {data.contato.telefone_consultor}</Text>
                       <Text>
                         Celular: {data.contato.celular_consultor}
